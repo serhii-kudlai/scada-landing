@@ -1,0 +1,638 @@
+{
+  "meta": {
+    "title": "SCADA System - Industrial control and monitoring system",
+    "description": "Modern web-SCADA system for industrial monitoring, control and automation of technological processes. Supports Siemens S7, Modbus, MQTT, OPC UA, EtherNet/IP."
+  },
+  "header": {
+    "nav": {
+      "features": "Possibilities",
+      "integrations": "Integrations",
+      "ai": "AI Assistant",
+      "architecture": "Architecture",
+      "systemInterface": "System interface",
+      "advantages": "Advantages",
+      "contacts": "Contacts"
+    },
+    "login": "Login",
+    "requestDemo": "Request a demo",
+    "openMenu": "Open menu"
+  },
+  "lang": {
+    "ru": "RU",
+    "en": "EN",
+    "de": "DE",
+    "uk": "UA",
+    "label": "Language"
+  },
+  "hero": {
+    "badge": "Next generation industrial automation",
+    "h1a": "Web SCADA system",
+    "h1b": "for your production",
+    "sub": "Monitoring, control and automation of technological processes in real time. Supports all major PLC protocols, visual circuit editor and built-in AI assistant.",
+    "ctaDemo": "Request a demo",
+    "ctaMore": "Find out more",
+    "scroll": "Scroll down",
+    "stats": [
+      {
+        "value": "14+",
+        "label": "Device types"
+      },
+      {
+        "value": "5",
+        "label": "PLC protocols"
+      },
+      {
+        "value": "Real-time",
+        "label": "Monitoring"
+      },
+      {
+        "value": "AI",
+        "label": "Assistant"
+      }
+    ],
+    "mockup": {
+      "browserUrl": "https://scada.example.com/dashboard",
+      "cards": [
+        {
+          "val": "247",
+          "lbl": "Devices"
+        },
+        {
+          "val": "99.8%",
+          "lbl": "Uptime"
+        },
+        {
+          "val": "0",
+          "lbl": "Accidents"
+        },
+        {
+          "val": "12",
+          "lbl": "Alarmov"
+        }
+      ],
+      "trendsTitle": "Trends - Temperature / Pressure",
+      "schemaTitle": "Process diagram",
+      "pump": "Pump",
+      "valve": "Valve",
+      "tank": "Tank",
+      "eventsTitle": "Latest events",
+      "events": [
+        {
+          "msg": "Pump P-101 started",
+          "time": "12:34:01"
+        },
+        {
+          "msg": "T-201 temperature exceeds threshold",
+          "time": "12:31:45"
+        },
+        {
+          "msg": "Valve V-305 is 75% open",
+          "time": "12:29:12"
+        }
+      ]
+    }
+  },
+  "features": {
+    "badge": "Platform capabilities",
+    "h2a": "Everything you need for",
+    "h2b": "industrial automation",
+    "intro": "Full-featured SCADA platform with a single interface for monitoring, controlling and analyzing technological processes.",
+    "items": [
+      {
+        "title": "Real-time monitoring",
+        "description": "WebSocket connection provides instant data update. TimescaleDB stores time series with nanosecond precision.",
+        "tags": [
+          "WebSocket",
+          "TimescaleDB",
+          "Redis"
+        ]
+      },
+      {
+        "title": "Visual schematic editor",
+        "description": "Drag-and-drop flow chart editor based on Konva.js. Create interactive mimic diagrams with animation of device states.",
+        "tags": [
+          "Konva.js",
+          "SVG",
+          "Drag & Drop"
+        ]
+      },
+      {
+        "title": "Accident management",
+        "description": "Multi-level alarm system with priorities. Event log, acknowledgment, escalation of notifications. History of emergency situations.",
+        "tags": [
+          "Alarms",
+          "Handshake",
+          "Notifications"
+        ]
+      },
+      {
+        "title": "Trends and data history",
+        "description": "Plotting historical data graphs with scaling. Export to Excel, CSV. Comparison of several parameters on one graph.",
+        "tags": [
+          "Chart.js",
+          "Excel",
+          "TimescaleDB"
+        ]
+      },
+      {
+        "title": "Sequences and recipes",
+        "description": "Visual programming of technological sequences. Management of recipes, stages and batches (batch automation).",
+        "tags": [
+          "Batch",
+          "Recipes",
+          "Automation"
+        ]
+      },
+      {
+        "title": "Role-based access model",
+        "description": "Flexible RBAC system: operators, engineers, administrators. User activity log. JWT authentication.",
+        "tags": [
+          "RBAC",
+          "JWT",
+          "Audit"
+        ]
+      },
+      {
+        "title": "Multilingual interface",
+        "description": "Full localization via i18next. RTL (Arabic) support. Switch language without reloading the page.",
+        "tags": [
+          "i18next",
+          "RTL",
+          "Localization"
+        ]
+      },
+      {
+        "title": "Docker deployment",
+        "description": "Full containerization via Docker Compose. One file - the entire stack: backend, frontend, database, Redis, PLC worker.",
+        "tags": [
+          "Docker",
+          "PostgreSQL",
+          "Redis"
+        ]
+      }
+    ]
+  },
+  "integrations": {
+    "badge": "Industrial protocols",
+    "h2a": "Support for everyone",
+    "h2b": "key PLC protocols",
+    "intro": "Connect any industrial equipment without modification - the system supports standard protocols out of the box.",
+    "protocols": [
+      {
+        "name": "Siemens S7",
+        "subtitle": "Snap7 + TIA Openness",
+        "description": "Full support for S7-300/400/1200/1500. Read/write variables DB, M, I, Q. Integration with TIA Portal for automatic configuration deployment.",
+        "badge": "Siemens"
+      },
+      {
+        "name": "Modbus",
+        "subtitle": "RTU / TCP / ASCII",
+        "description": "Modbus RTU via RS-485/RS-232 and Modbus TCP/IP. Supports all function codes: Coils, Discrete Inputs, Holding Registers, Input Registers.",
+        "badge": "Universal"
+      },
+      {
+        "name": "MQTT",
+        "subtitle": "Broker / Client",
+        "description": "IoT device protocol. Subscribe to topics, publish commands. Compatible with Mosquitto, HiveMQ, AWS IoT Core. QoS 0/1/2.",
+        "badge": "IoT"
+      },
+      {
+        "name": "OPC UA",
+        "subtitle": "Client / Server",
+        "description": "Industry standard IIoT. Secure data exchange with any OPC UA-compatible equipment. Support Node ID, Browse, Subscription.",
+        "badge": "IIoT"
+      },
+      {
+        "name": "EtherNet/IP",
+        "subtitle": "Allen-Bradley / Rockwell",
+        "description": "CIP protocol for Allen-Bradley PLCs. Supports ControlLogix, CompactLogix, MicroLogix. Tag reading, diagnostics.",
+        "badge": "Rockwell"
+      }
+    ],
+    "tia": {
+      "badge": "Exclusive Integration",
+      "title": "TIA Portal Agent (.NET)",
+      "body": "The Agent for Windows automatically exports the variable configuration from the Siemens TIA Portal project to the SCADA system. One-button tag synchronization—no manual data entry.",
+      "pill": ".NET / Windows"
+    }
+  },
+  "ai": {
+    "badge": "Built-in AI Assistant",
+    "h2a": "Ask the system",
+    "h2b": "in natural language",
+    "intro": "The RAG assistant based on FastAPI and Qdrant analyzes your production data and answers questions about equipment, accidents and processes in real time.",
+    "capabilities": [
+      "On-demand historical data analysis",
+      "Diagnostics of emergency situations",
+      "Search by documentation and regulations",
+      "Forecasting based on trends",
+      "Answers to questions about the condition of equipment"
+    ],
+    "chatTitle": "SCADA AI Assistant",
+    "online": "Online",
+    "placeholder": "Ask a question about equipment...",
+    "messages": [
+      {
+        "role": "user",
+        "text": "What is the average temperature of the R-201 reactor over the last 24 hours?"
+      },
+      {
+        "role": "ai",
+        "text": "The average temperature of the R-201 reactor over the last 24 hours was **82.4°C**. Maximum value: 91.2°C at 14:32, minimum: 74.8°C at 03:15. No deviations from the norm were recorded."
+      },
+      {
+        "role": "user",
+        "text": "Was pump P-101 in trouble this week?"
+      },
+      {
+        "role": "ai",
+        "text": "Pump P-101 was stopped due to an accident **1 time** - on April 12 at 09:47. Cause: bearing overheating (temperature 78°C at set point 75°C). The accident was acknowledged by operator Ivanov I.I. at 09:52, pump restarted at 10:05."
+      }
+    ]
+  },
+  "architecture": {
+    "badge": "Technical overview",
+    "h2a": "Modern",
+    "h2b": "microservice architecture",
+    "intro": "Each component is optimized for its task - from the UI to the highly loaded Rust worker that works directly with the hardware.",
+    "layers": [
+      {
+        "label": "Browser/Client",
+        "items": [
+          {
+            "name": "React 18 + TypeScript",
+            "desc": "SPA operator interface"
+          },
+          {
+            "name": "MUI + Konva.js",
+            "desc": "UI components and diagrams"
+          },
+          {
+            "name": "Redux Toolkit",
+            "desc": "State Management"
+          },
+          {
+            "name": "WebSocket Client",
+            "desc": "Real-time updates"
+          }
+        ]
+      },
+      {
+        "label": "Backend API",
+        "items": [
+          {
+            "name": "Django 4.2 + DRF",
+            "desc": "REST API, business logic"
+          },
+          {
+            "name": "Django Channels",
+            "desc": "WebSocket server"
+          },
+          {
+            "name": "JWT Auth",
+            "desc": "Authentication and RBAC"
+          },
+          {
+            "name": "Daphne / Gunicorn",
+            "desc": "ASGI/WSGI servers"
+          }
+        ]
+      },
+      {
+        "label": "Worker PLC (Rust)",
+        "items": [
+          {
+            "name": "Tokio Async Runtime",
+            "desc": "High performance worker"
+          },
+          {
+            "name": "Snap7 / Modbus",
+            "desc": "PLC protocol drivers"
+          },
+          {
+            "name": "MQTT / OPC UA",
+            "desc": "IoT protocols"
+          },
+          {
+            "name": "Redis PubSub",
+            "desc": "Broadcast events"
+          }
+        ]
+      },
+      {
+        "label": "Data warehouses",
+        "items": [
+          {
+            "name": "PostgreSQL + TimescaleDB",
+            "desc": "Main database and time series"
+          },
+          {
+            "name": "Redis",
+            "desc": "Cache, sessions, PubSub"
+          },
+          {
+            "name": "PgBouncer",
+            "desc": "Connection pooling"
+          },
+          {
+            "name": "Qdrant",
+            "desc": "Vector database for AI"
+          }
+        ]
+      },
+      {
+        "label": "AI Service",
+        "items": [
+          {
+            "name": "FastAPI",
+            "desc": "Asynchronous AI microservice"
+          },
+          {
+            "name": "RAG Pipeline",
+            "desc": "Retrieval Augmented Generation"
+          },
+          {
+            "name": "SQLAlchemy Async",
+            "desc": "Access to SCADA data"
+          },
+          {
+            "name": "Qdrant Client",
+            "desc": "Semantic search"
+          }
+        ]
+      },
+      {
+        "label": "Infrastructure",
+        "items": [
+          {
+            "name": "Docker Compose",
+            "desc": "Containerization of the entire stack"
+          },
+          {
+            "name": "Nginx",
+            "desc": "Reverse proxy, static"
+          },
+          {
+            "name": "TIA Agent (.NET)",
+            "desc": "Siemens TIA integration"
+          },
+          {
+            "name": "Debian ISO",
+            "desc": "Ready image for installation"
+          }
+        ]
+      }
+    ],
+    "systemInterface": {
+      "badge": "Main areas",
+      "titleA": "System",
+      "titleB": "interface",
+      "intro": "Main application areas: from monitoring and diagrams to equipment and administration.",
+      "groups": [
+        {
+          "title": "Monitoring and visualization",
+          "layout": "layer",
+          "cards": [
+            {
+              "title": "Monitoring dashboard",
+              "desc": "Home view: KPIs, area status, and a quick process overview"
+            },
+            {
+              "title": "Diagrams",
+              "desc": "Mimic diagrams: equipment, piping, and links — view and control close to the real process"
+            },
+            {
+              "title": "Alarms",
+              "desc": "Active and cleared alarms and warnings: filtering, acknowledgment, incident history"
+            },
+            {
+              "title": "Activity log",
+              "desc": "Audit trail: who did what and when — for accountability and investigations"
+            },
+            {
+              "title": "Trends",
+              "desc": "Trends and archives for selected signals/tags — analyze modes and deviations"
+            }
+          ]
+        },
+        {
+          "title": "Logic and automation",
+          "layout": "layer",
+          "cards": [
+            {
+              "title": "Programs",
+              "desc": "Automation scenarios — sequences and recipes: start, steps, execution status, binding to lines and areas"
+            }
+          ]
+        },
+        {
+          "title": "Equipment and connectivity",
+          "layout": "layer",
+          "cards": [
+            {
+              "title": "PLCs",
+              "desc": "Controllers: connection, link status, data exchange settings (Modbus, OPC UA, etc.)"
+            },
+            {
+              "title": "I/O points",
+              "desc": "Physical inputs/outputs: addressing and signal binding"
+            },
+            {
+              "title": "Devices",
+              "desc": "Plant objects (pumps, valves, PID, etc.): parameters, modes, binding to I/O and diagrams"
+            },
+            {
+              "title": "Functions",
+              "desc": "Calculations and signal transformations"
+            }
+          ]
+        },
+        {
+          "title": "Administration",
+          "layout": "layer",
+          "cards": [
+            {
+              "title": "Users",
+              "desc": "Accounts: access, profiles, lockouts"
+            },
+            {
+              "title": "Roles",
+              "desc": "Role-based permissions: operator, technologist, administrator, etc."
+            },
+            {
+              "title": "Graphic states",
+              "desc": "Equipment state on diagrams: colors and icons (run / stop / alarm)"
+            },
+            {
+              "title": "Settings",
+              "desc": "General application parameters, license, system information"
+            }
+          ]
+        }
+      ]
+    },
+    "flowTitle": "Data flow",
+    "flow1": [
+      "PLC/Hardware",
+      "→",
+      "Rust Worker",
+      "→",
+      "Redis PubSub",
+      "→",
+      "Django Channels",
+      "→",
+      "React UI"
+    ],
+    "flow2": [
+      "Rust Worker",
+      "→",
+      "TimescaleDB",
+      "←→",
+      "Django API",
+      "←→",
+      "AI FastAPI",
+      "→",
+      "Qdrant"
+    ],
+    "versusClassic": {
+      "badge": "Approach comparison",
+      "titleA": "Differences from",
+      "titleB": "classic SCADAs",
+      "intro": "Five practical differences between our web platform and traditional client SCADA.",
+      "items": [
+        {
+          "aspect": "Access",
+          "desc": "Via browser — no separate client needed, unified UX on any device."
+        },
+        {
+          "aspect": "Stack",
+          "desc": "Python + React/TypeScript — open source, easy to find developers and integrate custom logic."
+        },
+        {
+          "aspect": "Integration",
+          "desc": "API-first and WebSocket — MES, ERP, cloud, analytics without additional middleware."
+        },
+        {
+          "aspect": "Deployment",
+          "desc": "Docker containers — reproducible environments, predictable deployment, simple maintenance."
+        },
+        {
+          "aspect": "PLC engineering",
+          "desc": "Modbus/OPC UA + code export for Siemens — minimal gap between the SCADA project and the controller code."
+        }
+      ]
+    }
+  },
+  "cta": {
+    "badge": "Contact us",
+    "h2a": "Ready to implement",
+    "h2b": "SCADA at your site?",
+    "intro": "Contact us to receive demo access, technical advice or estimate the cost of implementation for your company.",
+    "benefits": [
+      {
+        "title": "Demo access",
+        "desc": "Test environment with real data for system evaluation"
+      },
+      {
+        "title": "Pilot project",
+        "desc": "Implementation on one site with subsequent scaling"
+      },
+      {
+        "title": "Technical consultation",
+        "desc": "Assess compatibility with your equipment and PLC"
+      }
+    ],
+    "formTitle": "Leave a request",
+    "fields": {
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Telephone",
+      "message": "Description of the task"
+    },
+    "placeholders": {
+      "name": "Ivan Ivanov",
+      "company": "LLC Industry",
+      "email": "ivanivanov@gmail.com",
+      "phone": "+38(999) 000-00-00",
+      "message": "Tell us about the equipment, protocols, project scale..."
+    },
+    "required": "*",
+    "submit": "Send a request",
+    "sending": "Sending...",
+    "success": "Application sent! We will contact you shortly.",
+    "consent": "By clicking the button, you agree to the processing of personal data"
+  },
+  "footer": {
+    "tagline": "Industrial web SCADA system for monitoring, control and automation of technological processes.",
+    "status": "The system is working",
+    "columns": {
+      "product": "Product",
+      "docs": "Documentation",
+      "contact": "Contacts"
+    },
+    "links": {
+      "product": [
+        {
+          "label": "Possibilities",
+          "href": "#features"
+        },
+        {
+          "label": "Integrations",
+          "href": "#integrations"
+        },
+        {
+          "label": "AI Assistant",
+          "href": "#ai"
+        },
+        {
+          "label": "Architecture",
+          "href": "#architecture"
+        },
+        {
+          "label": "System interface",
+          "href": "#system-interface"
+        },
+        {
+          "label": "Advantages",
+          "href": "#advantages"
+        }
+      ],
+      "docs": [
+        {
+          "label": "Documentation",
+          "href": "#"
+        },
+        {
+          "label": "User Guide",
+          "href": "#"
+        },
+        {
+          "label": "API Reference",
+          "href": "#"
+        },
+        {
+          "label": "Docker Setup",
+          "href": "https://docs.docker.com/engine/install/"
+        }
+      ],
+      "contact": [
+        {
+          "label": "Request a demo",
+          "href": "#contact"
+        },
+        {
+          "label": "Technical support",
+          "href": "#contact"
+        },
+        {
+          "label": "Partnership",
+          "href": "#contact"
+        }
+      ]
+    },
+    "copyright": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  }
+}

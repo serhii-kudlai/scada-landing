@@ -1,0 +1,5 @@
+flask==3.1.0
+gunicorn==23.0.0
+
+# Dependency for scripts/sync_landing_i18n.py (i18n auto-translation)
+deep-translator>=1.11.0

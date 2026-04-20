@@ -1,0 +1,147 @@
+---
+import type { Locale, Messages } from '../i18n/types';
+import { homeHref } from '../i18n/utils';
+
+interface Props {
+  lang: Locale;
+  m: Messages;
+  /** Уникальный префикс для id (в хедере два экземпляра) */
+  id: string;
+}
+
+const { lang, m, id } = Astro.props;
+
+const entries: { code: Locale; label: string }[] = [
+  { code: 'ru', label: m.lang.ru },
+  { code: 'en', label: m.lang.en },
+  { code: 'de', label: m.lang.de },
+  { code: 'uk', label: m.lang.uk },
+];
+
+const labelId = `${id}-label`;
+const listId = `${id}-list`;
+const current = entries.find((e) => e.code === lang) ?? entries[0]!;
+---
+
+<div class="relative inline-flex shrink-0 flex-col items-stretch" data-lang-dropdown data-open="false">
+  <span id={labelId} class="sr-only">{m.lang.label}</span>
+  <button
+    type="button"
+    class="lang-dd-trigger inline-flex h-8 items-center gap-1 rounded-md border border-slate-600/70 bg-gradient-to-b from-dark-700/90 to-dark-800/90 px-2 text-[11px] font-semibold leading-none text-slate-100 shadow-sm ring-1 ring-white/5 transition hover:border-slate-500 hover:from-dark-700 hover:to-dark-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-900 [&[aria-expanded='true']_svg]:rotate-180"
+    aria-expanded="false"
+    aria-haspopup="true"
+    aria-controls={listId}
+    aria-labelledby={labelId}
+    data-lang-dd-toggle
+  >
+    <span class="min-w-[1.5rem] text-center tabular-nums">{current.label}</span>
+    <svg
+      class="h-3 w-3 shrink-0 text-slate-400 transition-transform duration-200"
+      aria-hidden="true"
+      fill="none"
+      viewBox="0 0 20 20"
+    >
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+        d="M6 8l4 4 4-4"></path>
+    </svg>
+  </button>
+  <div
+    id={listId}
+    data-lang-dd-panel
+    class="lang-dd-panel pointer-events-none invisible absolute left-0 top-full z-[70] mt-1 w-full min-w-0 origin-top scale-95 opacity-0 transition-[opacity,transform,visibility] duration-150 ease-out"
+    role="region"
+    aria-label={m.lang.label}
+  >
+    <div
+      class="w-full overflow-hidden rounded-lg border border-slate-600/50 bg-dark-800/98 py-0.5 shadow-xl ring-1 ring-black/40 backdrop-blur-md"
+    >
+      <ul class="flex w-full flex-col gap-px px-px">
+        {
+          entries.map(({ code, label }) => {
+            const href = homeHref(code);
+            const active = lang === code;
+            return (
+              <li>
+                <a
+                  href={href}
+                  hreflang={code === 'uk' ? 'uk' : code}
+                  class:list={[
+                    'flex w-full items-center justify-center rounded-md px-1.5 py-1 text-[11px] font-semibold tabular-nums leading-none transition-colors',
+                    active
+                      ? 'bg-blue-600 text-white shadow-inner shadow-blue-900/40'
+                      : 'text-slate-200 hover:bg-slate-700/90 hover:text-white',
+                  ]}
+                  aria-current={active ? 'page' : undefined}
+                >
+                  {label}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    if (window.__langDdInit) return;
+    window.__langDdInit = true;
+
+    function closePanel(panel) {
+      var wrap = panel.closest('[data-lang-dropdown]');
+      if (!wrap) return;
+      var btn = wrap.querySelector('[data-lang-dd-toggle]');
+      wrap.setAttribute('data-open', 'false');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+      panel.classList.add('pointer-events-none', 'invisible', 'opacity-0', 'scale-95');
+      panel.classList.remove('pointer-events-auto', 'visible', 'opacity-100', 'scale-100');
+    }
+
+    function openPanel(panel) {
+      document.querySelectorAll('[data-lang-dropdown][data-open="true"]').forEach(function (w) {
+        if (w.contains(panel)) return;
+        var p = w.querySelector('[data-lang-dd-panel]');
+        if (p) closePanel(p);
+      });
+      var wrap = panel.closest('[data-lang-dropdown]');
+      if (!wrap) return;
+      var btn = wrap.querySelector('[data-lang-dd-toggle]');
+      wrap.setAttribute('data-open', 'true');
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+      panel.classList.remove('pointer-events-none', 'invisible', 'opacity-0', 'scale-95');
+      panel.classList.add('pointer-events-auto', 'visible', 'opacity-100', 'scale-100');
+    }
+
+    function closeAll() {
+      document.querySelectorAll('[data-lang-dd-panel]').forEach(closePanel);
+    }
+
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      if (!t || !t.closest) return;
+      var toggle = t.closest('[data-lang-dd-toggle]');
+      if (toggle) {
+        e.preventDefault();
+        var wrap = toggle.closest('[data-lang-dropdown]');
+        var panel = wrap && wrap.querySelector('[data-lang-dd-panel]');
+        if (!panel) return;
+        var isOpen = wrap.getAttribute('data-open') === 'true';
+        if (isOpen) closePanel(panel);
+        else openPanel(panel);
+        return;
+      }
+      if (t.closest('[data-lang-dropdown]')) return;
+      closeAll();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeAll();
+    });
+  })();
+</script>

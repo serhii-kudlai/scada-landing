@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+import { localeHtmlLang, type Locale } from '../i18n/types';
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: Locale;
+}
+
+const {
+  title = 'SCADA System — Промышленная система управления и мониторинга',
+  description = 'Современная веб-SCADA система для промышленного мониторинга, управления и автоматизации технологических процессов. Поддержка Siemens S7, Modbus, MQTT, OPC UA, EtherNet/IP.',
+  lang = 'ru',
+} = Astro.props;
+
+const htmlLang = localeHtmlLang[lang];
+---
+
+<!doctype html>
+<html lang={htmlLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="bg-dark-900 text-white font-sans antialiased">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --color-dark-900: #0a0f1e;
+    --color-dark-800: #0d1426;
+    --color-dark-700: #101b33;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0f1e;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1e3a8a;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+  }
+</style>

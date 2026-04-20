@@ -1,0 +1,46 @@
+---
+import AISection from '../../components/AISection.astro';
+import Architecture from '../../components/Architecture.astro';
+import CTA from '../../components/CTA.astro';
+import Features from '../../components/Features.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import Integrations from '../../components/Integrations.astro';
+import de from '../../i18n/de.json';
+import en from '../../i18n/en.json';
+import type { Locale } from '../../i18n/types';
+import uk from '../../i18n/uk.json';
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return [{ params: { lang: 'en' } }, { params: { lang: 'de' } }, { params: { lang: 'uk' } }];
+}
+
+const { lang: langParam } = Astro.params;
+
+const bundles = {
+  en,
+  de,
+  uk,
+} as const;
+
+type L = keyof typeof bundles;
+const lang = langParam as L;
+const m = bundles[lang];
+
+const locale = lang as Locale;
+---
+
+<Layout lang={locale} title={m.meta.title} description={m.meta.description}>
+  <Header lang={locale} m={m} />
+  <main>
+    <Hero lang={locale} m={m} />
+    <Features m={m} />
+    <Integrations m={m} />
+    <AISection m={m} />
+    <Architecture m={m} />
+    <CTA m={m} />
+  </main>
+  <Footer lang={locale} m={m} />
+</Layout>

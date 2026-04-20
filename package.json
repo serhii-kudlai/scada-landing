@@ -1,0 +1,16 @@
+{
+  "name": "scada-landing",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "i18n:sync": "py -3 scripts/sync_landing_i18n.py"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "astro": "^6.1.6",
+    "tailwindcss": "^4.1.0"
+  }
+}

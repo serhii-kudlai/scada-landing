@@ -1,0 +1,32 @@
+services:
+  landing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: scada-landing
+    ports:
+      - "8090:80"
+    depends_on:
+      - contact-backend
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:80"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  contact-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: scada-landing-contact
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:5000/api/contact/send/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

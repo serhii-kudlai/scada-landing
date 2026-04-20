@@ -1,0 +1,28 @@
+---
+import AISection from '../components/AISection.astro';
+import Architecture from '../components/Architecture.astro';
+import CTA from '../components/CTA.astro';
+import Features from '../components/Features.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Integrations from '../components/Integrations.astro';
+import ru from '../i18n/ru.json';
+import Layout from '../layouts/Layout.astro';
+
+const lang = 'ru';
+const m = ru;
+---
+
+<Layout lang={lang} title={m.meta.title} description={m.meta.description}>
+  <Header lang={lang} m={m} />
+  <main>
+    <Hero lang={lang} m={m} />
+    <Features m={m} />
+    <Integrations m={m} />
+    <AISection m={m} />
+    <Architecture m={m} />
+    <CTA m={m} />
+  </main>
+  <Footer lang={lang} m={m} />
+</Layout>
