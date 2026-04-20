@@ -1,4 +1,4 @@
-{
+﻿{
   "meta": {
     "title": "Système SCADA - Système de contrôle et de surveillance industriel",
     "description": "Système web-SCADA moderne pour la surveillance industrielle, le contrôle et l'automatisation des processus technologiques. Prend en charge Siemens S7, Modbus, MQTT, OPC UA, EtherNet/IP."
@@ -11,11 +11,13 @@
       "architecture": "Architecture",
       "systemInterface": "Interface système",
       "advantages": "Avantages",
-      "contacts": "Contacts"
+      "contacts": "Contacts",
+      "projects": "Exemples de projets"
     },
     "login": "Se connecter",
     "requestDemo": "Demander une démo",
-    "openMenu": "Ouvrir le menu"
+    "openMenu": "Ouvrir le menu",
+    "themeToggle": "Thème clair ou sombre"
   },
   "lang": {
     "ru": "RU",
@@ -565,6 +567,44 @@
     "success": "Candidature envoyée ! Nous vous contacterons sous peu.",
     "consent": "En cliquant sur le bouton, vous acceptez le traitement des données personnelles"
   },
+  "projects": {
+    "badge": "Installations réelles",
+    "h2a": "Exemples de",
+    "h2b": "projets",
+    "intro": "Captures d'écran d'installations SCADA en fonctionnement dans des installations industrielles de divers secteurs.",
+    "items": [
+      {
+        "id": "dashboard",
+        "title": "Tableau de bord principal",
+        "description": "Écran de surveillance d'ensemble : KPIs clés, état des équipements et tendances en temps réel.",
+        "tags": ["Surveillance", "KPI", "WebSocket"]
+      },
+      {
+        "id": "shema",
+        "title": "Schéma du procédé",
+        "description": "Schéma de procédé interactif avec dispositifs animés, canalisations et états des vannes.",
+        "tags": ["Schéma", "Konva.js", "SVG"]
+      },
+      {
+        "id": "alarms",
+        "title": "Alarmes et événements",
+        "description": "Journal d'alarmes avec priorités, acquittement et historique : filtrage par zone, heure et type.",
+        "tags": ["Alarmes", "Journal", "Acquittement"]
+      },
+      {
+        "id": "trends",
+        "title": "Tendances et archives",
+        "description": "Données historiques avec zoom, comparaison de paramètres et export Excel.",
+        "tags": ["Tendances", "TimescaleDB", "Chart.js"]
+      },
+      {
+        "id": "logs",
+        "title": "Journal d'actions",
+        "description": "Audit des opérateurs : qui, quand et quoi a été fait dans le système — pour les enquêtes et la responsabilité.",
+        "tags": ["Audit", "Sécurité", "RBAC"]
+      }
+    ]
+  },
   "footer": {
     "tagline": "Système Web SCADA industriel pour la surveillance, le contrôle et l'automatisation des processus technologiques.",
     "status": "Le système fonctionne",
@@ -597,8 +637,9 @@
         },
         {
           "label": "Avantages",
-          "href": "#avantages"
-        }
+          "href": "#advantages"
+        },
+        { "label": "Exemples de projets", "href": "#projects" }
       ],
       "docs": [
         {

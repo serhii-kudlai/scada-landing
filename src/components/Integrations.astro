@@ -56,20 +56,22 @@ const colorMap: Record<string, { border: string; glow: string; badge: string }> 
 ---
 
 <section id="integrations" class="py-24 lg:py-32 relative">
-  <div class="absolute inset-0 bg-dark-900"></div>
+  <div class="absolute inset-0 bg-slate-100 dark:bg-dark-900"></div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <div class="inline-flex items-center gap-2 bg-blue-950/60 border border-blue-800/50 rounded-full px-4 py-1.5 mb-6">
-        <span class="text-blue-400 text-sm font-medium">{sec.badge}</span>
+      <div
+        class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50/90 px-4 py-1.5 mb-6 dark:border-blue-800/50 dark:bg-blue-950/60"
+      >
+        <span class="text-sm font-medium text-blue-700 dark:text-blue-400">{sec.badge}</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-5">
         {sec.h2a}<br />
         <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
           {sec.h2b}
         </span>
       </h2>
-      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+      <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
         {sec.intro}
       </p>
     </div>
@@ -81,13 +83,13 @@ const colorMap: Record<string, { border: string; glow: string; badge: string }> 
           const c = colorMap[meta.color]!;
           return (
             <div
-              class={`group bg-dark-700/40 border ${c.border} ${c.glow} rounded-2xl p-6 transition-all duration-300 hover:bg-dark-700/60 hover:-translate-y-1`}
+              class={`group border bg-white/90 ${c.border} ${c.glow} rounded-2xl p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 dark:bg-dark-700/40 dark:hover:bg-dark-700/60`}
             >
               <div class="flex items-start gap-4 mb-4">
                 <div set:html={meta.icon} class="shrink-0" />
                 <div>
                   <div class="flex items-center gap-2 mb-1">
-                    <h3 class="text-white font-bold text-lg">{proto.name}</h3>
+                    <h3 class="font-bold text-lg text-slate-900 dark:text-white">{proto.name}</h3>
                     <span class={`text-xs px-2 py-0.5 rounded-full font-medium ${c.badge}`}>
                       {proto.badge}
                     </span>
@@ -95,7 +97,7 @@ const colorMap: Record<string, { border: string; glow: string; badge: string }> 
                   <p class="text-slate-500 text-sm">{proto.subtitle}</p>
                 </div>
               </div>
-              <p class="text-slate-400 text-sm leading-relaxed">{proto.description}</p>
+              <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{proto.description}</p>
             </div>
           );
         })
@@ -103,9 +105,11 @@ const colorMap: Record<string, { border: string; glow: string; badge: string }> 
     </div>
 
     <div
-      class="bg-gradient-to-r from-blue-950/60 to-dark-700/60 border border-blue-800/40 rounded-2xl p-8 flex flex-col lg:flex-row items-center gap-8"
+      class="flex flex-col items-center gap-8 rounded-2xl border border-blue-200 bg-gradient-to-r from-blue-50 to-slate-100 p-8 dark:from-blue-950/60 dark:to-dark-700/60 dark:border-blue-800/40 lg:flex-row"
     >
-      <div class="shrink-0 w-16 h-16 rounded-2xl bg-blue-600/20 border border-blue-600/30 flex items-center justify-center">
+      <div
+        class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-blue-300 bg-blue-100 dark:border-blue-600/30 dark:bg-blue-600/20"
+      >
         <svg
           width="32"
           height="32"
@@ -127,8 +131,8 @@ const colorMap: Record<string, { border: string; glow: string; badge: string }> 
           <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
           {sec.tia.badge}
         </div>
-        <h3 class="text-white font-bold text-xl mb-2">{sec.tia.title}</h3>
-        <p class="text-slate-400 leading-relaxed max-w-2xl">
+        <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">{sec.tia.title}</h3>
+        <p class="max-w-2xl leading-relaxed text-slate-600 dark:text-slate-400">
           {sec.tia.body}
         </p>
       </div>

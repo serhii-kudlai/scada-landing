@@ -1,4 +1,4 @@
-{
+﻿{
   "meta": {
     "title": "SCADA-System – Industrielles Steuerungs- und Überwachungssystem",
     "description": "Modernes Web-SCADA-System zur industriellen Überwachung, Steuerung und Automatisierung technologischer Prozesse. Unterstützt Siemens S7, Modbus, MQTT, OPC UA, EtherNet/IP."
@@ -11,11 +11,13 @@
       "architecture": "Architektur",
       "systemInterface": "Systemoberfläche",
       "advantages": "Vorteile",
-      "contacts": "Kontakte"
+      "contacts": "Kontakte",
+      "projects": "Projektbeispiele"
     },
     "login": "Login",
     "requestDemo": "Fordern Sie eine Demo an",
-    "openMenu": "Menü öffnen"
+    "openMenu": "Menü öffnen",
+    "themeToggle": "Helles oder dunkles Design"
   },
   "lang": {
     "ru": "RU",
@@ -565,6 +567,44 @@
     "success": "Bewerbung abgeschickt! Wir werden uns in Kürze mit Ihnen in Verbindung setzen.",
     "consent": "Durch Anklicken des Buttons stimmen Sie der Verarbeitung personenbezogener Daten zu"
   },
+  "projects": {
+    "badge": "Reale Installationen",
+    "h2a": "Projekt-",
+    "h2b": "beispiele",
+    "intro": "Screenshots von funktionierenden SCADA-Installationen in Industrieanlagen verschiedener Branchen.",
+    "items": [
+      {
+        "id": "dashboard",
+        "title": "Haupt-Dashboard",
+        "description": "Übersichtlicher Monitoring-Bildschirm: wichtige KPIs, Gerätestatus und Echtzeit-Druck- und Temperaturtrends.",
+        "tags": ["Monitoring", "KPI", "WebSocket"]
+      },
+      {
+        "id": "shema",
+        "title": "Prozess-Schaltplan",
+        "description": "Interaktives Prozessdiagramm mit animierten Geräten, Rohrleitungen und Ventilzuständen.",
+        "tags": ["Schaltplan", "Konva.js", "SVG"]
+      },
+      {
+        "id": "alarms",
+        "title": "Alarme & Ereignisse",
+        "description": "Alarmprotokoll mit Prioritäten, Quittierung und Verlauf: Filterung nach Zone, Zeit und Ereignistyp.",
+        "tags": ["Alarme", "Protokoll", "Quittierung"]
+      },
+      {
+        "id": "trends",
+        "title": "Trends & Archive",
+        "description": "Historische Daten auf einer Zeitachse mit Zoom, Multi-Parameter-Vergleich und Excel-Export.",
+        "tags": ["Trends", "TimescaleDB", "Chart.js"]
+      },
+      {
+        "id": "logs",
+        "title": "Aktivitätsprotokoll",
+        "description": "Operator-Audit: Wer hat wann was im System getan — für Untersuchungen und Nachvollziehbarkeit.",
+        "tags": ["Audit", "Sicherheit", "RBAC"]
+      }
+    ]
+  },
   "footer": {
     "tagline": "Industrielles Web-SCADA-System zur Überwachung, Steuerung und Automatisierung technologischer Prozesse.",
     "status": "Das System funktioniert",
@@ -598,7 +638,8 @@
         {
           "label": "Vorteile",
           "href": "#advantages"
-        }
+        },
+        { "label": "Projektbeispiele", "href": "#projects" }
       ],
       "docs": [
         {

@@ -1,0 +1,397 @@
+---
+import type { Messages } from '../i18n/types';
+
+interface Props {
+  m: Messages;
+}
+
+const { m } = Astro.props;
+const p = m.projects;
+
+const tagColors = [
+  'bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300',
+  'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/40 dark:text-cyan-300',
+  'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300',
+];
+
+const cardAccents = [
+  { glow: 'from-blue-400/20 to-cyan-400/20 dark:from-blue-600/20 dark:to-cyan-600/20', badge: 'bg-blue-500' },
+  { glow: 'from-purple-400/20 to-blue-400/20 dark:from-purple-600/20 dark:to-blue-600/20', badge: 'bg-purple-500' },
+  { glow: 'from-amber-400/20 to-orange-400/20 dark:from-amber-600/20 dark:to-orange-600/20', badge: 'bg-amber-500' },
+  { glow: 'from-green-400/20 to-teal-400/20 dark:from-green-600/20 dark:to-teal-600/20', badge: 'bg-green-500' },
+  { glow: 'from-orange-400/20 to-red-400/20 dark:from-orange-600/20 dark:to-red-600/20', badge: 'bg-orange-500' },
+  { glow: 'from-pink-400/20 to-purple-400/20 dark:from-pink-600/20 dark:to-purple-600/20', badge: 'bg-pink-500' },
+];
+---
+
+<section id="projects" class="py-24 lg:py-32 relative overflow-hidden scroll-mt-20">
+  <div class="absolute inset-0 bg-slate-100 dark:bg-dark-800/50"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_#bfdbfe_0%,_transparent_60%)] opacity-50 dark:bg-[radial-gradient(ellipse_at_top_right,_#172554_0%,_transparent_60%)] dark:opacity-30"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50/90 px-4 py-1.5 mb-6 dark:border-blue-800/50 dark:bg-blue-950/60">
+        <span class="text-sm font-medium text-blue-700 dark:text-blue-400">{p.badge}</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-5">
+        {p.h2a}<br />
+        <span class="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+          {p.h2b}
+        </span>
+      </h2>
+      <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
+        {p.intro}
+      </p>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+      {
+        p.items.map((item, idx) => {
+          const accent = cardAccents[idx % cardAccents.length]!;
+          return (
+            <article
+              class="group relative flex flex-col rounded-2xl border border-slate-200/80 bg-white shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-slate-300 dark:border-slate-700/60 dark:bg-dark-700/60 dark:hover:border-slate-600 cursor-pointer"
+              data-screen-id={item.id}
+              data-screen-idx={idx}
+              data-screen-title={item.title}
+              data-screen-desc={item.description}
+              data-screen-tags={JSON.stringify(item.tags)}
+            >
+              <!-- Gradient glow top bar -->
+              <div class={`absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r ${accent.glow} opacity-80`} />
+
+              <!-- Screenshot area -->
+              <div class="relative w-full aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-dark-800/80">
+                <!-- Placeholder shown when no image exists -->
+                <div
+                  class="screen-placeholder absolute inset-0 flex flex-col items-center justify-center gap-3 text-slate-400 dark:text-slate-600"
+                  data-item-id={item.id}
+                >
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <path d="M21 15l-5-5L5 21"/>
+                  </svg>
+                  <span class="text-xs font-mono opacity-60">
+                    {item.id}_ru_light.png / {item.id}_ru_dark.png
+                  </span>
+                </div>
+
+                <!-- Light image (visible in light theme) -->
+                <img
+                  src={`/screens/${item.id}_ru_light.png`}
+                  alt={item.title}
+                  class="screen-light absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                  style="display:none"
+                  data-item-id={item.id}
+                />
+
+                <!-- Dark theme image -->
+                <img
+                  src={`/screens/${item.id}_ru_dark.png`}
+                  alt={item.title}
+                  class="screen-dark absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                  style="display:none"
+                  data-item-id={item.id}
+                />
+
+                <!-- Number badge -->
+                <div class="absolute top-3 left-3 z-10">
+                  <span class={`inline-flex h-6 w-6 items-center justify-center rounded-full text-white text-xs font-bold ${accent.badge} shadow-sm`}>
+                    {idx + 1}
+                  </span>
+                </div>
+
+                <!-- Zoom icon on hover -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
+                  <div class="bg-white/20 backdrop-blur-sm rounded-full p-3 border border-white/30">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-1 p-5">
+                <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2 leading-snug">
+                  {item.title}
+                </h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed flex-1 mb-4">
+                  {item.description}
+                </p>
+                <div class="flex flex-wrap gap-1.5">
+                  {item.tags.map((tag, ti) => (
+                    <span class={`text-xs px-2 py-0.5 rounded-full font-medium ${tagColors[ti % tagColors.length]}`}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox modal -->
+<div
+  id="screen-lightbox"
+  class="fixed inset-0 z-[9999] flex items-center justify-center"
+  style="display:none"
+  role="dialog"
+  aria-modal="true"
+>
+  <!-- Backdrop -->
+  <div id="lb-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+
+  <!-- Modal container -->
+  <div class="relative z-10 flex flex-col w-full max-w-6xl mx-4 max-h-[90vh]">
+
+    <!-- Top bar: title + close -->
+    <div class="flex items-center justify-between px-2 pb-3">
+      <div>
+        <h3 id="lb-title" class="text-white font-bold text-lg leading-tight"></h3>
+        <p id="lb-counter" class="text-white/50 text-xs mt-0.5"></p>
+      </div>
+      <button
+        id="lb-close"
+        class="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white transition-colors"
+        aria-label="Закрыть"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Image area with nav arrows -->
+    <div class="relative flex items-center gap-2">
+      <!-- Prev -->
+      <button
+        id="lb-prev"
+        class="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+        aria-label="Назад"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+
+      <!-- Image wrapper -->
+      <div class="flex-1 rounded-xl overflow-hidden bg-slate-900 shadow-2xl border border-white/10">
+        <img
+          id="lb-img"
+          src=""
+          alt=""
+          class="w-full object-contain max-h-[65vh]"
+        />
+      </div>
+
+      <!-- Next -->
+      <button
+        id="lb-next"
+        class="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+        aria-label="Вперёд"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Description + tags -->
+    <div class="px-12 pt-4">
+      <p id="lb-desc" class="text-white/70 text-sm leading-relaxed mb-3"></p>
+      <div id="lb-tags" class="flex flex-wrap gap-2"></div>
+    </div>
+
+    <!-- Dots navigation -->
+    <div id="lb-dots" class="flex justify-center gap-2 pt-4"></div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    /* ── Theme images ─────────────────────────────────────────────── */
+    document.querySelectorAll('img.screen-light, img.screen-dark').forEach(function (img) {
+      img.addEventListener('load', function () {
+        img.dataset.loaded = '1';
+        applyThemeImages();
+      });
+      img.addEventListener('error', function () {
+        img.dataset.loaded = '0';
+      });
+    });
+
+    function applyThemeImages() {
+      var dark = document.documentElement.classList.contains('dark');
+      var showClass = dark ? 'screen-dark' : 'screen-light';
+      var hideClass = dark ? 'screen-light' : 'screen-dark';
+
+      document.querySelectorAll('img.' + hideClass).forEach(function (img) {
+        img.style.display = 'none';
+      });
+
+      document.querySelectorAll('img.' + showClass).forEach(function (img) {
+        var id = img.getAttribute('data-item-id');
+        if (img.dataset.loaded === '1') {
+          img.style.display = 'block';
+          hidePlaceholder(id);
+        } else if (!img.dataset.loaded) {
+          if (img.complete && img.naturalWidth > 0) {
+            img.dataset.loaded = '1';
+            img.style.display = 'block';
+            hidePlaceholder(id);
+          }
+        }
+      });
+
+      /* Refresh lightbox image if open */
+      if (lbCurrentIdx >= 0) renderLightbox(lbCurrentIdx);
+    }
+
+    function hidePlaceholder(id) {
+      if (!id) return;
+      document.querySelectorAll('.screen-placeholder[data-item-id="' + id + '"]').forEach(function (el) {
+        el.style.display = 'none';
+      });
+    }
+
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (m) {
+        if (m.attributeName === 'class') applyThemeImages();
+      });
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    applyThemeImages();
+
+    /* ── Lightbox ─────────────────────────────────────────────────── */
+    var cards = Array.from(document.querySelectorAll('article[data-screen-id]'));
+    var lbEl     = document.getElementById('screen-lightbox');
+    var lbImg    = document.getElementById('lb-img');
+    var lbTitle  = document.getElementById('lb-title');
+    var lbDesc   = document.getElementById('lb-desc');
+    var lbTags   = document.getElementById('lb-tags');
+    var lbCounter= document.getElementById('lb-counter');
+    var lbDots   = document.getElementById('lb-dots');
+    var lbPrev   = document.getElementById('lb-prev');
+    var lbNext   = document.getElementById('lb-next');
+    var lbClose  = document.getElementById('lb-close');
+    var lbBack   = document.getElementById('lb-backdrop');
+
+    var lbCurrentIdx = -1;
+
+    function getImageSrc(id) {
+      var dark = document.documentElement.classList.contains('dark');
+      return '/screens/' + id + '_ru_' + (dark ? 'dark' : 'light') + '.png';
+    }
+
+    function renderLightbox(idx) {
+      var card = cards[idx];
+      if (!card) return;
+
+      var id    = card.getAttribute('data-screen-id');
+      var title = card.getAttribute('data-screen-title');
+      var desc  = card.getAttribute('data-screen-desc');
+      var tags  = [];
+      try { tags = JSON.parse(card.getAttribute('data-screen-tags') || '[]'); } catch(e) {}
+
+      lbImg.src = getImageSrc(id);
+      lbImg.alt = title;
+      lbTitle.textContent = title;
+      lbDesc.textContent  = desc;
+      lbCounter.textContent = (idx + 1) + ' / ' + cards.length;
+
+      /* Tags */
+      lbTags.innerHTML = '';
+      var tagClasses = [
+        'bg-blue-500/20 text-blue-300 border border-blue-500/30',
+        'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30',
+        'bg-indigo-500/20 text-indigo-300 border border-indigo-500/30',
+      ];
+      tags.forEach(function (tag, ti) {
+        var span = document.createElement('span');
+        span.className = 'text-xs px-2.5 py-0.5 rounded-full font-medium ' + tagClasses[ti % tagClasses.length];
+        span.textContent = tag;
+        lbTags.appendChild(span);
+      });
+
+      /* Dots */
+      lbDots.innerHTML = '';
+      cards.forEach(function (_, i) {
+        var dot = document.createElement('button');
+        dot.className = 'w-2 h-2 rounded-full transition-all ' +
+          (i === idx ? 'bg-white scale-125' : 'bg-white/30 hover:bg-white/60');
+        dot.setAttribute('aria-label', 'Перейти к ' + (i + 1));
+        dot.addEventListener('click', function () { openLightbox(i); });
+        lbDots.appendChild(dot);
+      });
+
+      /* Arrows */
+      lbPrev.disabled = idx === 0;
+      lbNext.disabled = idx === cards.length - 1;
+
+      lbCurrentIdx = idx;
+    }
+
+    function openLightbox(idx) {
+      renderLightbox(idx);
+      lbEl.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      lbClose.focus();
+    }
+
+    function closeLightbox() {
+      lbEl.style.display = 'none';
+      document.body.style.overflow = '';
+      lbCurrentIdx = -1;
+    }
+
+    /* Card click → open */
+    cards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        var idx = parseInt(card.getAttribute('data-screen-idx') || '0', 10);
+        openLightbox(idx);
+      });
+    });
+
+    /* Close button */
+    lbClose.addEventListener('click', closeLightbox);
+
+    /* Backdrop click */
+    lbBack.addEventListener('click', closeLightbox);
+
+    /* Arrow buttons */
+    lbPrev.addEventListener('click', function () {
+      if (lbCurrentIdx > 0) openLightbox(lbCurrentIdx - 1);
+    });
+    lbNext.addEventListener('click', function () {
+      if (lbCurrentIdx < cards.length - 1) openLightbox(lbCurrentIdx + 1);
+    });
+
+    /* Keyboard */
+    document.addEventListener('keydown', function (e) {
+      if (lbCurrentIdx < 0) return;
+      if (e.key === 'Escape')      closeLightbox();
+      if (e.key === 'ArrowLeft'  && lbCurrentIdx > 0)                openLightbox(lbCurrentIdx - 1);
+      if (e.key === 'ArrowRight' && lbCurrentIdx < cards.length - 1) openLightbox(lbCurrentIdx + 1);
+    });
+
+    /* Touch swipe support */
+    var touchStartX = 0;
+    lbEl.addEventListener('touchstart', function (e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    lbEl.addEventListener('touchend', function (e) {
+      var dx = e.changedTouches[0].screenX - touchStartX;
+      if (Math.abs(dx) < 50) return;
+      if (dx < 0 && lbCurrentIdx < cards.length - 1) openLightbox(lbCurrentIdx + 1);
+      if (dx > 0 && lbCurrentIdx > 0)                openLightbox(lbCurrentIdx - 1);
+    }, { passive: true });
+  })();
+</script>

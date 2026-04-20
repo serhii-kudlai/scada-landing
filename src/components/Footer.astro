@@ -19,7 +19,9 @@ const tech = [
 ];
 ---
 
-<footer class="bg-dark-900 border-t border-slate-800/60 pt-16 pb-8">
+<footer
+  class="border-t border-slate-200 bg-slate-100 pt-16 pb-8 dark:border-slate-800/60 dark:bg-dark-900"
+>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
       <div class="lg:col-span-1">
@@ -42,32 +44,32 @@ const tech = [
                 stroke-linejoin="round"></path>
             </svg>
           </div>
-          <span class="text-white font-bold text-lg">
+          <span class="text-lg font-bold text-slate-900 dark:text-white">
             SCADA <span class="text-blue-400">System</span>
           </span>
         </a>
-        <p class="text-slate-500 text-sm leading-relaxed mb-5">
+        <p class="mb-5 text-sm leading-relaxed text-slate-600 dark:text-slate-500">
           {f.tagline}
         </p>
         <div class="flex items-center gap-3">
           <div
-            class="flex items-center gap-1.5 bg-green-900/30 border border-green-800/40 rounded-full px-3 py-1"
+            class="flex items-center gap-1.5 rounded-full border border-green-200 bg-green-50 px-3 py-1 dark:border-green-800/40 dark:bg-green-900/30"
           >
-            <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
-            <span class="text-green-400 text-xs font-medium">{f.status}</span>
+            <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500 dark:bg-green-400"></span>
+            <span class="text-xs font-medium text-green-700 dark:text-green-400">{f.status}</span>
           </div>
         </div>
       </div>
 
       <div>
-        <h4 class="text-white font-semibold text-sm mb-5">{f.columns.product}</h4>
+        <h4 class="mb-5 text-sm font-semibold text-slate-900 dark:text-white">{f.columns.product}</h4>
         <ul class="space-y-3">
           {
             f.links.product.map((link) => (
               <li>
                 <a
                   href={anchorHref(lang, link.href)}
-                  class="text-slate-500 hover:text-slate-300 text-sm transition-colors"
+                  class="text-sm text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-500 dark:hover:text-slate-300"
                 >
                   {link.label}
                 </a>
@@ -78,14 +80,14 @@ const tech = [
       </div>
 
       <div>
-        <h4 class="text-white font-semibold text-sm mb-5">{f.columns.docs}</h4>
+        <h4 class="mb-5 text-sm font-semibold text-slate-900 dark:text-white">{f.columns.docs}</h4>
         <ul class="space-y-3">
           {
             f.links.docs.map((link) => (
               <li>
                 <a
                   href={link.href}
-                  class="text-slate-500 hover:text-slate-300 text-sm transition-colors"
+                  class="text-sm text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-500 dark:hover:text-slate-300"
                 >
                   {link.label}
                 </a>
@@ -96,14 +98,14 @@ const tech = [
       </div>
 
       <div>
-        <h4 class="text-white font-semibold text-sm mb-5">{f.columns.contact}</h4>
+        <h4 class="mb-5 text-sm font-semibold text-slate-900 dark:text-white">{f.columns.contact}</h4>
         <ul class="space-y-3">
           {
             f.links.contact.map((link) => (
               <li>
                 <a
                   href={anchorHref(lang, link.href)}
-                  class="text-slate-500 hover:text-slate-300 text-sm transition-colors"
+                  class="text-sm text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-500 dark:hover:text-slate-300"
                 >
                   {link.label}
                 </a>
@@ -112,7 +114,7 @@ const tech = [
           }
         </ul>
         <div class="mt-6 space-y-2">
-          <div class="flex items-center gap-2 text-slate-600 text-xs">
+          <div class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-500">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
@@ -123,27 +125,27 @@ const tech = [
       </div>
     </div>
 
-    <div class="border-t border-slate-800/60 pt-8 mb-8">
+    <div class="mb-8 border-t border-slate-200 pt-8 dark:border-slate-800/60">
       <div class="flex flex-wrap items-center gap-x-6 gap-y-3 justify-center">
         {
           tech.map((t) => (
-            <span class="text-slate-600 text-xs font-mono">{t}</span>
+            <span class="text-xs font-mono text-slate-500 dark:text-slate-600">{t}</span>
           ))
         }
       </div>
     </div>
 
     <div
-      class="border-t border-slate-800/60 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+      class="flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-6 dark:border-slate-800/60 sm:flex-row"
     >
-      <p class="text-slate-600 text-sm">
+      <p class="text-sm text-slate-600 dark:text-slate-500">
         &copy; {currentYear} SCADA System. {f.copyright}
       </p>
       <div class="flex items-center gap-6">
-        <a href="#" class="text-slate-600 hover:text-slate-400 text-xs transition-colors">
+        <a href="#" class="text-xs text-slate-500 transition-colors hover:text-slate-800 dark:text-slate-600 dark:hover:text-slate-400">
           {f.privacy}
         </a>
-        <a href="#" class="text-slate-600 hover:text-slate-400 text-xs transition-colors">
+        <a href="#" class="text-xs text-slate-500 transition-colors hover:text-slate-800 dark:text-slate-600 dark:hover:text-slate-400">
           {f.terms}
         </a>
       </div>

@@ -7,6 +7,7 @@ import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
 import Integrations from '../../components/Integrations.astro';
+import ProjectScreens from '../../components/ProjectScreens.astro';
 import de from '../../i18n/de.json';
 import en from '../../i18n/en.json';
 import es from '../../i18n/es.json';
@@ -50,6 +51,7 @@ const locale = lang as Locale;
     <Integrations m={m} />
     <AISection m={m} />
     <Architecture m={m} />
+    <ProjectScreens m={m} />
     <CTA m={m} />
   </main>
   <Footer lang={locale} m={m} />

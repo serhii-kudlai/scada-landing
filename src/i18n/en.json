@@ -1,4 +1,4 @@
-{
+﻿{
   "meta": {
     "title": "SCADA System - Industrial control and monitoring system",
     "description": "Modern web-SCADA system for industrial monitoring, control and automation of technological processes. Supports Siemens S7, Modbus, MQTT, OPC UA, EtherNet/IP."
@@ -11,11 +11,13 @@
       "architecture": "Architecture",
       "systemInterface": "System interface",
       "advantages": "Advantages",
-      "contacts": "Contacts"
+      "contacts": "Contacts",
+      "projects": "Project examples"
     },
     "login": "Login",
     "requestDemo": "Request a demo",
-    "openMenu": "Open menu"
+    "openMenu": "Open menu",
+    "themeToggle": "Light or dark theme"
   },
   "lang": {
     "ru": "RU",
@@ -565,6 +567,44 @@
     "success": "Application sent! We will contact you shortly.",
     "consent": "By clicking the button, you agree to the processing of personal data"
   },
+  "projects": {
+    "badge": "Real installations",
+    "h2a": "Project",
+    "h2b": "examples",
+    "intro": "Screenshots of working SCADA installations at industrial facilities across various industries.",
+    "items": [
+      {
+        "id": "dashboard",
+        "title": "Main Dashboard",
+        "description": "Overview monitoring screen: key KPIs, equipment status, real-time pressure and temperature trends.",
+        "tags": ["Monitoring", "KPI", "WebSocket"]
+      },
+      {
+        "id": "shema",
+        "title": "Process Schematic",
+        "description": "Interactive process diagram with animated devices, pipelines and valve states.",
+        "tags": ["Schematic", "Konva.js", "SVG"]
+      },
+      {
+        "id": "alarms",
+        "title": "Alarms & Events",
+        "description": "Alarm log with priorities, acknowledgment and history: filtering by zone, time and event type.",
+        "tags": ["Alarms", "Log", "Acknowledgment"]
+      },
+      {
+        "id": "trends",
+        "title": "Trends & Archives",
+        "description": "Historical data on a time scale with zoom, multi-parameter comparison and Excel export.",
+        "tags": ["Trends", "TimescaleDB", "Chart.js"]
+      },
+      {
+        "id": "logs",
+        "title": "Action Log",
+        "description": "Operator audit trail: who, when and what was done in the system — for investigations and accountability.",
+        "tags": ["Audit", "Security", "RBAC"]
+      }
+    ]
+  },
   "footer": {
     "tagline": "Industrial web SCADA system for monitoring, control and automation of technological processes.",
     "status": "The system is working",
@@ -598,7 +638,8 @@
         {
           "label": "Advantages",
           "href": "#advantages"
-        }
+        },
+        { "label": "Project examples", "href": "#projects" }
       ],
       "docs": [
         {

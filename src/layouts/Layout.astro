@@ -18,7 +18,7 @@ const htmlLang = localeHtmlLang[lang];
 ---
 
 <!doctype html>
-<html lang={htmlLang}>
+<html lang={htmlLang} class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,8 +34,22 @@ const htmlLang = localeHtmlLang[lang];
       rel="stylesheet"
     />
     <title>{title}</title>
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          var h = document.documentElement;
+          if (t === 'light') h.classList.remove('dark');
+          else h.classList.add('dark');
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
-  <body class="bg-dark-900 text-white font-sans antialiased">
+  <body
+    class="bg-slate-100 text-slate-900 antialiased dark:bg-dark-900 dark:text-white font-sans"
+  >
     <slot />
   </body>
 </html>
@@ -60,15 +74,27 @@ const htmlLang = localeHtmlLang[lang];
   }
 
   ::-webkit-scrollbar-track {
+    background: #e2e8f0;
+  }
+
+  :global(.dark) ::-webkit-scrollbar-track {
     background: #0a0f1e;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #1e3a8a;
+    background: #94a3b8;
     border-radius: 3px;
   }
 
+  :global(.dark) ::-webkit-scrollbar-thumb {
+    background: #1e3a8a;
+  }
+
   ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+  }
+
+  :global(.dark) ::-webkit-scrollbar-thumb:hover {
     background: #2563eb;
   }
 </style>

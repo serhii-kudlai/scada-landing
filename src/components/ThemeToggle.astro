@@ -1,0 +1,52 @@
+---
+import type { Messages } from '../i18n/types';
+
+interface Props {
+  m: Messages;
+}
+
+const { m } = Astro.props;
+---
+
+<button
+  type="button"
+  id="theme-toggle"
+  class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-slate-300/90 bg-white text-slate-700 shadow-sm ring-1 ring-black/5 transition hover:bg-slate-50 hover:border-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 dark:border-slate-600/70 dark:bg-gradient-to-b dark:from-dark-700/90 dark:to-dark-800/90 dark:text-amber-300 dark:ring-white/5 dark:hover:border-slate-500 dark:hover:from-dark-700 dark:hover:to-dark-800"
+  aria-label={m.header.themeToggle}
+  title={m.header.themeToggle}
+  data-theme-toggle
+>
+  <span class="hidden dark:inline" aria-hidden="true">
+    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+      ></path>
+    </svg>
+  </span>
+  <span class="inline dark:hidden" aria-hidden="true">
+    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9 9 0 003.354-.646z"></path>
+    </svg>
+  </span>
+</button>
+
+<script is:inline>
+  (function () {
+    var btn = document.querySelector('[data-theme-toggle]');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      document.documentElement.classList.toggle('dark');
+      var on = document.documentElement.classList.contains('dark');
+      try {
+        localStorage.setItem('theme', on ? 'dark' : 'light');
+      } catch (e) {}
+    });
+  })();
+</script>
