@@ -65,37 +65,27 @@ const cardAccents = [
 
               <!-- Screenshot area -->
               <div class="relative w-full aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-dark-800/80">
-                <!-- Placeholder shown when no image exists -->
+                <!-- Placeholder (hidden once image loads) -->
                 <div
-                  class="screen-placeholder absolute inset-0 flex flex-col items-center justify-center gap-3 text-slate-400 dark:text-slate-600"
+                  class="screen-placeholder absolute inset-0 flex items-center justify-center text-slate-300 dark:text-slate-600"
                   data-item-id={item.id}
                 >
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="3" width="18" height="18" rx="2"/>
                     <circle cx="8.5" cy="8.5" r="1.5"/>
                     <path d="M21 15l-5-5L5 21"/>
                   </svg>
-                  <span class="text-xs font-mono opacity-60">
-                    {item.id}_ru_light.png / {item.id}_ru_dark.png
-                  </span>
                 </div>
 
-                <!-- Light image (visible in light theme) -->
-                <img
-                  src={`${baseUrl}screens/${item.id}_ru_light.png`}
-                  alt={item.title}
-                  class="screen-light absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-                  style="display:none"
-                  data-item-id={item.id}
-                />
-
-                <!-- Dark theme image -->
+                <!-- Single image — src is swapped by JS on theme change. Default = dark (site default theme) -->
                 <img
                   src={`${baseUrl}screens/${item.id}_ru_dark.png`}
                   alt={item.title}
-                  class="screen-dark absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-                  style="display:none"
+                  class="screen-img absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] opacity-0"
+                  loading="lazy"
                   data-item-id={item.id}
+                  data-src-light={`${baseUrl}screens/${item.id}_ru_light.png`}
+                  data-src-dark={`${baseUrl}screens/${item.id}_ru_dark.png`}
                 />
 
                 <!-- Number badge -->
@@ -219,42 +209,7 @@ const cardAccents = [
 <script is:inline>
   (function () {
     /* ── Theme images ─────────────────────────────────────────────── */
-    document.querySelectorAll('img.screen-light, img.screen-dark').forEach(function (img) {
-      img.addEventListener('load', function () {
-        img.dataset.loaded = '1';
-        applyThemeImages();
-      });
-      img.addEventListener('error', function () {
-        img.dataset.loaded = '0';
-      });
-    });
-
-    function applyThemeImages() {
-      var dark = document.documentElement.classList.contains('dark');
-      var showClass = dark ? 'screen-dark' : 'screen-light';
-      var hideClass = dark ? 'screen-light' : 'screen-dark';
-
-      document.querySelectorAll('img.' + hideClass).forEach(function (img) {
-        img.style.display = 'none';
-      });
-
-      document.querySelectorAll('img.' + showClass).forEach(function (img) {
-        var id = img.getAttribute('data-item-id');
-        if (img.dataset.loaded === '1') {
-          img.style.display = 'block';
-          hidePlaceholder(id);
-        } else if (!img.dataset.loaded) {
-          if (img.complete && img.naturalWidth > 0) {
-            img.dataset.loaded = '1';
-            img.style.display = 'block';
-            hidePlaceholder(id);
-          }
-        }
-      });
-
-      /* Refresh lightbox image if open */
-      if (lbCurrentIdx >= 0) renderLightbox(lbCurrentIdx);
-    }
+    function isDark() { return document.documentElement.classList.contains('dark'); }
 
     function hidePlaceholder(id) {
       if (!id) return;
@@ -263,13 +218,32 @@ const cardAccents = [
       });
     }
 
-    var observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (m) {
-        if (m.attributeName === 'class') applyThemeImages();
+    function applyTheme(img) {
+      var wanted = isDark() ? img.getAttribute('data-src-dark') : img.getAttribute('data-src-light');
+      if (!wanted) return;
+      if (img.getAttribute('src') !== wanted) {
+        img.classList.add('opacity-0');
+        img.src = wanted;
+      }
+    }
+
+    document.querySelectorAll('img.screen-img').forEach(function (img) {
+      img.addEventListener('load', function () {
+        img.classList.remove('opacity-0');
+        hidePlaceholder(img.getAttribute('data-item-id'));
       });
+      img.addEventListener('error', function () { img.classList.remove('opacity-0'); });
+      applyTheme(img);
+      if (img.complete && img.naturalWidth > 0) {
+        img.classList.remove('opacity-0');
+        hidePlaceholder(img.getAttribute('data-item-id'));
+      }
     });
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-    applyThemeImages();
+
+    new MutationObserver(function () {
+      document.querySelectorAll('img.screen-img').forEach(applyTheme);
+      if (lbCurrentIdx >= 0) renderLightbox(lbCurrentIdx);
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
     /* ── Lightbox ─────────────────────────────────────────────────── */
     var sectionEl = document.getElementById('projects');
