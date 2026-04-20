@@ -1,9 +1,12 @@
-# Publishes `dist/` to GitHub Pages without running Jekyll (see public/.nojekyll).
-name: Deploy to GitHub Pages
+# Astro static site → GitHub Pages (NO Jekyll).
+# If you see "Build with Jekyll" / jekyll-build-pages failing on .astro files:
+# delete any other workflow that uses actions/jekyll-build-pages@v1 from this repo.
+
+name: Deploy Astro site to Pages
 
 on:
   push:
-    branches: [main, master]
+    branches: [main, master, dev]
   workflow_dispatch:
 
 permissions:
@@ -38,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deploy
+      - id: deployment
         uses: actions/deploy-pages@v4
