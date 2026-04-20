@@ -32,6 +32,9 @@ jobs:
         env:
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          # Optional: set CONTACT_API_URL secret in repo settings to enable
+          # the contact form on GitHub Pages (must be a publicly accessible backend URL).
+          PUBLIC_CONTACT_API: ${{ secrets.CONTACT_API_URL }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
