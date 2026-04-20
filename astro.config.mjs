@@ -10,6 +10,10 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     server: {
+      // Windows: JSON/i18n updates are sometimes not reflected until restart; polling helps file watching
+      watch: {
+        usePolling: process.platform === 'win32',
+      },
       proxy: {
         '/api/contact': {
           target: 'http://localhost:5000',

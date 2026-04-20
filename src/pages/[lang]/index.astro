@@ -9,12 +9,20 @@ import Hero from '../../components/Hero.astro';
 import Integrations from '../../components/Integrations.astro';
 import de from '../../i18n/de.json';
 import en from '../../i18n/en.json';
+import es from '../../i18n/es.json';
+import fr from '../../i18n/fr.json';
 import type { Locale } from '../../i18n/types';
 import uk from '../../i18n/uk.json';
 import Layout from '../../layouts/Layout.astro';
 
 export function getStaticPaths() {
-  return [{ params: { lang: 'en' } }, { params: { lang: 'de' } }, { params: { lang: 'uk' } }];
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'uk' } },
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+  ];
 }
 
 const { lang: langParam } = Astro.params;
@@ -23,6 +31,8 @@ const bundles = {
   en,
   de,
   uk,
+  es,
+  fr,
 } as const;
 
 type L = keyof typeof bundles;

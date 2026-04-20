@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
+    "dev:clean": "node scripts/clear-dev-cache.mjs && astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "i18n:sync": "py -3 scripts/sync_landing_i18n.py"

@@ -16,6 +16,8 @@ const entries: { code: Locale; label: string }[] = [
   { code: 'en', label: m.lang.en },
   { code: 'de', label: m.lang.de },
   { code: 'uk', label: m.lang.uk },
+  { code: 'es', label: m.lang.es },
+  { code: 'fr', label: m.lang.fr },
 ];
 
 const labelId = `${id}-label`;
@@ -68,7 +70,7 @@ const current = entries.find((e) => e.code === lang) ?? entries[0]!;
               <li>
                 <a
                   href={href}
-                  hreflang={code === 'uk' ? 'uk' : code}
+                  hreflang={code}
                   class:list={[
                     'flex w-full items-center justify-center rounded-md px-1.5 py-1 text-[11px] font-semibold tabular-nums leading-none transition-colors',
                     active
