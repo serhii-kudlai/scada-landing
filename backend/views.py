@@ -12,6 +12,10 @@ import base as settings
 logger = logging.getLogger(__name__)
 
 
+def health():
+    return _json({'status': 'ok'})
+
+
 def contact_send():
     """Accept a JSON POST from the landing form and send it by email."""
     if request.method == 'OPTIONS':
