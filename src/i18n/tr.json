@@ -1,0 +1,682 @@
+{
+  "meta": {
+    "title": "SCADA Sistemi - Endüstriyel kontrol ve izleme sistemi",
+    "description": "Teknolojik süreçlerin endüstriyel izlenmesi, kontrolü ve otomasyonu için modern web-SCADA sistemi. Siemens S7, Modbus, MQTT, OPC UA, EtherNet/IP desteği."
+  },
+  "header": {
+    "nav": {
+      "features": "Olanaklar",
+      "integrations": "Entegrasyonlar",
+      "ai": "Yapay zeka asistanı",
+      "architecture": "Mimari",
+      "systemInterface": "Sistem arayüzü",
+      "advantages": "Avantajlar",
+      "contacts": "İletişim",
+      "projects": "Proje örnekleri"
+    },
+    "login": "Giriş",
+    "requestDemo": "Demo talep et",
+    "openMenu": "Menüyü aç",
+    "themeToggle": "Açık veya koyu tema"
+  },
+  "lang": {
+    "ru": "RU",
+    "en": "EN",
+    "de": "DE",
+    "uk": "UA",
+    "es": "ES",
+    "fr": "FR",
+    "tr": "TR",
+    "label": "Dil"
+  },
+  "hero": {
+    "badge": "Yeni nesil endüstriyel otomasyon",
+    "h1a": "Web SCADA sistemi",
+    "h1b": "üretiminiz için",
+    "sub": "Teknolojik süreçlerin gerçek zamanlı izlenmesi, kontrolü ve otomasyonu. Tüm ana PLC protokollerini, görsel şema düzenleyicisini ve yerleşik yapay zeka asistanını destekler.",
+    "ctaDemo": "Demo talep et",
+    "ctaMore": "Daha fazla bilgi",
+    "scroll": "Aşağı kaydır",
+    "stats": [
+      {
+        "value": "14+",
+        "label": "Cihaz türleri"
+      },
+      {
+        "value": "5",
+        "label": "PLC protokolleri"
+      },
+      {
+        "value": "Gerçek zamanlı",
+        "label": "İzleme"
+      },
+      {
+        "value": "YZ",
+        "label": "Asistan"
+      }
+    ],
+    "mockup": {
+      "browserUrl": "https://scada.example.com/dashboard",
+      "cards": [
+        {
+          "val": "247",
+          "lbl": "Cihazlar"
+        },
+        {
+          "val": "%99,8",
+          "lbl": "Çalışma süresi"
+        },
+        {
+          "val": "0",
+          "lbl": "Kaza"
+        },
+        {
+          "val": "12",
+          "lbl": "Alarmlar"
+        }
+      ],
+      "trendsTitle": "Trendler - Sıcaklık / Basınç",
+      "schemaTitle": "Proses diyagramı",
+      "pump": "Pompa",
+      "valve": "Vana",
+      "tank": "Tank",
+      "eventsTitle": "Son olaylar",
+      "events": [
+        {
+          "msg": "P-101 pompası başlatıldı",
+          "time": "12:34:01"
+        },
+        {
+          "msg": "T-201 sıcaklığı eşiği aştı",
+          "time": "12:31:45"
+        },
+        {
+          "msg": "V-305 vanası %75 açık",
+          "time": "12:29:12"
+        }
+      ]
+    }
+  },
+  "features": {
+    "badge": "Platform yetenekleri",
+    "h2a": "Endüstriyel otomasyon için",
+    "h2b": "ihtiyacınız olan her şey",
+    "intro": "Teknolojik süreçleri izlemek, kontrol etmek ve analiz etmek için tek arayüzle tam özellikli SCADA platformu.",
+    "items": [
+      {
+        "title": "Gerçek zamanlı izleme",
+        "description": "WebSocket bağlantısı anında veri güncellemesi sağlar. TimescaleDB zaman serilerini nanosaniye hassasiyetinde saklar.",
+        "tags": [
+          "WebSocket",
+          "TimescaleDB",
+          "Redis"
+        ]
+      },
+      {
+        "title": "Görsel şema düzenleyicisi",
+        "description": "Konva.js tabanlı sürükle-bırak akış şeması düzenleyicisi. Cihaz durumlarının animasyonlu etkileşimli taklit diyagramları oluşturun.",
+        "tags": [
+          "Konva.js",
+          "SVG",
+          "Sürükle ve bırak"
+        ]
+      },
+      {
+        "title": "Kaza yönetimi",
+        "description": "Önceliklere sahip çok seviyeli alarm sistemi. Olay günlüğü, onay, bildirim eskalasyonu. Acil durum geçmişi.",
+        "tags": [
+          "Alarmlar",
+          "El sıkışma",
+          "Bildirimler"
+        ]
+      },
+      {
+        "title": "Trendler ve veri geçmişi",
+        "description": "Ölçeklendirmeli geçmiş veri grafikleri. Excel, CSV dışa aktarma. Bir grafikte birden fazla parametre karşılaştırması.",
+        "tags": [
+          "Chart.js",
+          "Excel",
+          "TimescaleDB"
+        ]
+      },
+      {
+        "title": "Sekanslar ve reçeteler",
+        "description": "Teknolojik sekansların görsel programlanması. Reçete, aşama ve partilerin yönetimi (batch otomasyonu).",
+        "tags": [
+          "Batch",
+          "Reçeteler",
+          "Otomasyon"
+        ]
+      },
+      {
+        "title": "Rol tabanlı erişim modeli",
+        "description": "Esnek RBAC: operatörler, mühendisler, yöneticiler. Kullanıcı etkinlik günlüğü. JWT kimlik doğrulama.",
+        "tags": [
+          "RBAC",
+          "JWT",
+          "Denetim"
+        ]
+      },
+      {
+        "title": "Çok dilli arayüz",
+        "description": "i18next ile tam yerelleştirme. RTL (Arapça) desteği. Sayfayı yenilemeden dil değiştirme.",
+        "tags": [
+          "i18next",
+          "RTL",
+          "Yerelleştirme"
+        ]
+      },
+      {
+        "title": "Docker dağıtımı",
+        "description": "Docker Compose ile tam konteynerizasyon. Tek dosyada tüm yığın: backend, frontend, veritabanı, Redis, PLC worker.",
+        "tags": [
+          "Docker",
+          "PostgreSQL",
+          "Redis"
+        ]
+      }
+    ]
+  },
+  "integrations": {
+    "badge": "Endüstriyel protokoller",
+    "h2a": "Tüm önemli",
+    "h2b": "PLC protokollerini destekler",
+    "intro": "Endüstriyel ekipmanı değiştirmeden bağlayın — sistem standart protokolleri kutudan çıktığı gibi destekler.",
+    "protocols": [
+      {
+        "name": "Siemens S7",
+        "subtitle": "Snap7 + TIA Openness",
+        "description": "S7-300/400/1200/1500 için tam destek. DB, M, I, Q değişkenlerini okuma/yazma. Otomatik yapılandırma dağıtımı için TIA Portal entegrasyonu.",
+        "badge": "Siemens"
+      },
+      {
+        "name": "Modbus",
+        "subtitle": "RTU / TCP / ASCII",
+        "description": "RS-485/RS-232 üzerinden Modbus RTU ve Modbus TCP/IP. Tüm fonksiyon kodları: Bobinler, Ayrık girişler, Holding registerlar, Giriş registerları.",
+        "badge": "Evrensel"
+      },
+      {
+        "name": "MQTT",
+        "subtitle": "Broker / İstemci",
+        "description": "IoT cihaz protokolü. Konulara abone olun, komut yayınlayın. Mosquitto, HiveMQ, AWS IoT Core ile uyumlu. QoS 0/1/2.",
+        "badge": "IoT"
+      },
+      {
+        "name": "OPC UA",
+        "subtitle": "İstemci / Sunucu",
+        "description": "IIoT endüstri standardı. OPC UA uyumlu herhangi bir ekipmanla güvenli veri alışverişi. Node ID, Browse, Abonelik desteği.",
+        "badge": "IIoT"
+      },
+      {
+        "name": "EtherNet/IP",
+        "subtitle": "Allen-Bradley / Rockwell",
+        "description": "Allen-Bradley PLC'ler için CIP protokolü. ControlLogix, CompactLogix, MicroLogix desteği. Etiket okuma, tanılama.",
+        "badge": "Rockwell"
+      }
+    ],
+    "tia": {
+      "badge": "Özel entegrasyon",
+      "title": "TIA Portal Agent (.NET)",
+      "body": "Windows Agent, Siemens TIA Portal projesinden değişken yapılandırmasını SCADA sistemine otomatik aktarır. Tek tıkla etiket senkronizasyonu — manuel veri girişi yok.",
+      "pill": ".NET / Windows"
+    }
+  },
+  "ai": {
+    "badge": "Yerleşik YZ asistanı",
+    "h2a": "Sisteme",
+    "h2b": "doğal dilde sorun",
+    "intro": "FastAPI ve Qdrant tabanlı RAG asistanı üretim verilerinizi analiz eder ve ekipman, kazalar ve süreçler hakkında gerçek zamanlı yanıt verir.",
+    "capabilities": [
+      "İsteğe bağlı geçmiş veri analizi",
+      "Acil durum tanılaması",
+      "Dokümantasyon ve yönetmeliklerde arama",
+      "Trendlere dayalı tahmin",
+      "Ekipman durumu hakkında sorulara yanıtlar"
+    ],
+    "chatTitle": "SCADA YZ Asistanı",
+    "online": "Çevrimiçi",
+    "placeholder": "Ekipman hakkında bir soru sorun...",
+    "messages": [
+      {
+        "role": "user",
+        "text": "R-201 reaktörünün son 24 saatteki ortalama sıcaklığı nedir?"
+      },
+      {
+        "role": "ai",
+        "text": "R-201 reaktörünün son 24 saatteki ortalama sıcaklığı **82,4°C** idi. Maksimum: 14:32'de 91,2°C, minimum: 03:15'te 74,8°C. Normdan sapma kaydedilmedi."
+      },
+      {
+        "role": "user",
+        "text": "P-101 pompası bu hafta sorun yaşadı mı?"
+      },
+      {
+        "role": "ai",
+        "text": "P-101 pompası **1 kez** kaza nedeniyle durduruldu — 12 Nisan 09:47. Sebep: rulman aşırı ısınması (sıcaklık 78°C, set 75°C). Kaza operatör Ivanov I.I. tarafından 09:52'de onaylandı, pompa 10:05'te yeniden başlatıldı."
+      }
+    ]
+  },
+  "architecture": {
+    "badge": "Teknik genel bakış",
+    "h2a": "Modern",
+    "h2b": "mikroservis mimarisi",
+    "intro": "Her bileşen görevine göre optimize edilmiştir — arayüzden donanımla doğrudan çalışan yüksek yük altındaki Rust worker'a kadar.",
+    "layers": [
+      {
+        "label": "Tarayıcı/İstemci",
+        "items": [
+          {
+            "name": "React 18 + TypeScript",
+            "desc": "SPA operatör arayüzü"
+          },
+          {
+            "name": "MUI + Konva.js",
+            "desc": "UI bileşenleri ve diyagramlar"
+          },
+          {
+            "name": "Redux Toolkit",
+            "desc": "Durum yönetimi"
+          },
+          {
+            "name": "WebSocket İstemcisi",
+            "desc": "Gerçek zamanlı güncellemeler"
+          }
+        ]
+      },
+      {
+        "label": "Backend API",
+        "items": [
+          {
+            "name": "Django 4.2 + DRF",
+            "desc": "REST API, iş mantığı"
+          },
+          {
+            "name": "Django Channels",
+            "desc": "WebSocket sunucusu"
+          },
+          {
+            "name": "JWT Auth",
+            "desc": "Kimlik doğrulama ve RBAC"
+          },
+          {
+            "name": "Daphne / Gunicorn",
+            "desc": "ASGI/WSGI sunucuları"
+          }
+        ]
+      },
+      {
+        "label": "PLC Worker (Rust)",
+        "items": [
+          {
+            "name": "Tokio Async Runtime",
+            "desc": "Yüksek performanslı worker"
+          },
+          {
+            "name": "Snap7 / Modbus",
+            "desc": "PLC protokol sürücüleri"
+          },
+          {
+            "name": "MQTT / OPC UA",
+            "desc": "IoT protokolleri"
+          },
+          {
+            "name": "Redis PubSub",
+            "desc": "Olay yayını"
+          }
+        ]
+      },
+      {
+        "label": "Veri depoları",
+        "items": [
+          {
+            "name": "PostgreSQL + TimescaleDB",
+            "desc": "Ana veritabanı ve zaman serileri"
+          },
+          {
+            "name": "Redis",
+            "desc": "Önbellek, oturumlar, PubSub"
+          },
+          {
+            "name": "PgBouncer",
+            "desc": "Bağlantı havuzu"
+          },
+          {
+            "name": "Qdrant",
+            "desc": "YZ için vektör veritabanı"
+          }
+        ]
+      },
+      {
+        "label": "YZ servisi",
+        "items": [
+          {
+            "name": "FastAPI",
+            "desc": "Asenkron YZ mikroservisi"
+          },
+          {
+            "name": "RAG Pipeline",
+            "desc": "Retrieval Augmented Generation"
+          },
+          {
+            "name": "SQLAlchemy Async",
+            "desc": "SCADA verilerine erişim"
+          },
+          {
+            "name": "Qdrant Client",
+            "desc": "Anlamsal arama"
+          }
+        ]
+      },
+      {
+        "label": "Altyapı",
+        "items": [
+          {
+            "name": "Docker Compose",
+            "desc": "Tüm yığının konteynerizasyonu"
+          },
+          {
+            "name": "Nginx",
+            "desc": "Ters proxy, statik"
+          },
+          {
+            "name": "TIA Agent (.NET)",
+            "desc": "Siemens TIA entegrasyonu"
+          },
+          {
+            "name": "Debian ISO",
+            "desc": "Kurulum için hazır imaj"
+          }
+        ]
+      }
+    ],
+    "systemInterface": {
+      "badge": "Ana alanlar",
+      "titleA": "Sistem",
+      "titleB": "arayüzü",
+      "intro": "Ana uygulama alanları: izleme ve diyagramlardan ekipman ve yönetime kadar.",
+      "groups": [
+        {
+          "title": "İzleme ve görselleştirme",
+          "layout": "layer",
+          "cards": [
+            {
+              "title": "İzleme panosu",
+              "desc": "Ana görünüm: KPI'lar, bölge durumu ve hızlı proses özeti"
+            },
+            {
+              "title": "Diyagramlar",
+              "desc": "Taklit diyagramlar: ekipman, boru hatları ve bağlantılar — gerçek sürece yakın görüntüleme ve kontrol"
+            },
+            {
+              "title": "Alarmlar",
+              "desc": "Aktif ve temizlenen alarmlar ve uyarılar: filtreleme, onay, olay geçmişi"
+            },
+            {
+              "title": "Etkinlik günlüğü",
+              "desc": "Denetim izi: kim ne yaptı ve ne zaman — hesap verebilirlik ve soruşturmalar için"
+            },
+            {
+              "title": "Trendler",
+              "desc": "Seçilen sinyaller/etiketler için trendler ve arşivler — modları ve sapmaları analiz edin"
+            }
+          ]
+        },
+        {
+          "title": "Mantık ve otomasyon",
+          "layout": "layer",
+          "cards": [
+            {
+              "title": "Programlar",
+              "desc": "Otomasyon senaryoları — sekanslar ve reçeteler: başlatma, adımlar, yürütme durumu, hat ve bölge bağlantısı"
+            }
+          ]
+        },
+        {
+          "title": "Ekipman ve bağlantı",
+          "layout": "layer",
+          "cards": [
+            {
+              "title": "PLC'ler",
+              "desc": "Kontrolcüler: bağlantı, bağlantı durumu, veri alışverişi ayarları (Modbus, OPC UA vb.)"
+            },
+            {
+              "title": "G/Ç noktaları",
+              "desc": "Fiziksel girişler/çıkışlar: adresleme ve sinyal bağlama"
+            },
+            {
+              "title": "Cihazlar",
+              "desc": "Tesis nesneleri (pompalar, vanalar, PID vb.): parametreler, modlar, G/Ç ve diyagramlara bağlama"
+            },
+            {
+              "title": "Fonksiyonlar",
+              "desc": "Hesaplamalar ve sinyal dönüşümleri"
+            }
+          ]
+        },
+        {
+          "title": "Yönetim",
+          "layout": "layer",
+          "cards": [
+            {
+              "title": "Kullanıcılar",
+              "desc": "Hesaplar: erişim, profiller, kilitlemeler"
+            },
+            {
+              "title": "Roller",
+              "desc": "Rol tabanlı izinler: operatör, teknolog, yönetici vb."
+            },
+            {
+              "title": "Grafik durumlar",
+              "desc": "Diyagramlarda ekipman durumu: renkler ve simgeler (çalış / dur / alarm)"
+            },
+            {
+              "title": "Ayarlar",
+              "desc": "Genel uygulama parametreleri, lisans, sistem bilgisi"
+            }
+          ]
+        }
+      ]
+    },
+    "flowTitle": "Veri akışı",
+    "flow1": [
+      "PLC/Donanım",
+      "→",
+      "Rust Worker",
+      "→",
+      "Redis PubSub",
+      "→",
+      "Django Channels",
+      "→",
+      "React UI"
+    ],
+    "flow2": [
+      "Rust Worker",
+      "→",
+      "TimescaleDB",
+      "↔",
+      "Django API",
+      "↔",
+      "AI FastAPI",
+      "→",
+      "Qdrant"
+    ],
+    "versusClassic": {
+      "badge": "Yaklaşım karşılaştırması",
+      "titleA": "Klasik SCADA'lardan",
+      "titleB": "farklar",
+      "intro": "Web platformumuz ile geleneksel istemci SCADA arasında beş pratik fark.",
+      "items": [
+        {
+          "aspect": "Erişim",
+          "desc": "Tarayıcı üzerinden — ayrı istemci gerekmez, her cihazda birleşik UX."
+        },
+        {
+          "aspect": "Yığın",
+          "desc": "Python + React/TypeScript — açık kaynak, geliştirici bulmak ve özel mantık entegre etmek kolay."
+        },
+        {
+          "aspect": "Entegrasyon",
+          "desc": "API-first ve WebSocket — MES, ERP, bulut, analitik için ek ara katman gerekmez."
+        },
+        {
+          "aspect": "Dağıtım",
+          "desc": "Docker konteynerleri — tekrarlanabilir ortamlar, öngörülebilir dağıtım, basit bakım."
+        },
+        {
+          "aspect": "PLC mühendisliği",
+          "desc": "Modbus/OPC UA + Siemens için kod dışa aktarma — SCADA projesi ile kontrolör kodu arasında minimal boşluk."
+        }
+      ]
+    }
+  },
+  "cta": {
+    "badge": "Bize ulaşın",
+    "h2a": "Sitenizde SCADA'yı",
+    "h2b": "uygulamaya hazır mısınız?",
+    "intro": "Demo erişimi, teknik danışmanlık veya şirketiniz için uygulama maliyeti tahmini için bizimle iletişime geçin.",
+    "benefits": [
+      {
+        "title": "Demo erişimi",
+        "desc": "Sistemi değerlendirmek için gerçek verilerle test ortamı"
+      },
+      {
+        "title": "Pilot proje",
+        "desc": "Ardından ölçeklendirme ile tek bir tesis uygulaması"
+      },
+      {
+        "title": "Teknik danışmanlık",
+        "desc": "Ekipmanınız ve PLC'nizle uyumluluğu değerlendirin"
+      }
+    ],
+    "formTitle": "Talep bırakın",
+    "fields": {
+      "name": "Ad",
+      "company": "Şirket",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "message": "Görev açıklaması"
+    },
+    "placeholders": {
+      "name": "Ahmet Yılmaz",
+      "company": "Sanayi A.Ş.",
+      "email": "ahmet@ornek.com",
+      "phone": "+90 (5xx) xxx xx xx",
+      "message": "Ekipman, protokoller, proje ölçeği hakkında bilgi verin..."
+    },
+    "required": "*",
+    "submit": "Talebi gönder",
+    "sending": "Gönderiliyor...",
+    "success": "Başvurunuz alındı! Kısa süre içinde sizinle iletişime geçeceğiz.",
+    "consent": "Butona tıklayarak kişisel verilerin işlenmesini kabul edersiniz"
+  },
+  "projects": {
+    "badge": "Gerçek kurulumlar",
+    "h2a": "Proje",
+    "h2b": "örnekleri",
+    "intro": "Çeşitli sektörlerde endüstriyel tesislerde çalışan SCADA kurulumlarından ekran görüntüleri.",
+    "items": [
+      {
+        "id": "dashboard",
+        "title": "Ana pano",
+        "description": "Genel izleme ekranı: ana KPI'lar, ekipman durumu, gerçek zamanlı basınç ve sıcaklık trendleri.",
+        "tags": ["İzleme", "KPI", "WebSocket"]
+      },
+      {
+        "id": "shema",
+        "title": "Proses şeması",
+        "description": "Animasyonlu cihazlar, boru hatları ve vana durumlarıyla etkileşimli proses diyagramı.",
+        "tags": ["Şema", "Konva.js", "SVG"]
+      },
+      {
+        "id": "alarms",
+        "title": "Alarmlar ve olaylar",
+        "description": "Öncelikli alarm günlüğü, onay ve geçmiş: bölge, zaman ve olay türüne göre filtreleme.",
+        "tags": ["Alarmlar", "Günlük", "Onay"]
+      },
+      {
+        "id": "trends",
+        "title": "Trendler ve arşivler",
+        "description": "Yakınlaştırma, çok parametreli karşılaştırma ve Excel dışa aktarma ile zaman ölçeğinde geçmiş veriler.",
+        "tags": ["Trendler", "TimescaleDB", "Chart.js"]
+      },
+      {
+        "id": "logs",
+        "title": "İşlem günlüğü",
+        "description": "Operatör denetim izi: sistemde kim, ne zaman ve ne yaptı — soruşturmalar ve hesap verebilirlik için.",
+        "tags": ["Denetim", "Güvenlik", "RBAC"]
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Teknolojik süreçlerin izlenmesi, kontrolü ve otomasyonu için endüstriyel web SCADA sistemi.",
+    "status": "Sistem çalışıyor",
+    "columns": {
+      "product": "Ürün",
+      "docs": "Dokümantasyon",
+      "contact": "İletişim"
+    },
+    "links": {
+      "product": [
+        {
+          "label": "Olanaklar",
+          "href": "#features"
+        },
+        {
+          "label": "Entegrasyonlar",
+          "href": "#integrations"
+        },
+        {
+          "label": "YZ asistanı",
+          "href": "#ai"
+        },
+        {
+          "label": "Mimari",
+          "href": "#architecture"
+        },
+        {
+          "label": "Sistem arayüzü",
+          "href": "#system-interface"
+        },
+        {
+          "label": "Avantajlar",
+          "href": "#advantages"
+        },
+        { "label": "Proje örnekleri", "href": "#projects" }
+      ],
+      "docs": [
+        {
+          "label": "Dokümantasyon",
+          "href": "#"
+        },
+        {
+          "label": "Kullanıcı kılavuzu",
+          "href": "#"
+        },
+        {
+          "label": "API referansı",
+          "href": "#"
+        },
+        {
+          "label": "Docker kurulumu",
+          "href": "https://docs.docker.com/engine/install/"
+        }
+      ],
+      "contact": [
+        {
+          "label": "Demo talep et",
+          "href": "#contact"
+        },
+        {
+          "label": "Teknik destek",
+          "href": "#contact"
+        },
+        {
+          "label": "Ortaklık",
+          "href": "#contact"
+        }
+      ]
+    },
+    "copyright": "Tüm hakları saklıdır.",
+    "privacy": "Gizlilik politikası",
+    "terms": "Kullanım şartları"
+  }
+}

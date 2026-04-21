@@ -10,20 +10,20 @@ function withBase(path: string): string {
   return `${base}${path}`;
 }
 
-/** Base path: `` for Russian (default), `/en`, `/de`, `/uk` for localized routes. */
+/** Base path: `` for English (default), `/ru`, `/de`, `/uk`, etc. for localized routes. */
 export function pathPrefix(lang: Locale): string {
-  return lang === 'ru' ? '' : `/${lang}`;
+  return lang === 'en' ? '' : `/${lang}`;
 }
 
 /** In-page anchor targets for the current language route. */
 export function anchorHref(lang: Locale, href: string): string {
   if (!href || href === '#') return '#';
   const id = href.startsWith('#') ? href.slice(1) : href;
-  const path = lang === 'ru' ? `/#${id}` : `/${lang}/#${id}`;
+  const path = lang === 'en' ? `/#${id}` : `/${lang}/#${id}`;
   return withBase(path);
 }
 
 export function homeHref(lang: Locale): string {
-  const path = lang === 'ru' ? '/' : `/${lang}/`;
+  const path = lang === 'en' ? '/' : `/${lang}/`;
   return withBase(path);
 }
