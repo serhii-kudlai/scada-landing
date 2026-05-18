@@ -1,7 +1,7 @@
 ﻿{
   "meta": {
-    "title": "Système SCADA - Système de contrôle et de surveillance industriel",
-    "description": "Système web-SCADA moderne pour la surveillance industrielle, le contrôle et l'automatisation des processus technologiques. Prend en charge Siemens S7, Modbus, MQTT, OPC UA, EtherNet/IP."
+    "title": "OBJECTSCADA - Système de contrôle et de surveillance industriel",
+    "description": "OBJECTSCADA est une plateforme SCADA web moderne pour la surveillance industrielle, le contrôle et l'automatisation des procédés technologiques. Prend en charge Siemens S7, Modbus, MQTT, OPC UA, EtherNet/IP."
   },
   "header": {
     "nav": {
@@ -650,7 +650,8 @@
         },
         {
           "label": "Guide de l'utilisateur",
-          "href": null
+          "href": null,
+          "id": "user-manual"
         },
         {
           "label": "Référence API",

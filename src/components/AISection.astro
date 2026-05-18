@@ -16,7 +16,7 @@ const a = m.ai;
   >
   </div>
   <div
-    class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl dark:bg-blue-900/15"
+    class="absolute bottom-0 left-0 w-96 h-96 bg-amber-600/8 rounded-full blur-3xl dark:bg-amber-900/12"
   >
   </div>
 
@@ -45,7 +45,7 @@ const a = m.ai;
 
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-zinc-50 mb-6">
           {a.h2a}<br />
-          <span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+          <span class="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
             {a.h2b}
           </span>
         </h2>
@@ -101,7 +101,7 @@ const a = m.ai;
             class="flex items-center gap-3 border-b border-app-line bg-app-canvas px-4 py-3 dark:border-dark-600 dark:bg-dark-800"
           >
             <div
-              class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center"
+              class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-fuchsia-600 flex items-center justify-center"
             >
               <svg
                 width="14"
@@ -131,7 +131,7 @@ const a = m.ai;
                   class={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} gap-3`}
                 >
                   {msg.role === 'ai' && (
-                    <div class="shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center mt-0.5">
+                    <div class="shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-purple-500 to-fuchsia-600 flex items-center justify-center mt-0.5">
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="white">
                         <path d="M12 2a10 10 0 1 0 10 10H12V2zM22 12A10 10 0 0 0 12 2v10h10z"/>
                       </svg>
@@ -140,7 +140,7 @@ const a = m.ai;
                   <div
                     class={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                       msg.role === 'user'
-                        ? 'bg-blue-600 text-white rounded-br-sm'
+                        ? 'bg-neutral-800 text-white rounded-br-sm dark:bg-zinc-200 dark:text-neutral-900'
                         : 'rounded-bl-sm border border-app-line bg-app-canvas text-neutral-800 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-300'
                     }`}
                   >

@@ -1,6 +1,7 @@
 ---
 import type { Locale } from '../i18n/types';
 import type { Messages } from '../i18n/types';
+import ObjectScadaLogo from './ObjectScadaLogo.astro';
 import { anchorHref, homeHref } from '../i18n/utils';
 
 interface Props {
@@ -12,6 +13,24 @@ const { lang, m } = Astro.props;
 const f = m.footer;
 
 const currentYear = new Date().getFullYear();
+const baseUrl = import.meta.env.BASE_URL;
+
+const userManualFiles: Record<string, string> = {
+  en: 'USER_MANUAL_EN.pdf',
+  ru: 'USER_MANUAL_RU.pdf',
+  de: 'USER_MANUAL_DE.pdf',
+  uk: 'USER_MANUAL_UK.pdf',
+  es: 'USER_MANUAL_ES.pdf',
+  fr: 'USER_MANUAL_FR.pdf',
+};
+
+function getDocHref(link: { href: string | null; id?: string }): string {
+  if ((link as { id?: string }).id === 'user-manual') {
+    const file = userManualFiles[lang] ?? 'USER_MANUAL_EN.pdf';
+    return `${baseUrl}docs/${file}`;
+  }
+  return link.href ?? '#';
+}
 
 const tech = [
   'Django 4.2', 'React 18', 'TypeScript', 'Rust', 'PostgreSQL',
@@ -25,28 +44,8 @@ const tech = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
       <div class="lg:col-span-1">
-        <a href={homeHref(lang)} class="flex items-center gap-3 mb-4 group">
-          <div
-            class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-500/30"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
-          </div>
-          <span class="text-lg font-bold text-neutral-900 dark:text-zinc-50">
-            SCADA <span class="text-blue-400">System</span>
-          </span>
+        <a href={homeHref(lang)} class="mb-4 inline-flex transition-opacity hover:opacity-90">
+          <ObjectScadaLogo size="footer" />
         </a>
         <p class="mb-5 text-sm leading-relaxed text-neutral-600 dark:text-zinc-500">
           {f.tagline}
@@ -83,16 +82,21 @@ const tech = [
         <h4 class="mb-5 text-sm font-semibold text-neutral-900 dark:text-zinc-50">{f.columns.docs}</h4>
         <ul class="space-y-3">
           {
-            f.links.docs.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  class="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-zinc-500 dark:hover:text-zinc-300"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))
+            f.links.docs.map((link) => {
+              const isManual = (link as { id?: string }).id === 'user-manual';
+              return (
+                <li>
+                  <a
+                    href={getDocHref(link)}
+                    target={isManual ? '_blank' : undefined}
+                    rel={isManual ? 'noopener noreferrer' : undefined}
+                    class="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-zinc-500 dark:hover:text-zinc-300"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              );
+            })
           }
         </ul>
       </div>
@@ -139,7 +143,7 @@ const tech = [
       class="flex flex-col items-center justify-between gap-4 border-t border-app-line pt-6 dark:border-dark-600 sm:flex-row"
     >
       <p class="text-sm text-neutral-600 dark:text-zinc-500">
-        &copy; {currentYear} SCADA System. {f.copyright}
+        &copy; {currentYear} OBJECTSCADA. {f.copyright}
       </p>
       <div class="flex items-center gap-6">
         <a href="#" class="text-xs text-neutral-500 transition-colors hover:text-neutral-800 dark:text-zinc-600 dark:hover:text-zinc-400">

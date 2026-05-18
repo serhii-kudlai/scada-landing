@@ -1,7 +1,7 @@
 ﻿{
   "meta": {
-    "title": "SCADA System — Промислова система управління та моніторингу",
-    "description": "Сучасна веб-SCADA система для промислового моніторингу, управління та автоматизації технологічних процесів. Підтримка Siemens S7 Modbus, MQTT, OPC UA, EtherNet/IP."
+    "title": "OBJECTSCADA — промислова система управління та моніторингу",
+    "description": "OBJECTSCADA — сучасна веб-SCADA для промислового моніторингу, управління та автоматизації технологічних процесів. Підтримка Siemens S7, Modbus, MQTT, OPC UA, EtherNet/IP."
   },
   "header": {
     "nav": {
@@ -650,7 +650,8 @@
         },
         {
           "label": "Посібник користувача",
-          "href": "#"
+          "href": "#",
+          "id": "user-manual"
         },
         {
           "label": "API Reference",

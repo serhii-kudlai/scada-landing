@@ -1,0 +1,73 @@
+---
+interface Props {
+  size?: 'header' | 'footer';
+}
+
+const { size = 'header' } = Astro.props;
+
+const isHeader = size === 'header';
+
+const boxClass = isHeader
+  ? 'h-9 w-9 sm:h-10 sm:w-10'
+  : 'h-8 w-8 sm:h-9 sm:w-9';
+
+const textClass = isHeader
+  ? 'text-[0.8125rem] sm:text-[0.9375rem] lg:text-[1.0625rem]'
+  : 'text-sm sm:text-base';
+---
+
+<span class="font-sans inline-flex items-center gap-2.5 sm:gap-3">
+  <span
+    class:list={[
+      'flex shrink-0 items-center justify-center overflow-hidden rounded-lg border shadow-sm',
+      'p-[1px] sm:p-[2px]',
+      boxClass,
+      'border-neutral-900/25 bg-white',
+      'dark:border-white/30 dark:bg-neutral-950',
+    ]}
+    aria-hidden="true"
+  >
+    <!-- Куб: узкая глубина. Блок-S как в оригинале: верхний ход справа, нижний слева (не цифра 5). -->
+    <svg
+      class="h-full w-full min-h-0 min-w-0 text-neutral-900 dark:text-zinc-100"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <g class="cube-faces">
+        <polygon
+          points="21,9.5 24.5,7.1 24.5,24.1 21,26.5"
+          class="fill-neutral-200 dark:fill-zinc-900"
+        />
+        <polygon
+          points="5,9.5 21,9.5 24.5,7.1 8.5,7.1"
+          class="fill-neutral-100 dark:fill-zinc-700/90"
+        />
+        <polygon points="5,9.5 21,9.5 21,26.5 5,26.5" class="fill-neutral-50 dark:fill-zinc-800" />
+      </g>
+      <path
+        class="stroke-neutral-400 dark:stroke-zinc-500"
+        d="M 5 26.5 L 5 9.5 L 8.5 7.1 L 24.5 7.1 L 24.5 24.1 L 21 26.5 L 5 26.5 M 5 9.5 L 21 9.5 L 21 26.5 M 21 9.5 L 24.5 7.1"
+        fill="none"
+        stroke-width="0.55"
+        stroke-linecap="square"
+        stroke-linejoin="miter"
+      />
+      <path
+        fill="currentColor"
+        d="M 7 13.5 L 8.5 12 L 17.5 12 L 19 13.5 L 19 13.7 Q 19 14.5 18.2 14.5 L 10.8 14.5 Q 10 14.5 10 15.3 L 10 16.7 Q 10 17.5 10.8 17.5 L 18.2 17.5 Q 19 17.5 19 18.3 L 19 23.5 L 17.5 25 L 8.5 25 L 7 23.5 L 7 23.3 Q 7 22.5 7.8 22.5 L 15.2 22.5 Q 16 22.5 16 21.7 L 16 20.3 Q 16 19.5 15.2 19.5 L 7.8 19.5 Q 7 19.5 7 18.7 Z"
+      />
+    </svg>
+  </span>
+  <span
+    class:list={[
+      'font-black uppercase leading-none tracking-[0.08em] text-neutral-900 antialiased dark:text-white',
+      'sm:tracking-[0.1em]',
+      textClass,
+    ]}
+    style="font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';"
+  >
+    OBJECTSCADA
+  </span>
+</span>

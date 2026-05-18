@@ -2,6 +2,7 @@
 import type { Locale } from '../i18n/types';
 import type { Messages } from '../i18n/types';
 import LanguageSwitcher from './LanguageSwitcher.astro';
+import ObjectScadaLogo from './ObjectScadaLogo.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import { anchorHref, homeHref } from '../i18n/utils';
 
@@ -31,30 +32,11 @@ const navLinks = [
     <div
       class="flex h-16 lg:h-20 w-full items-center justify-between gap-4 xl:grid xl:items-center xl:gap-x-4 xl:[grid-template-columns:auto_minmax(0,1fr)_auto] 2xl:gap-x-6"
     >
-      <a href={homeHref(lang)} class="flex items-center gap-3 group min-w-0 xl:justify-self-start shrink-0">
-        <div
-          class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-500/30"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"></path>
-          </svg>
-        </div>
-        <span
-          class="font-bold text-lg tracking-tight text-neutral-900 transition-colors group-hover:text-blue-600 dark:text-zinc-50 dark:group-hover:text-blue-400"
-        >
-          SCADA <span class="text-blue-400">System</span>
-        </span>
+      <a
+        href={homeHref(lang)}
+        class="flex min-w-0 shrink-0 items-center gap-3 transition-opacity hover:opacity-90 xl:justify-self-start"
+      >
+        <ObjectScadaLogo size="header" />
       </a>
 
       <div class="hidden xl:block xl:min-w-0 xl:w-full xl:justify-self-stretch relative">
@@ -72,7 +54,7 @@ const navLinks = [
                 class="text-neutral-600 hover:text-neutral-950 dark:text-zinc-400 dark:hover:text-zinc-50 text-[11px] 2xl:text-[13px] font-medium transition-colors duration-200 relative group whitespace-nowrap shrink-0 px-0.5"
               >
                 {link.label}
-                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300" />
+                <span class="absolute -bottom-1 left-0 h-0.5 w-0 bg-amber-500 transition-all duration-300 group-hover:w-full dark:bg-amber-400" />
               </a>
             ))
           }
@@ -88,7 +70,7 @@ const navLinks = [
         <ThemeToggle m={m} />
         <a
           href={anchorHref(lang, '#contact')}
-          class="hidden sm:inline-flex bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-all duration-200 shadow-lg shadow-blue-600/25 hover:shadow-blue-500/40 dark:shadow-blue-600/30 whitespace-nowrap"
+          class="hidden sm:inline-flex rounded-lg bg-neutral-900 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-neutral-900/15 transition-all duration-200 hover:bg-neutral-800 dark:bg-zinc-100 dark:text-neutral-900 dark:shadow-black/20 dark:hover:bg-white whitespace-nowrap"
         >
           {m.header.requestDemo}
         </a>

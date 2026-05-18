@@ -19,24 +19,24 @@ const icons = [
   `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>`,
 ];
 
-const featureColors = ['blue', 'cyan', 'orange', 'green', 'purple', 'slate', 'indigo', 'teal'] as const;
+const featureColors = ['emerald', 'teal', 'orange', 'green', 'purple', 'slate', 'amber', 'rose'] as const;
 
 const colorMap: Record<string, { bg: string; border: string; icon: string; tag: string }> = {
-  blue:   { bg: 'bg-app-panel dark:bg-dark-700',   border: 'border-app-line dark:border-dark-600',   icon: 'text-blue-600 dark:text-blue-400',   tag: 'bg-blue-100 text-blue-800 dark:bg-blue-950/50 dark:text-blue-300' },
-  cyan:   { bg: 'bg-app-panel dark:bg-dark-700',   border: 'border-app-line dark:border-dark-600',   icon: 'text-cyan-600 dark:text-cyan-400',   tag: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-950/50 dark:text-cyan-300' },
+  emerald: { bg: 'bg-app-panel dark:bg-dark-700',   border: 'border-app-line dark:border-dark-600',   icon: 'text-emerald-600 dark:text-emerald-400',   tag: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300' },
+  teal:   { bg: 'bg-app-panel dark:bg-dark-700',   border: 'border-app-line dark:border-dark-600',   icon: 'text-teal-600 dark:text-teal-400',   tag: 'bg-teal-100 text-teal-800 dark:bg-teal-950/50 dark:text-teal-300' },
   orange: { bg: 'bg-app-panel dark:bg-dark-700', border: 'border-app-line dark:border-dark-600', icon: 'text-orange-600 dark:text-orange-400', tag: 'bg-orange-100 text-orange-800 dark:bg-orange-950/50 dark:text-orange-300' },
   green:  { bg: 'bg-app-panel dark:bg-dark-700',  border: 'border-app-line dark:border-dark-600',  icon: 'text-green-600 dark:text-green-400',  tag: 'bg-green-100 text-green-800 dark:bg-green-950/50 dark:text-green-300' },
   purple: { bg: 'bg-app-panel dark:bg-dark-700', border: 'border-app-line dark:border-dark-600', icon: 'text-purple-600 dark:text-purple-400', tag: 'bg-purple-100 text-purple-800 dark:bg-purple-950/50 dark:text-purple-300' },
   slate:  { bg: 'bg-app-panel dark:bg-dark-700',  border: 'border-app-line dark:border-dark-600',  icon: 'text-neutral-600 dark:text-zinc-400',  tag: 'bg-neutral-100 text-neutral-800 dark:bg-zinc-700/50 dark:text-zinc-300' },
-  indigo: { bg: 'bg-app-panel dark:bg-dark-700', border: 'border-app-line dark:border-dark-600', icon: 'text-indigo-600 dark:text-indigo-400', tag: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-950/50 dark:text-indigo-300' },
-  teal:   { bg: 'bg-app-panel dark:bg-dark-700',   border: 'border-app-line dark:border-dark-600',   icon: 'text-teal-600 dark:text-teal-400',   tag: 'bg-teal-100 text-teal-800 dark:bg-teal-950/50 dark:text-teal-300' },
+  amber: { bg: 'bg-app-panel dark:bg-dark-700', border: 'border-app-line dark:border-dark-600', icon: 'text-amber-600 dark:text-amber-400', tag: 'bg-amber-100 text-amber-800 dark:bg-amber-950/50 dark:text-amber-300' },
+  rose:   { bg: 'bg-app-panel dark:bg-dark-700', border: 'border-app-line dark:border-dark-600', icon: 'text-rose-600 dark:text-rose-400', tag: 'bg-rose-100 text-rose-800 dark:bg-rose-950/50 dark:text-rose-300' },
 };
 ---
 
 <section id="features" class="py-24 lg:py-32 relative overflow-hidden">
   <div class="absolute inset-0 z-0 bg-app-canvas dark:bg-dark-900"></div>
   <div
-    class="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.06)_0%,transparent_78%)] opacity-40 dark:bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.08)_0%,transparent_78%)] dark:opacity-32"
+    class="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(217,119,6,0.06)_0%,transparent_78%)] opacity-40 dark:bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.07)_0%,transparent_78%)] dark:opacity-32"
   >
   </div>
   <div class="bg-landing-section-edges" aria-hidden="true"></div>
@@ -44,13 +44,13 @@ const colorMap: Record<string, { bg: string; border: string; icon: string; tag: 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <div
-        class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50/90 px-4 py-1.5 mb-6 dark:border-blue-800/50 dark:bg-blue-950/60"
+        class="inline-flex items-center gap-2 rounded-full border border-amber-200/90 bg-amber-50/95 px-4 py-1.5 mb-6 dark:border-amber-800/45 dark:bg-amber-950/40"
       >
-        <span class="text-sm font-medium text-blue-700 dark:text-blue-400">{f.badge}</span>
+        <span class="text-sm font-medium text-amber-900 dark:text-amber-200/90">{f.badge}</span>
       </div>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-zinc-50 mb-5">
         {f.h2a}<br />
-        <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-600 bg-clip-text text-transparent dark:from-amber-400 dark:via-orange-400 dark:to-amber-300">
           {f.h2b}
         </span>
       </h2>
@@ -62,7 +62,7 @@ const colorMap: Record<string, { bg: string; border: string; icon: string; tag: 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
       {
         f.items.map((feature, i) => {
-          const colorKey = featureColors[i] ?? 'blue';
+          const colorKey = featureColors[i] ?? 'emerald';
           const c = colorMap[colorKey];
           const icon = icons[i] ?? icons[0]!;
           return (

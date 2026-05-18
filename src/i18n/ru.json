@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "SCADA System — Промышленная система управления и мониторинга",
-    "description": "Современная веб-SCADA система для промышленного мониторинга, управления и автоматизации технологических процессов. Поддержка Siemens S7, Modbus, MQTT, OPC UA, EtherNet/IP."
+    "title": "OBJECTSCADA — промышленная система управления и мониторинга",
+    "description": "OBJECTSCADA — современная веб-SCADA для промышленного мониторинга, управления и автоматизации технологических процессов. Поддержка Siemens S7, Modbus, MQTT, OPC UA, EtherNet/IP."
   },
   "header": {
     "nav": {
@@ -493,7 +493,7 @@
       ],
       "docs": [
         { "label": "Документация", "href": "#" },
-        { "label": "Руководство пользователя", "href": "#" },
+        { "label": "Руководство пользователя", "href": "#", "id": "user-manual" },
         { "label": "API Reference", "href": "#" },
         { "label": "Docker Setup", "href": "https://docs.docker.com/engine/install/" }
       ],

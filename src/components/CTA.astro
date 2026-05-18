@@ -21,7 +21,7 @@ const benefitIcons = [
 <section id="contact" class="py-24 lg:py-32 relative overflow-hidden">
   <div class="absolute inset-0 z-0 bg-app-canvas dark:bg-dark-900"></div>
   <div
-    class="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,transparent_72%)] opacity-42 dark:bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.11)_0%,transparent_72%)] dark:opacity-30"
+    class="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.07)_0%,transparent_72%)] opacity-42 dark:bg-[radial-gradient(ellipse_at_center,rgba(217,119,6,0.1)_0%,transparent_72%)] dark:opacity-30"
   >
   </div>
   <div class="bg-landing-section-edges" aria-hidden="true"></div>
@@ -30,14 +30,14 @@ const benefitIcons = [
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
       <div class="flex flex-col justify-center">
         <div
-          class="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-blue-200 bg-blue-50/90 px-4 py-1.5 dark:border-blue-800/50 dark:bg-blue-950/60"
+          class="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-amber-200 bg-amber-50/90 px-4 py-1.5 dark:border-amber-800/50 dark:bg-amber-950/60"
         >
-          <span class="text-sm font-medium text-blue-700 dark:text-blue-400">{c.badge}</span>
+          <span class="text-sm font-medium text-amber-900 dark:text-amber-200">{c.badge}</span>
         </div>
 
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-zinc-50 mb-6">
           {c.h2a}<br />
-          <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <span class="bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text text-transparent">
             {c.h2b}
           </span>
         </h2>
@@ -50,7 +50,7 @@ const benefitIcons = [
           {
             c.benefits.map((item, i) => (
               <div class="flex items-start gap-4">
-                <div class="shrink-0 w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-600/30 flex items-center justify-center text-blue-400">
+                <div class="shrink-0 w-10 h-10 rounded-xl bg-amber-600/15 border border-amber-600/30 flex items-center justify-center text-amber-700 dark:text-amber-400">
                   <span set:html={benefitIcons[i] ?? benefitIcons[0]!} />
                 </div>
                 <div>
@@ -71,7 +71,7 @@ const benefitIcons = [
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
               <label for="name" class="mb-1.5 block text-sm font-medium text-neutral-700 dark:text-zinc-400">
-                {c.fields.name} <span class="text-blue-400">{c.required}</span>
+                {c.fields.name} <span class="text-amber-600 dark:text-amber-400">{c.required}</span>
               </label>
               <input
                 type="text"
@@ -79,12 +79,12 @@ const benefitIcons = [
                 name="name"
                 required
                 placeholder={c.placeholders.name}
-                class="w-full rounded-lg border border-app-line bg-app-panel text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-blue-500 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-50 dark:placeholder:text-zinc-500 px-4 py-3"
+                class="w-full rounded-lg border border-app-line bg-app-panel text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-amber-500 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-50 dark:placeholder:text-zinc-500 px-4 py-3"
               />
             </div>
             <div>
               <label for="company" class="mb-1.5 block text-sm font-medium text-neutral-700 dark:text-zinc-400">
-                {c.fields.company} <span class="text-blue-400">{c.required}</span>
+                {c.fields.company} <span class="text-amber-600 dark:text-amber-400">{c.required}</span>
               </label>
               <input
                 type="text"
@@ -92,14 +92,14 @@ const benefitIcons = [
                 name="company"
                 required
                 placeholder={c.placeholders.company}
-                class="w-full rounded-lg border border-app-line bg-app-panel text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-blue-500 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-50 dark:placeholder:text-zinc-500 px-4 py-3"
+                class="w-full rounded-lg border border-app-line bg-app-panel text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-amber-500 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-50 dark:placeholder:text-zinc-500 px-4 py-3"
               />
             </div>
           </div>
 
           <div>
             <label for="email" class="mb-1.5 block text-sm font-medium text-neutral-700 dark:text-zinc-400">
-              {c.fields.email} <span class="text-blue-400">{c.required}</span>
+              {c.fields.email} <span class="text-amber-600 dark:text-amber-400">{c.required}</span>
             </label>
             <input
               type="email"
@@ -107,7 +107,7 @@ const benefitIcons = [
               name="email"
               required
               placeholder={c.placeholders.email}
-                class="w-full rounded-lg border border-app-line bg-app-panel text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-blue-500 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-50 dark:placeholder:text-zinc-500 px-4 py-3"
+                class="w-full rounded-lg border border-app-line bg-app-panel text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-amber-500 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-50 dark:placeholder:text-zinc-500 px-4 py-3"
             />
           </div>
 
@@ -120,7 +120,7 @@ const benefitIcons = [
               id="phone"
               name="phone"
               placeholder={c.placeholders.phone}
-                class="w-full rounded-lg border border-app-line bg-app-panel text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-blue-500 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-50 dark:placeholder:text-zinc-500 px-4 py-3"
+                class="w-full rounded-lg border border-app-line bg-app-panel text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-amber-500 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-50 dark:placeholder:text-zinc-500 px-4 py-3"
             />
           </div>
 
@@ -133,7 +133,7 @@ const benefitIcons = [
               name="message"
               rows="4"
               placeholder={c.placeholders.message}
-              class="w-full resize-none rounded-lg border border-app-line bg-app-panel px-4 py-3 text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-blue-500 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-50 dark:placeholder:text-zinc-500"
+              class="w-full resize-none rounded-lg border border-app-line bg-app-panel px-4 py-3 text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-amber-500 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-50 dark:placeholder:text-zinc-500"
             ></textarea>
           </div>
 
@@ -141,7 +141,7 @@ const benefitIcons = [
             type="submit"
             id="contact-submit"
             data-default-label={c.submit}
-            class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3.5 rounded-xl transition-all duration-200 shadow-lg shadow-blue-600/30 hover:shadow-blue-500/40 flex items-center justify-center gap-2 group"
+            class="w-full bg-neutral-900 hover:bg-neutral-800 text-white font-semibold py-3.5 rounded-xl transition-all duration-200 shadow-lg shadow-neutral-900/25 hover:shadow-amber-500/20 flex items-center justify-center gap-2 group dark:bg-zinc-100 dark:text-neutral-900 dark:hover:bg-white dark:shadow-zinc-100/25"
           >
             <span class="submit-label">{c.submit}</span>
             <svg

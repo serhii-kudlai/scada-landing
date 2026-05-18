@@ -1,7 +1,7 @@
 ﻿{
   "meta": {
-    "title": "SCADA System - Industrial control and monitoring system",
-    "description": "Modern web-SCADA system for industrial monitoring, control and automation of technological processes. Supports Siemens S7, Modbus, MQTT, OPC UA, EtherNet/IP."
+    "title": "OBJECTSCADA - Industrial control and monitoring system",
+    "description": "OBJECTSCADA is a modern web-based SCADA platform for industrial monitoring, control, and automation of technological processes. Supports Siemens S7, Modbus, MQTT, OPC UA, EtherNet/IP."
   },
   "header": {
     "nav": {
@@ -650,7 +650,8 @@
         },
         {
           "label": "User Guide",
-          "href": "#"
+          "href": "#",
+          "id": "user-manual"
         },
         {
           "label": "API Reference",
