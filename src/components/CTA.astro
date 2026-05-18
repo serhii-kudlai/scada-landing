@@ -19,11 +19,12 @@ const benefitIcons = [
 ---
 
 <section id="contact" class="py-24 lg:py-32 relative overflow-hidden">
-  <div class="absolute inset-0 bg-slate-100 dark:bg-dark-800/50"></div>
+  <div class="absolute inset-0 z-0 bg-app-canvas dark:bg-dark-900"></div>
   <div
-    class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#93c5fd_0%,_transparent_65%)] opacity-40 dark:bg-[radial-gradient(ellipse_at_center,_#1e3a8a_0%,_transparent_65%)] dark:opacity-30"
+    class="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,transparent_72%)] opacity-42 dark:bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.11)_0%,transparent_72%)] dark:opacity-30"
   >
   </div>
+  <div class="bg-landing-section-edges" aria-hidden="true"></div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
@@ -34,14 +35,14 @@ const benefitIcons = [
           <span class="text-sm font-medium text-blue-700 dark:text-blue-400">{c.badge}</span>
         </div>
 
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-zinc-50 mb-6">
           {c.h2a}<br />
           <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
             {c.h2b}
           </span>
         </h2>
 
-        <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-10">
+        <p class="text-neutral-600 dark:text-zinc-400 text-lg leading-relaxed mb-10">
           {c.intro}
         </p>
 
@@ -53,8 +54,8 @@ const benefitIcons = [
                   <span set:html={benefitIcons[i] ?? benefitIcons[0]!} />
                 </div>
                 <div>
-                  <div class="font-semibold text-sm mb-0.5 text-slate-900 dark:text-white">{item.title}</div>
-                  <div class="text-slate-600 dark:text-slate-400 text-sm">{item.desc}</div>
+                  <div class="font-semibold text-sm mb-0.5 text-neutral-900 dark:text-zinc-50">{item.title}</div>
+                  <div class="text-neutral-600 dark:text-zinc-400 text-sm">{item.desc}</div>
                 </div>
               </div>
             ))
@@ -63,13 +64,13 @@ const benefitIcons = [
       </div>
 
       <div
-        class="rounded-2xl border border-slate-200 bg-white p-8 shadow-xl dark:border-slate-700/50 dark:bg-dark-700/60 dark:shadow-2xl"
+        class="rounded-xl border border-app-line bg-app-panel p-8 shadow-lg shadow-slate-200/50 dark:border-dark-600 dark:bg-dark-700 dark:shadow-black/25"
       >
-        <h3 class="mb-6 text-xl font-bold text-slate-900 dark:text-white">{c.formTitle}</h3>
+        <h3 class="mb-6 text-xl font-bold text-neutral-900 dark:text-zinc-50">{c.formTitle}</h3>
         <form id="contact-form" class="space-y-5" novalidate data-sending={c.sending} data-success={c.success} data-api={contactApiUrl}>
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
-              <label for="name" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-400">
+              <label for="name" class="mb-1.5 block text-sm font-medium text-neutral-700 dark:text-zinc-400">
                 {c.fields.name} <span class="text-blue-400">{c.required}</span>
               </label>
               <input
@@ -78,11 +79,11 @@ const benefitIcons = [
                 name="name"
                 required
                 placeholder={c.placeholders.name}
-                class="w-full rounded-lg border border-slate-300 bg-white text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-blue-500 dark:border-slate-700/60 dark:bg-dark-800 dark:text-white dark:placeholder:text-slate-600 px-4 py-3"
+                class="w-full rounded-lg border border-app-line bg-app-panel text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-blue-500 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-50 dark:placeholder:text-zinc-500 px-4 py-3"
               />
             </div>
             <div>
-              <label for="company" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-400">
+              <label for="company" class="mb-1.5 block text-sm font-medium text-neutral-700 dark:text-zinc-400">
                 {c.fields.company} <span class="text-blue-400">{c.required}</span>
               </label>
               <input
@@ -91,13 +92,13 @@ const benefitIcons = [
                 name="company"
                 required
                 placeholder={c.placeholders.company}
-                class="w-full rounded-lg border border-slate-300 bg-white text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-blue-500 dark:border-slate-700/60 dark:bg-dark-800 dark:text-white dark:placeholder:text-slate-600 px-4 py-3"
+                class="w-full rounded-lg border border-app-line bg-app-panel text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-blue-500 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-50 dark:placeholder:text-zinc-500 px-4 py-3"
               />
             </div>
           </div>
 
           <div>
-            <label for="email" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-400">
+            <label for="email" class="mb-1.5 block text-sm font-medium text-neutral-700 dark:text-zinc-400">
               {c.fields.email} <span class="text-blue-400">{c.required}</span>
             </label>
             <input
@@ -106,12 +107,12 @@ const benefitIcons = [
               name="email"
               required
               placeholder={c.placeholders.email}
-              class="w-full rounded-lg border border-slate-300 bg-white text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-blue-500 dark:border-slate-700/60 dark:bg-dark-800 dark:text-white dark:placeholder:text-slate-600 px-4 py-3"
+                class="w-full rounded-lg border border-app-line bg-app-panel text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-blue-500 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-50 dark:placeholder:text-zinc-500 px-4 py-3"
             />
           </div>
 
           <div>
-            <label for="phone" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-400">
+            <label for="phone" class="mb-1.5 block text-sm font-medium text-neutral-700 dark:text-zinc-400">
               {c.fields.phone}
             </label>
             <input
@@ -119,12 +120,12 @@ const benefitIcons = [
               id="phone"
               name="phone"
               placeholder={c.placeholders.phone}
-              class="w-full rounded-lg border border-slate-300 bg-white text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-blue-500 dark:border-slate-700/60 dark:bg-dark-800 dark:text-white dark:placeholder:text-slate-600 px-4 py-3"
+                class="w-full rounded-lg border border-app-line bg-app-panel text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-blue-500 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-50 dark:placeholder:text-zinc-500 px-4 py-3"
             />
           </div>
 
           <div>
-            <label for="message" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-400">
+            <label for="message" class="mb-1.5 block text-sm font-medium text-neutral-700 dark:text-zinc-400">
               {c.fields.message}
             </label>
             <textarea
@@ -132,7 +133,7 @@ const benefitIcons = [
               name="message"
               rows="4"
               placeholder={c.placeholders.message}
-              class="w-full resize-none rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-blue-500 dark:border-slate-700/60 dark:bg-dark-800 dark:text-white dark:placeholder:text-slate-600"
+              class="w-full resize-none rounded-lg border border-app-line bg-app-panel px-4 py-3 text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-blue-500 dark:border-dark-600 dark:bg-dark-800 dark:text-zinc-50 dark:placeholder:text-zinc-500"
             ></textarea>
           </div>
 
@@ -163,7 +164,7 @@ const benefitIcons = [
           >
           </div>
 
-          <p class="text-center text-xs text-slate-500 dark:text-slate-600">
+          <p class="text-center text-xs text-neutral-500 dark:text-zinc-600">
             {c.consent}
           </p>
         </form>

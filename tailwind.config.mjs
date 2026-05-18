@@ -23,11 +23,20 @@ export default {
           500: '#f97316',
           600: '#ea580c',
         },
+        /** OBJECT SCADA–style neutrals (main app UI) */
         dark: {
-          900: '#0a0f1e',
-          800: '#0d1426',
-          700: '#101b33',
-          600: '#162040',
+          900: '#121212',
+          800: '#1a1a1a',
+          700: '#1e1e1e',
+          600: '#2a2a2a',
+          500: '#3d3d3d',
+        },
+        /** Light theme surfaces — dashboard canvas + white panels */
+        app: {
+          canvas: '#f8f9fa',
+          panel: '#ffffff',
+          line: '#e8eaed',
+          'line-strong': '#dadce0',
         },
       },
       fontFamily: {
@@ -35,7 +44,7 @@ export default {
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       backgroundImage: {
-        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231e3a8a' fill-opacity='0.15' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E\")",
+        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232563eb' fill-opacity='0.08' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E\")",
       },
     },
   },

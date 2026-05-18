@@ -26,7 +26,6 @@
     "uk": "UA",
     "es": "ES",
     "fr": "FR",
-    "tr": "TR",
     "label": "Idioma"
   },
   "hero": {
@@ -599,6 +598,12 @@
         "tags": ["Tendencias", "TimescaleDB", "Chart.js"]
       },
       {
+        "id": "connections",
+        "title": "Conexiones de dispositivos",
+        "description": "Vista unificada de enlaces con autómatas, servidores OPC y dispositivos de campo: estado de canales, diagnóstico y calidad de conexión.",
+        "tags": ["OPC UA", "Modbus", "PLC"]
+      },
+      {
         "id": "logs",
         "title": "Registro de acciones",
         "description": "Auditoría de operadores: quién, cuándo y qué se hizo en el sistema — para investigaciones y responsabilidad.",
@@ -623,10 +628,6 @@
         {
           "label": "Integraciones",
           "href": "#integraciones"
-        },
-        {
-          "label": "Asistente de IA",
-          "href": "#ai"
         },
         {
           "label": "Arquitectura",

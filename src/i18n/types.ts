@@ -1,10 +1,10 @@
 import type ru from './ru.json';
 
-export type Locale = 'ru' | 'en' | 'de' | 'uk' | 'es' | 'fr' | 'tr';
+export type Locale = 'ru' | 'en' | 'de' | 'uk' | 'es' | 'fr';
 
 export type Messages = typeof ru;
 
-export const locales: Exclude<Locale, 'en'>[] = ['ru', 'de', 'uk', 'es', 'fr', 'tr'];
+export const locales: Exclude<Locale, 'en'>[] = ['ru', 'de', 'uk', 'es', 'fr'];
 
 export const localeHtmlLang: Record<Locale, string> = {
   ru: 'ru-RU',
@@ -13,5 +13,4 @@ export const localeHtmlLang: Record<Locale, string> = {
   uk: 'uk',
   es: 'es',
   fr: 'fr',
-  tr: 'tr',
 };

@@ -16,32 +16,36 @@ const h = m.hero;
   id="hero"
   class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
 >
-  <div class="absolute inset-0 bg-slate-100 dark:bg-dark-900"></div>
+  <div class="absolute inset-0 bg-app-canvas dark:bg-dark-900"></div>
   <div
-    class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#bfdbfe_0%,_transparent_60%)] dark:bg-[radial-gradient(ellipse_at_top,_#172554_0%,_transparent_60%)]"
+    class="absolute inset-0 bg-[radial-gradient(ellipse_85%_55%_at_50%_-12%,rgba(37,99,235,0.11)_0%,transparent_55%)] dark:bg-[radial-gradient(ellipse_85%_50%_at_50%_-10%,rgba(37,99,235,0.14)_0%,transparent_52%)]"
   >
   </div>
   <div
-    class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_#3b82f620_0%,_transparent_50%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,_#1e3a8a20_0%,_transparent_50%)]"
+    class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(59,130,246,0.06)_0%,transparent_48%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,rgba(59,130,246,0.05)_0%,transparent_48%)]"
   >
   </div>
 
-  <div class="absolute inset-0 opacity-30 dark:opacity-20">
+  <div class="absolute inset-0 opacity-40 dark:opacity-[0.14]">
     <div
-      class="absolute inset-0"
-      style="background-image: linear-gradient(rgba(59,130,246,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.12) 1px, transparent 1px); background-size: 50px 50px;"
+      class="absolute inset-0 [background-image:linear-gradient(rgba(15,23,42,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.055)_1px,transparent_1px)] [background-size:48px_48px] dark:[background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]"
     >
     </div>
   </div>
 
   <div
-    class="absolute top-1/4 -left-32 w-96 h-96 bg-blue-400/25 rounded-full blur-3xl pointer-events-none dark:bg-blue-600/20"
+    class="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-blue-500/15 blur-3xl pointer-events-none dark:bg-blue-600/10"
   >
   </div>
   <div
-    class="absolute bottom-1/4 -right-32 w-96 h-96 bg-blue-300/30 rounded-full blur-3xl pointer-events-none dark:bg-blue-800/20"
+    class="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-blue-400/12 blur-3xl pointer-events-none dark:bg-blue-500/8"
   >
   </div>
+
+  <div
+    class="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-44 bg-gradient-to-t from-[rgba(15,23,42,0.06)] to-transparent dark:from-black/30"
+    aria-hidden="true"
+  ></div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <div
@@ -52,7 +56,7 @@ const h = m.hero;
     </div>
 
     <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6">
-      <span class="text-slate-900 dark:text-white">{h.h1a}</span><br />
+      <span class="text-neutral-900 dark:text-zinc-50">{h.h1a}</span><br />
       <span
         class="bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-400 bg-clip-text text-transparent"
       >
@@ -61,7 +65,7 @@ const h = m.hero;
     </h1>
 
     <p
-      class="text-slate-600 dark:text-slate-400 text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed"
+      class="text-neutral-600 dark:text-zinc-400 text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed"
     >
       {h.sub}
     </p>
@@ -75,7 +79,7 @@ const h = m.hero;
       </a>
       <a
         href={anchorHref(lang, '#features')}
-        class="w-full sm:w-auto border border-slate-300 hover:border-blue-500 text-slate-700 hover:text-slate-900 dark:border-slate-600 dark:text-slate-300 dark:hover:text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 text-base flex items-center justify-center gap-2 group"
+        class="w-full sm:w-auto border border-app-line-strong hover:border-blue-500 text-neutral-800 hover:text-neutral-950 dark:border-dark-600 dark:text-zinc-300 dark:hover:text-zinc-50 font-semibold px-8 py-4 rounded-xl transition-all duration-200 text-base flex items-center justify-center gap-2 group"
       >
         {h.ctaMore}
         <svg
@@ -97,12 +101,12 @@ const h = m.hero;
       {
         h.stats.map((stat) => (
           <div
-            class="rounded-xl border border-slate-200 bg-white/80 p-5 backdrop-blur-sm dark:border-slate-800/60 dark:bg-dark-700/50"
+            class="rounded-xl border border-app-line bg-app-panel/95 p-5 shadow-sm backdrop-blur-sm dark:border-dark-600 dark:bg-dark-700"
           >
             <div class="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">
               {stat.value}
             </div>
-            <div class="text-slate-500 text-sm">{stat.label}</div>
+            <div class="text-neutral-500 text-sm dark:text-zinc-500">{stat.label}</div>
           </div>
         ))
       }
@@ -110,10 +114,10 @@ const h = m.hero;
 
     <div class="relative max-w-5xl mx-auto">
       <div
-        class="rounded-2xl border border-slate-200/80 bg-white p-1 shadow-xl shadow-slate-400/30 backdrop-blur-sm dark:border-slate-700/60 dark:bg-dark-700/60 dark:shadow-black/60"
+        class="rounded-2xl border border-app-line/90 bg-app-panel p-1 shadow-lg shadow-slate-300/25 backdrop-blur-sm dark:border-dark-600 dark:bg-dark-700 dark:shadow-black/40"
       >
         <div
-          class="rounded-xl bg-slate-100 px-4 py-3 flex items-center gap-3 mb-1 dark:bg-dark-800"
+          class="rounded-xl bg-app-canvas px-4 py-3 flex items-center gap-3 mb-1 dark:bg-dark-800"
         >
           <div class="flex gap-1.5">
             <span class="w-3 h-3 rounded-full bg-red-500/70"></span>
@@ -121,38 +125,38 @@ const h = m.hero;
             <span class="w-3 h-3 rounded-full bg-green-500/70"></span>
           </div>
           <div
-            class="flex-1 rounded-md bg-slate-200/80 px-3 py-1 text-slate-600 text-xs font-mono truncate dark:bg-dark-900/60 dark:text-slate-500"
+            class="flex-1 rounded-md border border-app-line bg-white px-3 py-1 text-neutral-600 text-xs font-mono truncate dark:border-dark-600 dark:bg-dark-900 dark:text-zinc-500"
           >
             {h.mockup.browserUrl}
           </div>
         </div>
-        <div class="rounded-xl overflow-hidden bg-slate-50 dark:bg-dark-800">
+        <div class="rounded-xl overflow-hidden bg-app-canvas dark:bg-dark-800">
           <svg
             viewBox="0 0 900 480"
             xmlns="http://www.w3.org/2000/svg"
             class="w-full"
           >
-            <rect width="200" height="480" fill="#0d1426"/>
-            <rect x="16" y="20" width="168" height="36" rx="8" fill="#172554"/>
-            <circle cx="34" cy="38" r="10" fill="#3b82f6"/>
+            <rect width="200" height="480" fill="#1a1a1a"/>
+            <rect x="16" y="20" width="168" height="36" rx="8" fill="#1e1e1e"/>
+            <circle cx="34" cy="38" r="10" fill="#2563eb"/>
             <rect x="50" y="32" width="80" height="6" rx="3" fill="#60a5fa"/>
-            <rect x="50" y="41" width="50" height="4" rx="2" fill="#1e3a8a"/>
+            <rect x="50" y="41" width="50" height="4" rx="2" fill="#3b82f6"/>
 
             {[80, 116, 152, 188, 224, 260].map((y, i) => (
               <>
-                <rect x="16" y={y} width="168" height="32" rx="6" fill={i === 0 ? '#1e40af' : 'transparent'}/>
-                <rect x="36" y={y + 12} width="12" height="8" rx="2" fill={i === 0 ? '#93c5fd' : '#334155'}/>
-                <rect x="56" y={y + 13} width={60 + (i % 3) * 20} height="6" rx="3" fill={i === 0 ? '#bfdbfe' : '#334155'}/>
+                <rect x="16" y={y} width="168" height="32" rx="6" fill={i === 0 ? '#2563eb' : 'transparent'}/>
+                <rect x="36" y={y + 12} width="12" height="8" rx="2" fill={i === 0 ? '#93c5fd' : '#525252'}/>
+                <rect x="56" y={y + 13} width={60 + (i % 3) * 20} height="6" rx="3" fill={i === 0 ? '#dbeafe' : '#525252'}/>
               </>
             ))}
 
-            <rect x="200" y="0" width="700" height="480" fill="#101b33"/>
+            <rect x="200" y="0" width="700" height="480" fill="#121212"/>
 
-            <rect x="200" y="0" width="700" height="52" fill="#0d1426"/>
-            <rect x="220" y="16" width="200" height="20" rx="4" fill="#172554"/>
-            <rect x="230" y="22" width="100" height="8" rx="3" fill="#1e3a8a"/>
-            <circle cx="840" cy="26" r="12" fill="#172554"/>
-            <circle cx="810" cy="26" r="12" fill="#172554"/>
+            <rect x="200" y="0" width="700" height="52" fill="#1a1a1a"/>
+            <rect x="220" y="16" width="200" height="20" rx="4" fill="#1e1e1e"/>
+            <rect x="230" y="22" width="100" height="8" rx="3" fill="#2a2a2a"/>
+            <circle cx="840" cy="26" r="12" fill="#1e1e1e"/>
+            <circle cx="810" cy="26" r="12" fill="#1e1e1e"/>
 
             {h.mockup.cards.map((card, idx) => {
               const x = 220 + idx * 170;
@@ -166,24 +170,24 @@ const h = m.hero;
                 <>
                   <rect x={x} y="68" width="150" height="80" rx="10" fill={colors.c} opacity="0.5"/>
                   <rect x={x} y="68" width="150" height="80" rx="10" fill="none" stroke={colors.a} stroke-width="1" opacity="0.4"/>
-                  <text x={x + 16} y="96" font-family="Inter" font-size="11" fill="#94a3b8">{card.lbl}</text>
+                  <text x={x + 16} y="96" font-family="Inter" font-size="11" fill="#a1a1aa">{card.lbl}</text>
                   <text x={x + 16} y="122" font-family="Inter" font-weight="bold" font-size="22" fill={colors.a}>{card.val}</text>
                 </>
               );
             })}
 
-            <rect x="220" y="164" width="460" height="200" rx="10" fill="#0d1426" opacity="0.8"/>
-            <rect x="220" y="164" width="460" height="200" rx="10" fill="none" stroke="#1e3a8a" stroke-width="1"/>
-            <text x="238" y="186" font-family="Inter" font-size="11" fill="#64748b">{h.mockup.trendsTitle}</text>
+            <rect x="220" y="164" width="460" height="200" rx="10" fill="#1e1e1e" opacity="0.95"/>
+            <rect x="220" y="164" width="460" height="200" rx="10" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.35"/>
+            <text x="238" y="186" font-family="Inter" font-size="11" fill="#a1a1aa">{h.mockup.trendsTitle}</text>
             <polyline points="240,300 280,280 320,290 360,260 400,270 440,240 480,255 520,230 560,245 600,220 640,235 660,215" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.9"/>
             <polyline points="240,320 280,330 320,310 360,325 400,308 440,315 480,300 520,318 560,295 600,310 640,290 660,305" fill="none" stroke="#06b6d4" stroke-width="2" opacity="0.7"/>
             {[220, 255, 290, 325, 355].map((y) => (
-              <line x1="240" y1={y} x2="660" y2={y} stroke="#1e3a8a" stroke-width="0.5" opacity="0.5"/>
+              <line x1="240" y1={y} x2="660" y2={y} stroke="#2a2a2a" stroke-width="0.5" opacity="0.9"/>
             ))}
 
-            <rect x="696" y="164" width="224" height="200" rx="10" fill="#0d1426" opacity="0.8"/>
-            <rect x="696" y="164" width="224" height="200" rx="10" fill="none" stroke="#1e3a8a" stroke-width="1"/>
-            <text x="714" y="186" font-family="Inter" font-size="11" fill="#64748b">{h.mockup.schemaTitle}</text>
+            <rect x="696" y="164" width="224" height="200" rx="10" fill="#1e1e1e" opacity="0.95"/>
+            <rect x="696" y="164" width="224" height="200" rx="10" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.35"/>
+            <text x="714" y="186" font-family="Inter" font-size="11" fill="#a1a1aa">{h.mockup.schemaTitle}</text>
             <rect x="714" y="196" width="40" height="30" rx="4" fill="#1e40af" opacity="0.7"/>
             <text x="719" y="216" font-family="Inter" font-size="9" fill="#93c5fd">{h.mockup.pump}</text>
             <line x1="754" y1="211" x2="780" y2="211" stroke="#3b82f6" stroke-width="2"/>
@@ -193,17 +197,17 @@ const h = m.hero;
             <circle cx="860" cy="211" r="18" fill="#164e63" opacity="0.7"/>
             <text x="850" y="215" font-family="Inter" font-size="9" fill="#67e8f9">{h.mockup.tank}</text>
 
-            <rect x="220" y="378" width="700" height="90" rx="10" fill="#0d1426" opacity="0.8"/>
-            <rect x="220" y="378" width="700" height="90" rx="10" fill="none" stroke="#1e3a8a" stroke-width="1"/>
-            <text x="238" y="398" font-family="Inter" font-size="11" fill="#64748b">{h.mockup.eventsTitle}</text>
+            <rect x="220" y="378" width="700" height="90" rx="10" fill="#1e1e1e" opacity="0.95"/>
+            <rect x="220" y="378" width="700" height="90" rx="10" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.35"/>
+            <text x="238" y="398" font-family="Inter" font-size="11" fill="#a1a1aa">{h.mockup.eventsTitle}</text>
             {h.mockup.events.map((ev, i) => {
               const y = 415 + i * 18;
               const color = ['#22c55e', '#f97316', '#3b82f6'][i]!;
               return (
                 <>
                   <circle cx="248" cy={y} r="4" fill={color}/>
-                  <text x="262" y={y + 4} font-family="Inter" font-size="10" fill="#94a3b8">{ev.msg}</text>
-                  <text x="860" y={y + 4} font-family="Inter" font-size="10" fill="#475569" text-anchor="end">{ev.time}</text>
+                  <text x="262" y={y + 4} font-family="Inter" font-size="10" fill="#d4d4d8">{ev.msg}</text>
+                  <text x="860" y={y + 4} font-family="Inter" font-size="10" fill="#71717a" text-anchor="end">{ev.time}</text>
                 </>
               );
             })}
@@ -218,9 +222,9 @@ const h = m.hero;
   </div>
 
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-    <span class="text-slate-500 text-xs dark:text-slate-600">{h.scroll}</span>
+    <span class="text-neutral-500 text-xs dark:text-zinc-600">{h.scroll}</span>
     <svg
-      class="w-5 h-5 text-slate-500 dark:text-slate-600"
+      class="w-5 h-5 text-neutral-500 dark:text-zinc-600"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"

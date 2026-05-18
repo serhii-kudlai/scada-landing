@@ -26,7 +26,6 @@
     "uk": "UA",
     "es": "ES",
     "fr": "FR",
-    "tr": "TR",
     "label": "Sprache"
   },
   "hero": {
@@ -599,6 +598,12 @@
         "tags": ["Trends", "TimescaleDB", "Chart.js"]
       },
       {
+        "id": "connections",
+        "title": "Geräteverbindungen",
+        "description": "Einheitliche Übersicht über Verbindungen zu SPSen, OPC-Servern und Feldgeräten: Kanalstatus, Diagnose und Verbindungsqualität.",
+        "tags": ["OPC UA", "Modbus", "SPS"]
+      },
+      {
         "id": "logs",
         "title": "Aktivitätsprotokoll",
         "description": "Operator-Audit: Wer hat wann was im System getan — für Untersuchungen und Nachvollziehbarkeit.",
@@ -623,10 +628,6 @@
         {
           "label": "Integrationen",
           "href": "#integrations"
-        },
-        {
-          "label": "KI-Assistent",
-          "href": "#ai"
         },
         {
           "label": "Architektur",

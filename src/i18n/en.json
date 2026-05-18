@@ -26,7 +26,6 @@
     "uk": "UA",
     "es": "ES",
     "fr": "FR",
-    "tr": "TR",
     "label": "Language"
   },
   "hero": {
@@ -599,6 +598,12 @@
         "tags": ["Trends", "TimescaleDB", "Chart.js"]
       },
       {
+        "id": "connections",
+        "title": "Device connections",
+        "description": "Unified view of links to PLCs, OPC servers and field devices: channel status, diagnostics and connection health.",
+        "tags": ["OPC UA", "Modbus", "PLC"]
+      },
+      {
         "id": "logs",
         "title": "Action Log",
         "description": "Operator audit trail: who, when and what was done in the system — for investigations and accountability.",
@@ -623,10 +628,6 @@
         {
           "label": "Integrations",
           "href": "#integrations"
-        },
-        {
-          "label": "AI Assistant",
-          "href": "#ai"
         },
         {
           "label": "Architecture",

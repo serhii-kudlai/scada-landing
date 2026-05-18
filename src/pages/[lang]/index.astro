@@ -1,5 +1,4 @@
 ---
-import AISection from '../../components/AISection.astro';
 import Architecture from '../../components/Architecture.astro';
 import CTA from '../../components/CTA.astro';
 import Features from '../../components/Features.astro';
@@ -13,7 +12,6 @@ import es from '../../i18n/es.json';
 import fr from '../../i18n/fr.json';
 import type { Locale } from '../../i18n/types';
 import ru from '../../i18n/ru.json';
-import tr from '../../i18n/tr.json';
 import uk from '../../i18n/uk.json';
 import Layout from '../../layouts/Layout.astro';
 
@@ -24,7 +22,6 @@ export function getStaticPaths() {
     { params: { lang: 'uk' } },
     { params: { lang: 'es' } },
     { params: { lang: 'fr' } },
-    { params: { lang: 'tr' } },
   ];
 }
 
@@ -36,7 +33,6 @@ const bundles = {
   uk,
   es,
   fr,
-  tr,
 } as const;
 
 type L = keyof typeof bundles;
@@ -52,7 +48,6 @@ const locale = lang as Locale;
     <Hero lang={locale} m={m} />
     <Features m={m} />
     <Integrations m={m} />
-    <AISection m={m} />
     <Architecture m={m} />
     <ProjectScreens m={m} lang={locale} />
     <CTA m={m} />

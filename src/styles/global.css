@@ -1,2 +1,30 @@
 @import 'tailwindcss';
 @config '../../tailwind.config.mjs';
+
+/**
+ * Вертикальное смягчение стыков между полноширинными секциями лендинга
+ * (единый фон + лёгкое затемнение у верхнего/нижнего края).
+ */
+.bg-landing-section-edges {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.042) 0%,
+    transparent min(100px, 16vw),
+    transparent calc(100% - min(100px, 16vw)),
+    rgba(15, 23, 42, 0.042) 100%
+  );
+}
+
+html.dark .bg-landing-section-edges {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.28) 0%,
+    transparent min(96px, 14vw),
+    transparent calc(100% - min(96px, 14vw)),
+    rgba(0, 0, 0, 0.28) 100%
+  );
+}
