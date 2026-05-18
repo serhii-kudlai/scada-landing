@@ -492,7 +492,6 @@
         { "label": "Примеры проектов", "href": "#projects" }
       ],
       "docs": [
-        { "label": "Документация", "href": "#" },
         { "label": "Руководство пользователя", "href": "#", "id": "user-manual" },
         { "label": "API Reference", "href": "#" },
         { "label": "Docker Setup", "href": "https://docs.docker.com/engine/install/" }

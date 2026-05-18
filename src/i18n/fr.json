@@ -645,10 +645,6 @@
       ],
       "docs": [
         {
-          "label": "Documentation",
-          "href": null
-        },
-        {
           "label": "Guide de l'utilisateur",
           "href": null,
           "id": "user-manual"
