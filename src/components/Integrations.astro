@@ -108,46 +108,5 @@ const colorMap: Record<string, { border: string; glow: string; badge: string }> 
       }
     </div>
 
-    <div
-      class="flex flex-col items-center gap-8 rounded-xl border border-app-line bg-gradient-to-r from-neutral-100/95 to-app-canvas p-8 dark:from-zinc-800/80 dark:to-dark-700 dark:border-dark-600 lg:flex-row"
-    >
-      <div
-        class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-neutral-300 bg-neutral-200/80 dark:border-zinc-600 dark:bg-zinc-800/80"
-      >
-        <svg
-          width="32"
-          height="32"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          class="text-neutral-600 dark:text-zinc-300"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <polyline points="16 18 22 12 16 6"></polyline>
-          <polyline points="8 6 2 12 8 18"></polyline>
-        </svg>
-      </div>
-      <div class="flex-1 text-center lg:text-left">
-        <div
-          class="inline-flex items-center gap-1.5 bg-amber-100 text-amber-900 dark:bg-amber-950/50 dark:text-amber-200 text-xs px-2.5 py-1 rounded-full mb-3"
-        >
-          <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-          {sec.tia.badge}
-        </div>
-        <h3 class="mb-2 text-xl font-bold text-neutral-900 dark:text-zinc-50">{sec.tia.title}</h3>
-        <p class="max-w-2xl leading-relaxed text-neutral-600 dark:text-zinc-400">
-          {sec.tia.body}
-        </p>
-      </div>
-      <div class="shrink-0">
-        <span
-          class="inline-block bg-neutral-200 border border-neutral-300 text-neutral-800 dark:bg-zinc-800/80 dark:border-zinc-600 dark:text-zinc-200 text-sm font-semibold px-5 py-2.5 rounded-lg"
-        >
-          {sec.tia.pill}
-        </span>
-      </div>
-    </div>
   </div>
 </section>
