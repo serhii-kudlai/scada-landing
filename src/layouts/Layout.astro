@@ -16,10 +16,11 @@ const {
 } = Astro.props;
 
 const htmlLang = localeHtmlLang[lang];
+const htmlDir = lang === 'ar' ? 'rtl' : 'ltr';
 ---
 
 <!doctype html>
-<html lang={htmlLang} class="dark">
+<html lang={htmlLang} dir={htmlDir} class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

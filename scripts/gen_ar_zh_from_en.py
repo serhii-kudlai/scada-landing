@@ -1,4 +1,4 @@
-"""Generate src/i18n locale JSON from en.json (Google Translate). Requires: pip install deep-translator"""
+"""Generate src/i18n/{ar,zh}.json from en.json. Requires: pip install deep-translator"""
 from __future__ import annotations
 
 import json
@@ -9,6 +9,7 @@ from pathlib import Path
 
 try:
     from deep_translator import GoogleTranslator
+    from deep_translator.exceptions import TranslationNotFound
 except ImportError:
     print("Install: pip install deep-translator", file=sys.stderr)
     sys.exit(1)
@@ -16,7 +17,6 @@ except ImportError:
 ROOT = Path(__file__).resolve().parents[1]
 EN_PATH = ROOT / "src" / "i18n" / "en.json"
 
-# Do not translate (URLs, short locale codes, purely numeric UI tokens)
 _URL = re.compile(r"^https?://", re.I)
 _CODE2 = re.compile(r"^[A-Z]{2}$")
 
@@ -39,7 +39,7 @@ def main() -> int:
 
     raw: object = json.loads(EN_PATH.read_text(encoding="utf-8-sig"))
 
-    for dest, code in (("es", "es"), ("fr", "fr"), ("ar", "ar"), ("zh-CN", "zh")):
+    for dest, code in (("ar", "ar"), ("zh-CN", "zh")):
         cache: dict[str, str] = {}
         tr = GoogleTranslator(source="en", target=dest)
 
@@ -53,17 +53,17 @@ def main() -> int:
                     return obj
                 if obj in cache:
                     return cache[obj]
-                out = tr.translate(obj)
+                try:
+                    out = tr.translate(obj)
+                except TranslationNotFound:
+                    out = obj
                 time.sleep(0.06)
                 cache[obj] = out
                 return out
             return obj
 
         data = walk(json.loads(json.dumps(raw)))
-        # Ensure language picker labels include new locales (codes stay Latin)
         if isinstance(data, dict) and "lang" in data and isinstance(data["lang"], dict):
-            data["lang"]["es"] = "ES"
-            data["lang"]["fr"] = "FR"
             data["lang"]["ar"] = "العربية"
             data["lang"]["zh"] = "中文"
 

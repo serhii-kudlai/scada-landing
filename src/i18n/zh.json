@@ -1,0 +1,709 @@
+{
+  "meta": {
+    "title": "OBJECTSCADA - 工业控制和监控系统",
+    "description": "OBJECTSCADA 是一个基于网络的现代化 SCADA 平台，用于工业监控、控制和技术流程自动化。支持西门子S7、Modbus、MQTT、OPC UA、EtherNet/IP。"
+  },
+  "header": {
+    "nav": {
+      "features": "可能性",
+      "integrations": "集成",
+      "ai": "人工智能助手",
+      "architecture": "建筑学",
+      "systemInterface": "系统界面",
+      "advantages": "优点",
+      "contacts": "联系方式",
+      "projects": "项目实例"
+    },
+    "login": "登录",
+    "requestDemo": "请求演示",
+    "openMenu": "打开菜单",
+    "themeToggle": "浅色或深色主题"
+  },
+  "lang": {
+    "ru": "RU",
+    "en": "EN",
+    "de": "DE",
+    "uk": "UA",
+    "es": "ES",
+    "fr": "FR",
+    "ar": "العربية",
+    "zh": "中文",
+    "label": "语言"
+  },
+  "hero": {
+    "badge": "下一代工业自动化",
+    "h1a": "网络SCADA系统",
+    "h1b": "为您的生产",
+    "sub": "工艺过程的实时监测、控制和自动化。支持所有主要PLC协议、可视化电路编辑器和内置AI助手。",
+    "ctaDemo": "请求演示",
+    "ctaMore": "了解更多",
+    "scroll": "向下滚动",
+    "stats": [
+      {
+        "value": "14+",
+        "label": "设备类型"
+      },
+      {
+        "value": "5",
+        "label": "PLC协议"
+      },
+      {
+        "value": "即时的",
+        "label": "监控"
+      },
+      {
+        "value": "AI",
+        "label": "助手"
+      }
+    ],
+    "mockup": {
+      "browserUrl": "https://scada.example.com/dashboard",
+      "cards": [
+        {
+          "val": "第247章",
+          "lbl": "设备"
+        },
+        {
+          "val": "99.8%",
+          "lbl": "正常运行时间"
+        },
+        {
+          "val": "0",
+          "lbl": "事故"
+        },
+        {
+          "val": "12",
+          "lbl": "阿尔莫夫"
+        }
+      ],
+      "trendsTitle": "趋势 - 温度/压力",
+      "schemaTitle": "流程图",
+      "pump": "泵",
+      "valve": "阀门",
+      "tank": "坦克",
+      "eventsTitle": "最新活动",
+      "events": [
+        {
+          "msg": "泵 P-101 启动",
+          "time": "12:34:01"
+        },
+        {
+          "msg": "T-201温度超过阈值",
+          "time": "12:31:45"
+        },
+        {
+          "msg": "阀门 V-305 打开 75%",
+          "time": "12:29:12"
+        }
+      ]
+    }
+  },
+  "features": {
+    "badge": "平台能力",
+    "h2a": "您需要的一切",
+    "h2b": "工业自动化",
+    "intro": "功能齐全的 SCADA 平台，具有用于监视、控制和分析工艺流程的单一界面。",
+    "items": [
+      {
+        "title": "实时监控",
+        "description": "WebSocket 连接提供即时数据更新。 TimescaleDB 以纳秒精度存储时间序列。",
+        "tags": [
+          "WebSocket",
+          "时标数据库",
+          "雷迪斯"
+        ]
+      },
+      {
+        "title": "可视化原理图编辑器",
+        "description": "基于 Konva.js 的拖放流程图编辑器。使用设备状态动画创建交互式模拟图。",
+        "tags": [
+          "Konva.js",
+          "静止无功发生器",
+          "拖放"
+        ]
+      },
+      {
+        "title": "事故管理",
+        "description": "具有优先级的多级报警系统。事件日志、确认、通知升级。紧急情况的历史。",
+        "tags": [
+          "警报",
+          "握手",
+          "通知"
+        ]
+      },
+      {
+        "title": "趋势和数据历史",
+        "description": "通过缩放绘制历史数据图表。导出到 Excel、CSV。在一张图表上比较多个参数。",
+        "tags": [
+          "Chart.js",
+          "Excel",
+          "时标数据库"
+        ]
+      },
+      {
+        "title": "顺序和食谱",
+        "description": "技术序列的可视化编程。配方、阶段和批次的管理（批次自动化）。",
+        "tags": [
+          "批",
+          "食谱",
+          "自动化"
+        ]
+      },
+      {
+        "title": "基于角色的访问模型",
+        "description": "灵活的RBAC系统：操作员、工程师、管理员。用户活动日志。 JWT 身份验证。",
+        "tags": [
+          "RBAC",
+          "智威汤逊",
+          "审计"
+        ]
+      },
+      {
+        "title": "多语言界面",
+        "description": "通过 i18next 进行完全本地化。 RTL（阿拉伯语）支持。切换语言而不重新加载页面。",
+        "tags": [
+          "i18下一个",
+          "RTL",
+          "本土化"
+        ]
+      },
+      {
+        "title": "Docker部署",
+        "description": "通过 Docker Compose 实现完全容器化。一个文件 - 整个堆栈：后端、前端、数据库、Redis、PLC 工作线程。",
+        "tags": [
+          "码头工人",
+          "PostgreSQL",
+          "雷迪斯"
+        ]
+      }
+    ]
+  },
+  "integrations": {
+    "badge": "工业协议",
+    "h2a": "对大家的支持",
+    "h2b": "关键 PLC 协议",
+    "intro": "无需修改即可连接任何工业设备 - 系统支持开箱即用的标准协议。",
+    "protocols": [
+      {
+        "name": "西门子S7",
+        "subtitle": "Snap7 + TIA 开放性",
+        "description": "全面支持S7-300/400/1200/1500。读/写变量 DB、M、I、Q。与 TIA Portal 集成以实现自动配置部署。",
+        "badge": "西门子"
+      },
+      {
+        "name": "MODBUS",
+        "subtitle": "RTU/TCP/ASCII",
+        "description": "通过 RS-485/RS-232 和 Modbus TCP/IP 的 Modbus RTU。支持所有功能代码：线圈、离散输入、保持寄存器、输入寄存器。",
+        "badge": "普遍的"
+      },
+      {
+        "name": "MQTT",
+        "subtitle": "经纪商/客户",
+        "description": "物联网设备协议。订阅主题，发布命令。与 Mosquitto、HiveMQ、AWS IoT Core 兼容。服务质量 0/1/2。",
+        "badge": "物联网"
+      },
+      {
+        "name": "OPC统一协议",
+        "subtitle": "客户端/服务器",
+        "description": "行业标准 IIoT。与任何 OPC UA 兼容设备进行安全数据交换。支持节点ID、浏览、订阅。",
+        "badge": "工业物联网"
+      },
+      {
+        "name": "以太网/IP",
+        "subtitle": "艾伦-布拉德利/罗克韦尔",
+        "description": "Allen-Bradley PLC 的 CIP 协议。支持 ControlLogix、CompactLogix、MicroLogix。标签读取、诊断。",
+        "badge": "罗克韦尔"
+      }
+    ],
+    "tia": {
+      "badge": "独家整合",
+      "title": "TIA Portal 代理 (.NET)",
+      "body": "Agent for Windows 自动将变量配置从Siemens TIA Portal 项目导出到SCADA 系统。一键标签同步——无需手动数据输入。",
+      "pill": ".NET/Windows"
+    }
+  },
+  "ai": {
+    "badge": "内置AI助手",
+    "h2a": "询问系统",
+    "h2b": "用自然语言",
+    "intro": "基于FastAPI和Qdrant的RAG助手分析您的生产数据并实时回答有关设备、事故和流程的问题。",
+    "capabilities": [
+      "按需历史数据分析",
+      "紧急情况诊断",
+      "按文件和法规搜索",
+      "基于趋势的预测",
+      "回答有关设备状况的问题"
+    ],
+    "chatTitle": "SCADA人工智能助手",
+    "online": "在线的",
+    "placeholder": "请教一个关于装备的问题...",
+    "messages": [
+      {
+        "role": "用户",
+        "text": "过去 24 小时 R-201 反应器的平均温度是多少？"
+      },
+      {
+        "role": "人工智能",
+        "text": "过去 24 小时内 R-201 反应器的平均温度为 **82.4°C**。最大值：14:32 时 91.2°C，最小值：03:15 时 74.8°C。没有记录到与标准的偏差。"
+      },
+      {
+        "role": "用户",
+        "text": "泵 P-101 本周遇到麻烦了吗？"
+      },
+      {
+        "role": "人工智能",
+        "text": "P-101 泵因事故**1 次** 停止 - 4 月 12 日 09:47。原因：轴承过热（设定点 75°C 时温度为 78°C）。操作员 Ivanov I.I. 承认了这起事故。 09:52，泵于10:05重新启动。"
+      }
+    ]
+  },
+  "architecture": {
+    "badge": "技术概述",
+    "h2a": "现代的",
+    "h2b": "微服务架构",
+    "intro": "每个组件都针对其任务进行了优化 - 从 UI 到直接与硬件一起工作的高负载 Rust 工作线程。",
+    "layers": [
+      {
+        "label": "浏览器/客户端",
+        "items": [
+          {
+            "name": "React 18 + TypeScript",
+            "desc": "SPA 操作员界面"
+          },
+          {
+            "name": "MUI + Konva.js",
+            "desc": "UI 组件和图表"
+          },
+          {
+            "name": "Redux 工具包",
+            "desc": "状态管理"
+          },
+          {
+            "name": "WebSocket客户端",
+            "desc": "实时更新"
+          }
+        ]
+      },
+      {
+        "label": "后端API",
+        "items": [
+          {
+            "name": "Django 4.2 + DRF",
+            "desc": "REST API、业务逻辑"
+          },
+          {
+            "name": "姜戈频道",
+            "desc": "WebSocket服务器"
+          },
+          {
+            "name": "智威汤逊认证",
+            "desc": "身份验证和 RBAC"
+          },
+          {
+            "name": "达芙妮/古尼角兽",
+            "desc": "ASGI/WSGI 服务器"
+          }
+        ]
+      },
+      {
+        "label": "工人PLC（Rust）",
+        "items": [
+          {
+            "name": "Tokio 异步运行时",
+            "desc": "高绩效工人"
+          },
+          {
+            "name": "Snap7/Modbus",
+            "desc": "PLC协议驱动程序"
+          },
+          {
+            "name": "MQTT/OPC UA",
+            "desc": "物联网协议"
+          },
+          {
+            "name": "Redis 发布订阅",
+            "desc": "广播事件"
+          }
+        ]
+      },
+      {
+        "label": "数据仓库",
+        "items": [
+          {
+            "name": "PostgreSQL + TimescaleDB",
+            "desc": "主要数据库和时间序列"
+          },
+          {
+            "name": "雷迪斯",
+            "desc": "缓存、会话、PubSub"
+          },
+          {
+            "name": "保镖",
+            "desc": "连接池"
+          },
+          {
+            "name": "奎德兰特",
+            "desc": "AI矢量数据库"
+          }
+        ]
+      },
+      {
+        "label": "人工智能服务",
+        "items": [
+          {
+            "name": "快速API",
+            "desc": "异步AI微服务"
+          },
+          {
+            "name": "RAG管道",
+            "desc": "检索增强生成"
+          },
+          {
+            "name": "SQLAlchemy 异步",
+            "desc": "访问 SCADA 数据"
+          },
+          {
+            "name": "Qdrant客户端",
+            "desc": "语义搜索"
+          }
+        ]
+      },
+      {
+        "label": "基础设施",
+        "items": [
+          {
+            "name": "Docker 组合",
+            "desc": "整个堆栈的容器化"
+          },
+          {
+            "name": "nginx",
+            "desc": "反向代理，静态"
+          },
+          {
+            "name": "TIA 代理 (.NET)",
+            "desc": "西门子TIA集成"
+          },
+          {
+            "name": "Debian ISO",
+            "desc": "准备好安装镜像"
+          }
+        ]
+      }
+    ],
+    "systemInterface": {
+      "badge": "主要领域",
+      "titleA": "系统",
+      "titleB": "界面",
+      "intro": "主要应用领域：从监控和图表到设备和管理。",
+      "groups": [
+        {
+          "title": "监控和可视化",
+          "layout": "层",
+          "cards": [
+            {
+              "title": "监控仪表板",
+              "desc": "主页视图：KPI、区域状态和快速流程概述"
+            },
+            {
+              "title": "图表",
+              "desc": "模拟图：设备、管道和链路——接近真实过程的查看和控制"
+            },
+            {
+              "title": "警报",
+              "desc": "活动和已清除的警报和警告：过滤、确认、事件历史记录"
+            },
+            {
+              "title": "活动日志",
+              "desc": "审计追踪：谁在何时做了什么——用于问责和调查"
+            },
+            {
+              "title": "趋势",
+              "desc": "选定信号/标签的趋势和档案 - 分析模式和偏差"
+            }
+          ]
+        },
+        {
+          "title": "逻辑和自动化",
+          "layout": "层",
+          "cards": [
+            {
+              "title": "节目",
+              "desc": "自动化场景 - 序列和配方：开始、步骤、执行状态、绑定到行和区域"
+            }
+          ]
+        },
+        {
+          "title": "设备和连接",
+          "layout": "层",
+          "cards": [
+            {
+              "title": "PLC",
+              "desc": "控制器：连接、链路状态、数据交换设置（Modbus、OPC UA 等）"
+            },
+            {
+              "title": "输入/输出点数",
+              "desc": "物理输入/输出：寻址和信号绑定"
+            },
+            {
+              "title": "设备",
+              "desc": "工厂对象（泵、阀门、PID 等）：参数、模式、I/O 绑定和图表"
+            },
+            {
+              "title": "功能",
+              "desc": "计算和信号转换"
+            }
+          ]
+        },
+        {
+          "title": "行政",
+          "layout": "层",
+          "cards": [
+            {
+              "title": "用户",
+              "desc": "帐户：访问、配置文件、锁定"
+            },
+            {
+              "title": "角色",
+              "desc": "基于角色的权限：操作员、技术员、管理员等。"
+            },
+            {
+              "title": "图形状态",
+              "desc": "图表上的设备状态：颜色和图标（运行/停止/报警）"
+            },
+            {
+              "title": "设置",
+              "desc": "一般应用参数、许可证、系统信息"
+            }
+          ]
+        }
+      ]
+    },
+    "flowTitle": "数据流",
+    "flow1": [
+      "PLC/硬件",
+      null,
+      "锈工",
+      null,
+      "Redis 发布订阅",
+      null,
+      "姜戈频道",
+      null,
+      "反应用户界面"
+    ],
+    "flow2": [
+      "锈工",
+      null,
+      "时标数据库",
+      null,
+      "Django API",
+      null,
+      "人工智能快速API",
+      null,
+      "奎德兰特"
+    ],
+    "versusClassic": {
+      "badge": "方法比较",
+      "titleA": "与的差异",
+      "titleB": "经典 SCADA",
+      "intro": "我们的网络平台和传统客户端 SCADA 之间有五个实际差异。",
+      "items": [
+        {
+          "aspect": "使用权",
+          "desc": "通过浏览器——无需单独的客户端，任何设备上的统一用户体验。"
+        },
+        {
+          "aspect": "堆",
+          "desc": "Python + React/TypeScript — 开源，易于找到开发人员并集成自定义逻辑。"
+        },
+        {
+          "aspect": "一体化",
+          "desc": "API 优先和 WebSocket — MES、ERP、云、分析，无需额外的中间件。"
+        },
+        {
+          "aspect": "部署",
+          "desc": "Docker 容器——可重复的环境、可预测的部署、简单的维护。"
+        },
+        {
+          "aspect": "PLC工程",
+          "desc": "Modbus/OPC UA + 西门子代码导出 — SCADA 项目和控制器代码之间的差距最小。"
+        }
+      ]
+    }
+  },
+  "cta": {
+    "badge": "联系我们",
+    "h2a": "准备实施",
+    "h2b": "SCADA 在您的站点吗？",
+    "intro": "联系我们以获得演示访问、技术建议或估算贵公司的实施成本。",
+    "benefits": [
+      {
+        "title": "演示访问",
+        "desc": "具有真实数据的测试环境用于系统评估"
+      },
+      {
+        "title": "试点项目",
+        "desc": "在一个站点上实施并随后进行扩展"
+      },
+      {
+        "title": "技术咨询",
+        "desc": "评估与您的设备和 PLC 的兼容性"
+      }
+    ],
+    "formTitle": "留下请求",
+    "fields": {
+      "name": "姓名",
+      "company": "公司",
+      "email": "电子邮件",
+      "phone": "电话",
+      "message": "任务描述"
+    },
+    "placeholders": {
+      "name": "伊万·伊万诺夫",
+      "company": "有限责任公司产业",
+      "email": "ivanivanov@gmail.com",
+      "phone": "+38(999) 000-00-00",
+      "message": "告诉我们设备、协议、项目规模……"
+    },
+    "required": null,
+    "submit": "发送请求",
+    "sending": "正在发送...",
+    "success": "申请已发送！我们会尽快与您联系。",
+    "consent": "单击按钮即表示您同意处理个人数据"
+  },
+  "projects": {
+    "badge": "实际安装",
+    "h2a": "项目",
+    "h2b": "例子",
+    "intro": "各行业工业设施中运行 SCADA 安装的屏幕截图。",
+    "items": [
+      {
+        "id": "仪表板",
+        "title": "主仪表板",
+        "description": "概览监控画面：关键KPI、设备状态、实时压力和温度趋势。",
+        "tags": [
+          "监控",
+          "关键绩效指标",
+          "WebSocket"
+        ]
+      },
+      {
+        "id": "舍玛",
+        "title": "工艺示意图",
+        "description": "带有动画设备、管道和阀门状态的交互式流程图。",
+        "tags": [
+          "示意图",
+          "Konva.js",
+          "静止无功发生器"
+        ]
+      },
+      {
+        "id": "alarms",
+        "title": "警报和事件",
+        "description": "带有优先级、确认和历史记录的报警日志：按区域、时间和事件类型进行过滤。",
+        "tags": [
+          "警报",
+          "日志",
+          "致谢"
+        ]
+      },
+      {
+        "id": "趋势",
+        "title": "趋势与档案",
+        "description": "时间尺度上的历史数据，具有缩放、多参数比较和 Excel 导出功能。",
+        "tags": [
+          "趋势",
+          "时标数据库",
+          "Chart.js"
+        ]
+      },
+      {
+        "id": "连接",
+        "title": "设备连接",
+        "description": "PLC、OPC 服务器和现场设备链接的统一视图：通道状态、诊断和连接运行状况。",
+        "tags": [
+          "OPC统一协议",
+          "MODBUS",
+          "可编程逻辑控制器"
+        ]
+      },
+      {
+        "id": "日志",
+        "title": "行动日志",
+        "description": "操作员审计跟踪：谁、何时以及在系统中做了什么 — 用于调查和问责。",
+        "tags": [
+          "审计",
+          "安全",
+          "RBAC"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "用于监测、控制和自动化工艺流程的工业网络 SCADA 系统。",
+    "status": "系统正在运行",
+    "columns": {
+      "product": "产品",
+      "docs": "文档",
+      "contact": "联系方式"
+    },
+    "links": {
+      "product": [
+        {
+          "label": "可能性",
+          "href": "＃特征"
+        },
+        {
+          "label": "集成",
+          "href": "#集成"
+        },
+        {
+          "label": "建筑学",
+          "href": "＃建筑学"
+        },
+        {
+          "label": "系统界面",
+          "href": "#系统接口"
+        },
+        {
+          "label": "优点",
+          "href": "#优点"
+        },
+        {
+          "label": "项目实例",
+          "href": "#项目"
+        }
+      ],
+      "docs": [
+        {
+          "label": "用户指南",
+          "href": null,
+          "id": "用户手册"
+        },
+        {
+          "label": "API参考",
+          "href": null
+        },
+        {
+          "label": "Docker 设置",
+          "href": "https://docs.docker.com/engine/install/"
+        }
+      ],
+      "contact": [
+        {
+          "label": "请求演示",
+          "href": "＃接触"
+        },
+        {
+          "label": "技术支援",
+          "href": "＃接触"
+        },
+        {
+          "label": "合伙",
+          "href": "＃接触"
+        }
+      ]
+    },
+    "copyright": "版权所有。",
+    "privacy": "隐私政策",
+    "terms": "使用条款"
+  }
+}

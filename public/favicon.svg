@@ -1,21 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="OBJECTSCADA">
-  <rect width="32" height="32" rx="7" fill="#f4f4f5" />
-  <rect width="32" height="32" rx="7" fill="none" stroke="#e4e4e7" stroke-width="0.75" />
-  <g transform="translate(0 0.25)">
-    <polygon points="21,9.5 24.5,7.1 24.5,24.1 21,26.5" fill="#e5e7eb" />
-    <polygon points="5,9.5 21,9.5 24.5,7.1 8.5,7.1" fill="#eceef2" />
-    <polygon points="5,9.5 21,9.5 21,26.5 5,26.5" fill="#f9fafb" />
+  <rect width="32" height="32" rx="7" fill="#f5f2eb" />
+  <defs>
+    <pattern id="hatch" width="1.35" height="1.35" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="1.35" height="1.35" fill="#171717" />
+      <line x1="0" y1="0" x2="0" y2="1.35" stroke="#f5f2eb" stroke-width="0.32" />
+    </pattern>
+  </defs>
+  <g transform="translate(1.25 -0.8) translate(14.75 16.8) scale(1.1) translate(-14.75 -16.8)">
     <path
-      d="M 5 26.5 L 5 9.5 L 8.5 7.1 L 24.5 7.1 L 24.5 24.1 L 21 26.5 L 5 26.5 M 5 9.5 L 21 9.5 L 21 26.5 M 21 9.5 L 24.5 7.1"
+      d="M 5 26.5 L 5 9.5 L 8.5 7.1 L 24.5 7.1 L 24.5 24.1 L 21 26.5 Z M 5 9.5 L 21 9.5 M 21 9.5 L 21 26.5"
       fill="none"
-      stroke="#9ca3af"
-      stroke-width="0.55"
+      stroke="#1e293b"
+      stroke-width="0.62"
       stroke-linecap="square"
       stroke-linejoin="miter"
     />
     <path
-      fill="#0a0a0a"
-      d="M 7 13.5 L 8.5 12 L 17.5 12 L 19 13.5 L 19 13.7 Q 19 14.5 18.2 14.5 L 10.8 14.5 Q 10 14.5 10 15.3 L 10 16.7 Q 10 17.5 10.8 17.5 L 18.2 17.5 Q 19 17.5 19 18.3 L 19 23.5 L 17.5 25 L 8.5 25 L 7 23.5 L 7 23.3 Q 7 22.5 7.8 22.5 L 15.2 22.5 Q 16 22.5 16 21.7 L 16 20.3 Q 16 19.5 15.2 19.5 L 7.8 19.5 Q 7 19.5 7 18.7 Z"
+      fill="url(#hatch)"
+      stroke="#1e293b"
+      stroke-width="0.4"
+      stroke-linejoin="miter"
+      d="M 7 13.5 L 8.5 12 L 17.5 12 L 19 12 L 17.56 14.5 L 10.8 14.5 Q 10 14.5 10 15.3 L 10 16.7 Q 10 17.5 10.8 17.5 L 18.2 17.5 Q 19 17.5 19 18.3 L 19 23.5 L 17.5 25 L 8.5 25 L 7 25 L 8.7 22.5 L 15.2 22.5 Q 16 22.5 16 21.7 L 16 20.3 Q 16 19.5 15.2 19.5 L 7.8 19.5 Q 7 19.5 7 18.7 Z"
     />
   </g>
 </svg>
