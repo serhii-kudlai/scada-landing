@@ -22,59 +22,21 @@ const textClass = isHeader
     class:list={[
       'flex shrink-0 items-center justify-center overflow-hidden rounded-[0.55rem] shadow-sm',
       boxClass,
-      'bg-[#f5f2eb] dark:bg-black',
     ]}
     aria-hidden="true"
   >
-    <svg
-      class="h-[88%] w-[88%] min-h-0 min-w-0"
-      viewBox="0 0 32 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <defs>
-        <pattern
-          id="logo-hatch-light"
-          width="1.35"
-          height="1.35"
-          patternUnits="userSpaceOnUse"
-          patternTransform="rotate(45)"
-        >
-          <rect width="1.35" height="1.35" fill="#171717" />
-          <line x1="0" y1="0" x2="0" y2="1.35" stroke="#f5f2eb" stroke-width="0.32" />
-        </pattern>
-        <pattern
-          id="logo-hatch-dark"
-          width="1.35"
-          height="1.35"
-          patternUnits="userSpaceOnUse"
-          patternTransform="rotate(45)"
-        >
-          <rect width="1.35" height="1.35" fill="#e4e4e7" />
-          <line x1="0" y1="0" x2="0" y2="1.35" stroke="#0a0a0a" stroke-width="0.32" />
-        </pattern>
-      </defs>
-
-      <g transform="translate(1.25 -0.8) translate(14.75 16.8) scale(1.1) translate(-14.75 -16.8)">
-        <!-- Wireframe cube: solid visible edges -->
-        <path
-          class="stroke-[#1e293b] dark:stroke-white"
-          d="M 5 26.5 L 5 9.5 L 8.5 7.1 L 24.5 7.1 L 24.5 24.1 L 21 26.5 Z M 5 9.5 L 21 9.5 M 21 9.5 L 21 26.5"
-          fill="none"
-          stroke-width="0.62"
-          stroke-linecap="square"
-          stroke-linejoin="miter"
-        />
-        <!-- Letter S: single shape with hatch fill -->
-        <path
-          class="fill-[url(#logo-hatch-light)] dark:fill-[url(#logo-hatch-dark)] stroke-[#1e293b] dark:stroke-white"
-          stroke-width="0.4"
-          stroke-linejoin="miter"
-          d="M 7 13.5 L 8.5 12 L 17.5 12 L 19 12 L 17.56 14.5 L 10.8 14.5 Q 10 14.5 10 15.3 L 10 16.7 Q 10 17.5 10.8 17.5 L 18.2 17.5 Q 19 17.5 19 18.3 L 19 23.5 L 17.5 25 L 8.5 25 L 7 25 L 8.7 22.5 L 15.2 22.5 Q 16 22.5 16 21.7 L 16 20.3 Q 16 19.5 15.2 19.5 L 7.8 19.5 Q 7 19.5 7 18.7 Z"
-        />
-      </g>
-    </svg>
+    <img
+      src="/logo_light.png"
+      alt="ObjectSCADA"
+      class:list={['block dark:hidden h-full w-full object-contain']}
+      draggable="false"
+    />
+    <img
+      src="/logo_dark.png"
+      alt="ObjectSCADA"
+      class:list={['hidden dark:block h-full w-full object-contain']}
+      draggable="false"
+    />
   </span>
   <span
     class:list={[
