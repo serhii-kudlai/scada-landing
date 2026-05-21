@@ -576,7 +576,7 @@
     "intro": "各行业工业设施中运行 SCADA 安装的屏幕截图。",
     "items": [
       {
-        "id": "仪表板",
+        "id": "dashboard",
         "title": "主仪表板",
         "description": "概览监控画面：关键KPI、设备状态、实时压力和温度趋势。",
         "tags": [
@@ -586,7 +586,7 @@
         ]
       },
       {
-        "id": "舍玛",
+        "id": "shema",
         "title": "工艺示意图",
         "description": "带有动画设备、管道和阀门状态的交互式流程图。",
         "tags": [
@@ -606,7 +606,7 @@
         ]
       },
       {
-        "id": "趋势",
+        "id": "trends",
         "title": "趋势与档案",
         "description": "时间尺度上的历史数据，具有缩放、多参数比较和 Excel 导出功能。",
         "tags": [
@@ -616,7 +616,7 @@
         ]
       },
       {
-        "id": "连接",
+        "id": "connections",
         "title": "设备连接",
         "description": "PLC、OPC 服务器和现场设备链接的统一视图：通道状态、诊断和连接运行状况。",
         "tags": [
@@ -626,7 +626,7 @@
         ]
       },
       {
-        "id": "日志",
+        "id": "logs",
         "title": "行动日志",
         "description": "操作员审计跟踪：谁、何时以及在系统中做了什么 — 用于调查和问责。",
         "tags": [
@@ -676,7 +676,7 @@
         {
           "label": "用户指南",
           "href": null,
-          "id": "用户手册"
+          "id": "user-manual"
         },
         {
           "label": "API参考",
