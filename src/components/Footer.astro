@@ -43,6 +43,11 @@ function isPdfDocLink(link: { id?: string }): boolean {
   return id === 'user-manual' || id === 'api-reference';
 }
 
+function isHiddenDocLink(link: { id?: string }): boolean {
+  const id = (link as { id?: string }).id;
+  return id === 'user-manual' || id === 'api-reference';
+}
+
 const tech = [
   'Django 4.2', 'React 18', 'TypeScript', 'Rust', 'PostgreSQL',
   'TimescaleDB', 'Redis', 'Docker', 'FastAPI', 'OPC UA',
@@ -96,7 +101,7 @@ const tech = [
             f.links.docs.map((link) => {
               const openPdf = isPdfDocLink(link);
               return (
-                <li>
+                <li class:list={[isHiddenDocLink(link) && 'hidden']}>
                   <a
                     href={getDocHref(link)}
                     target={openPdf ? '_blank' : undefined}
