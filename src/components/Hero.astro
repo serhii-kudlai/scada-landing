@@ -97,11 +97,14 @@ const h = m.hero;
       </a>
     </div>
 
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-3xl mx-auto mb-16">
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 max-w-3xl mx-auto mb-16">
       {
         h.stats.map((stat) => (
           <div
-            class="rounded-xl border border-app-line bg-app-panel/95 p-5 shadow-sm backdrop-blur-sm dark:border-dark-600 dark:bg-dark-700"
+            class:list={[
+              'rounded-xl border border-app-line bg-app-panel/95 p-5 shadow-sm backdrop-blur-sm dark:border-dark-600 dark:bg-dark-700',
+              stat.value === 'AI' && 'hidden',
+            ]}
           >
             <div class="text-2xl sm:text-3xl font-bold text-amber-700 dark:text-amber-400 mb-1">
               {stat.value}

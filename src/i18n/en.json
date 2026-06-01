@@ -653,7 +653,8 @@
         },
         {
           "label": "API Reference",
-          "href": "#"
+          "href": "#",
+          "id": "api-reference"
         },
         {
           "label": "Docker Setup",

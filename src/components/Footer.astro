@@ -27,11 +27,20 @@ const userManualFiles: Record<string, string> = {
 };
 
 function getDocHref(link: { href: string | null; id?: string }): string {
-  if ((link as { id?: string }).id === 'user-manual') {
+  const id = (link as { id?: string }).id;
+  if (id === 'user-manual') {
     const file = userManualFiles[lang] ?? 'USER_MANUAL_EN.pdf';
     return `${baseUrl}docs/${file}`;
   }
+  if (id === 'api-reference') {
+    return `${baseUrl}docs/API_REFERENCE.pdf`;
+  }
   return link.href ?? '#';
+}
+
+function isPdfDocLink(link: { id?: string }): boolean {
+  const id = (link as { id?: string }).id;
+  return id === 'user-manual' || id === 'api-reference';
 }
 
 const tech = [
@@ -85,13 +94,13 @@ const tech = [
         <ul class="space-y-3">
           {
             f.links.docs.map((link) => {
-              const isManual = (link as { id?: string }).id === 'user-manual';
+              const openPdf = isPdfDocLink(link);
               return (
                 <li>
                   <a
                     href={getDocHref(link)}
-                    target={isManual ? '_blank' : undefined}
-                    rel={isManual ? 'noopener noreferrer' : undefined}
+                    target={openPdf ? '_blank' : undefined}
+                    rel={openPdf ? 'noopener noreferrer' : undefined}
                     class="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-zinc-500 dark:hover:text-zinc-300"
                   >
                     {link.label}

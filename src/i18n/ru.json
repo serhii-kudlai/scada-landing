@@ -495,7 +495,7 @@
       ],
       "docs": [
         { "label": "Руководство пользователя", "href": "#", "id": "user-manual" },
-        { "label": "API Reference", "href": "#" },
+        { "label": "API Reference", "href": "#", "id": "api-reference" },
         { "label": "Docker Setup", "href": "https://docs.docker.com/engine/install/" }
       ],
       "contact": [

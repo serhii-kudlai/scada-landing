@@ -653,7 +653,8 @@
         },
         {
           "label": "Référence API",
-          "href": null
+          "href": null,
+          "id": "api-reference"
         },
         {
           "label": "Configuration du menu Docker",

@@ -680,7 +680,8 @@
         },
         {
           "label": "API参考",
-          "href": null
+          "href": null,
+          "id": "api-reference"
         },
         {
           "label": "Docker 设置",

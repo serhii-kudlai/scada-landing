@@ -653,7 +653,8 @@
         },
         {
           "label": "Referencia de API",
-          "href": null
+          "href": null,
+          "id": "api-reference"
         },
         {
           "label": "Configuración de la ventana acoplable",
