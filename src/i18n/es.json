@@ -1,22 +1,18 @@
 ﻿{
   "meta": {
-    "title": "OBJECTSCADA - Sistema de control y monitorización industrial",
-    "description": "OBJECTSCADA es una plataforma SCADA web moderna para monitorización, control y automatización de procesos tecnológicos industriales. Compatible con Siemens S7, Modbus, MQTT, OPC UA, EtherNet/IP."
+    "title": "OBJECTSCADA — SCADA web para supervisión y control de procesos industriales",
+    "description": "OBJECTSCADA es un sistema SCADA web: sinópticos, alarmas, tendencias, recetas y lotes en el navegador. Se conecta a Siemens S7, Modbus TCP, OPC UA, MQTT y EtherNet/IP. Se instala en sus servidores y funciona sin internet."
   },
   "header": {
     "nav": {
-      "features": "Posibilidades",
-      "integrations": "Integraciones",
-      "ai": "Asistente de IA",
-      "architecture": "Arquitectura",
-      "systemInterface": "Interfaz del sistema",
-      "advantages": "Ventajas",
-      "contacts": "Contactos",
-      "projects": "Ejemplos de proyectos"
+      "features": "Funciones",
+      "interface": "Interfaz",
+      "protocols": "Protocolos",
+      "deployment": "Implantación",
+      "contacts": "Contacto"
     },
-    "login": "Acceso",
-    "requestDemo": "Solicitar una demostración",
-    "openMenu": "abrir menú",
+    "requestDemo": "Solicitar demo",
+    "openMenu": "Abrir menú",
     "themeToggle": "Tema claro u oscuro"
   },
   "lang": {
@@ -31,653 +27,272 @@
     "label": "Idioma"
   },
   "hero": {
-    "badge": "Automatización industrial de próxima generación",
-    "h1a": "Sistema SCADA web",
-    "h1b": "para tu producción",
-    "sub": "Monitoreo, control y automatización de procesos tecnológicos en tiempo real. Admite todos los protocolos PLC principales, editor de circuitos visuales y asistente de IA integrado.",
-    "ctaDemo": "Solicitar una demostración",
-    "ctaMore": "Descubra más",
-    "scroll": "Desplácese hacia abajo",
-    "stats": [
-      {
-        "value": "14+",
-        "label": "Tipos de dispositivos"
-      },
-      {
-        "value": "5",
-        "label": "protocolos PLC"
-      },
-      {
-        "value": "en tiempo real",
-        "label": "Escucha"
-      },
-      {
-        "value": "AI",
-        "label": "Asistente"
-      }
-    ],
-    "mockup": {
-      "browserUrl": "https://scada.example.com/dashboard",
-      "cards": [
-        {
-          "val": "247",
-          "lbl": "Dispositivos"
-        },
-        {
-          "val": "99,8%",
-          "lbl": "tiempo de actividad"
-        },
-        {
-          "val": "0",
-          "lbl": "Accidentes"
-        },
-        {
-          "val": "12",
-          "lbl": "Alarmov"
-        }
-      ],
-      "trendsTitle": "Tendencias - Temperatura / Presión",
-      "schemaTitle": "Diagrama de proceso",
-      "pump": "Bomba",
-      "valve": "Válvula",
-      "tank": "Tanque",
-      "eventsTitle": "Últimos eventos",
-      "events": [
-        {
-          "msg": "Bomba P-101 puesta en marcha",
-          "time": "12:34:01"
-        },
-        {
-          "msg": "La temperatura del T-201 supera el umbral",
-          "time": "12:31:45"
-        },
-        {
-          "msg": "La válvula V-305 está abierta al 75%",
-          "time": "12:29:12"
-        }
-      ]
-    }
+    "kicker": "SCADA web · Control industrial",
+    "h1": "Supervise y controle su proceso desde cualquier navegador",
+    "sub": "OBJECTSCADA se conecta a sus PLC, muestra la planta en sinópticos en tiempo real y reúne alarmas, tendencias, recetas y lotes en un solo sistema. Funciona en su propio servidor y no necesita internet.",
+    "ctaDemo": "Solicitar demo",
+    "ctaScreens": "Ver la interfaz",
+    "shotCaption": "Pasteurizador · sinóptico",
+    "shotStatus": "En línea",
+    "shotAlt": "Sinóptico de OBJECTSCADA de una línea de pasteurización",
+    "facts": [
+      { "label": "Puesto de operador", "value": "Cualquier navegador" },
+      { "label": "Drivers de PLC", "value": "5 protocolos" },
+      { "label": "Interfaz", "value": "11 idiomas" },
+      { "label": "Instalación", "value": "Local, sin internet" }
+    ]
   },
   "features": {
-    "badge": "Capacidades de la plataforma",
-    "h2a": "Todo lo que necesitas para",
-    "h2b": "automatización industrial",
-    "intro": "Plataforma SCADA con todas las funciones y una única interfaz para monitorear, controlar y analizar procesos tecnológicos.",
+    "kicker": "Funciones",
+    "h2": "Un solo sistema del PLC al operador",
+    "intro": "Todo lo que necesitan el operador, el ingeniero de proceso y el ingeniero de automatización, sin módulos adicionales ni licencias aparte.",
     "items": [
       {
-        "title": "Monitoreo en tiempo real",
-        "description": "La conexión WebSocket proporciona actualización de datos instantánea. TimescaleDB almacena series temporales con una precisión de nanosegundos.",
-        "tags": [
-          "WebSocket",
-          "Escala de tiempoDB",
-          "Redis"
-        ]
+        "title": "Funciona en el navegador",
+        "description": "Puestos de operador en cualquier PC, panel o tablet de la red de planta. Nada que instalar en los puestos: un servidor da servicio a toda la planta."
       },
       {
-        "title": "editor de esquemas visuales",
-        "description": "Editor de diagramas de flujo de arrastrar y soltar basado en Konva.js. Cree diagramas mímicos interactivos con animación de los estados del dispositivo.",
-        "tags": [
-          "Konva.js",
-          "SVG",
-          "Arrastrar y soltar"
-        ]
+        "title": "Editor de sinópticos",
+        "description": "Arrastre equipos, tuberías, depósitos y líneas de producción al lienzo. Ventanas emergentes, botones, imágenes y valores en tiempo real se configuran sin código."
       },
       {
-        "title": "Gestión de accidentes",
-        "description": "Sistema de alarma multinivel con prioridades. Registro de eventos, reconocimiento, escalamiento de notificaciones. Historia de situaciones de emergencia.",
-        "tags": [
-          "Alarmas",
-          "Apretón de manos",
-          "Notificaciones"
-        ]
+        "title": "Alarmas que llegan a las personas",
+        "description": "Cuatro niveles de gravedad, reconocimiento, una sirena que suena hasta que alguien responde y avisos por email o SMS filtrados por gravedad."
       },
       {
-        "title": "Tendencias e historial de datos.",
-        "description": "Trazar gráficos de datos históricos con escala. Exportar a Excel, CSV. Comparación de varios parámetros en un gráfico.",
-        "tags": [
-          "Gráfico.js",
-          "Sobresalir",
-          "Escala de tiempoDB"
-        ]
+        "title": "Secuencias, recetas, lotes",
+        "description": "Programas por pasos con condiciones de transición, recetas con variables y lotes que avanzan por las líneas de producción con historial completo de etapas."
       },
       {
-        "title": "Secuencias y recetas",
-        "description": "Programación visual de secuencias tecnológicas. Gestión de recetas, etapas y lotes (automatización de lotes).",
-        "tags": [
-          "Lote",
-          "Recetas",
-          "Automatización"
-        ]
+        "title": "Tendencias e históricos",
+        "description": "Todas las señales se archivan. Compare parámetros en un mismo gráfico, amplíe un turno, guarde grupos de sensores y exporte a Excel."
       },
       {
-        "title": "Modelo de acceso basado en roles",
-        "description": "Sistema RBAC flexible: operadores, ingenieros, administradores. Registro de actividad del usuario. Autenticación JWT.",
-        "tags": [
-          "RBAC",
-          "JWT",
-          "Auditoría"
-        ]
+        "title": "Del SCADA al código del PLC",
+        "description": "Genere un programa Siemens SCL y tablas de variables de TIA Portal a partir del proyecto configurado, sin introducir los mismos datos dos veces."
       },
       {
-        "title": "Interfaz multilingüe",
-        "description": "Localización completa a través de i18next. Soporte RTL (árabe). Cambia de idioma sin recargar la página.",
-        "tags": [
-          "i18siguiente",
-          "RTL",
-          "Localización"
-        ]
+        "title": "Proyecto en minutos",
+        "description": "Un asistente crea PLC, equipos, áreas, programas y sinópticos de una sola vez. Las clases de equipo propias se convierten en plantillas reutilizables."
       },
       {
-        "title": "Implementación de Docker",
-        "description": "Contenedorización completa a través de Docker Compose. Un archivo: toda la pila: backend, frontend, base de datos, Redis, trabajador de PLC.",
-        "tags": [
-          "Estibador",
-          "PostgreSQL",
-          "Redis"
-        ]
+        "title": "Pensado para la planta",
+        "description": "Modo quiosco para paneles de operador, teclado en pantalla con 10 distribuciones, 11 idiomas de interfaz incluido el árabe y recorridos guiados integrados."
+      },
+      {
+        "title": "Control de acceso y auditoría",
+        "description": "Roles con permisos por sección. Cada acción del operador queda registrada: quién cambió qué, cuándo y desde qué dirección."
       }
     ]
   },
-  "integrations": {
-    "badge": "Protocolos industriales",
-    "h2a": "Apoyo para todos",
-    "h2b": "protocolos clave del PLC",
-    "intro": "Conecte cualquier equipo industrial sin modificaciones: el sistema admite protocolos estándar listos para usar.",
-    "protocols": [
-      {
-        "name": "Siemens S7",
-        "subtitle": "Apertura Snap7 + TIA",
-        "description": "Soporte completo para S7-300/400/1200/1500. Lectura/escritura de variables DB, M, I, Q. Integración con TIA Portal para despliegue automático de configuración.",
-        "badge": "siemens"
-      },
-      {
-        "name": "Modbus",
-        "subtitle": "RTU/TCP/ASCII",
-        "description": "Modbus RTU vía RS-485/RS-232 y Modbus TCP/IP. Admite todos los códigos de función: bobinas, entradas discretas, registros de retención, registros de entrada.",
-        "badge": "Universal"
-      },
-      {
-        "name": "MQTT",
-        "subtitle": "Corredor / Cliente",
-        "description": "Protocolo de dispositivo IoT. Suscríbete a temas, publica comandos. Compatible con Mosquitto, HiveMQ, AWS IoT Core. Calidad de servicio 0/1/2.",
-        "badge": "IoT"
-      },
-      {
-        "name": "OPC-UA",
-        "subtitle": "Cliente/Servidor",
-        "description": "IIoT estándar de la industria. Intercambio de datos seguro con cualquier equipo compatible con OPC UA. ID de nodo de soporte, exploración, suscripción.",
-        "badge": "IIoT"
-      },
-      {
-        "name": "Ethernet/IP",
-        "subtitle": "Allen-Bradley / Rockwell",
-        "description": "Protocolo CIP para PLC Allen-Bradley. Soporta ControlLogix, CompactLogix, MicroLogix. Lectura de etiquetas, diagnóstico.",
-        "badge": "rockwell"
-      }
-    ],
-    "tia": {
-      "badge": "Integración exclusiva",
-      "title": "Agente del Portal TIA (.NET)",
-      "body": "El Agente para Windows exporta automáticamente la configuración de variables del proyecto Siemens TIA Portal al sistema SCADA. Sincronización de etiquetas con un solo botón: sin entrada de datos manual.",
-      "pill": ".NET/Windows"
-    }
-  },
-  "ai": {
-    "badge": "Asistente de IA incorporado",
-    "h2a": "pregunta al sistema",
-    "h2b": "en lenguaje natural",
-    "intro": "El asistente RAG basado en FastAPI y Qdrant analiza sus datos de producción y responde preguntas sobre equipos, accidentes y procesos en tiempo real.",
-    "capabilities": [
-      "Análisis de datos históricos bajo demanda",
-      "Diagnóstico de situaciones de emergencia.",
-      "Búsqueda por documentación y normativa",
-      "Previsión basada en tendencias.",
-      "Respuestas a preguntas sobre el estado del equipo."
-    ],
-    "chatTitle": "Asistente de IA SCADA",
-    "online": "En línea",
-    "placeholder": "Haga una pregunta sobre el equipo...",
-    "messages": [
-      {
-        "role": "usuario",
-        "text": "¿Cuál es la temperatura promedio del reactor R-201 durante las últimas 24 horas?"
-      },
-      {
-        "role": "ai",
-        "text": "La temperatura media del reactor R-201 durante las últimas 24 horas fue de **82,4°C**. Valor máximo: 91,2°C a las 14:32, mínimo: 74,8°C a las 03:15. No se registraron desviaciones de la norma."
-      },
-      {
-        "role": "usuario",
-        "text": "¿Tuvo problemas la bomba P-101 esta semana?"
-      },
-      {
-        "role": "ai",
-        "text": "La bomba P-101 se detuvo debido a un accidente **1 vez** - el 12 de abril a las 09:47. Causa: sobrecalentamiento del rodamiento (temperatura 78°C en punto de consigna 75°C). El accidente fue reconocido por el operador Ivanov I.I. a las 09:52, la bomba se reinició a las 10:05."
-      }
-    ]
-  },
-  "architecture": {
-    "badge": "Descripción técnica",
-    "h2a": "Moderno",
-    "h2b": "arquitectura de microservicio",
-    "intro": "Cada componente está optimizado para su tarea, desde la interfaz de usuario hasta el trabajador Rust altamente cargado que trabaja directamente con el hardware.",
-    "layers": [
-      {
-        "label": "Navegador/Cliente",
-        "items": [
-          {
-            "name": "Reaccionar 18 + mecanografiado",
-            "desc": "Interfaz del operador SPA"
-          },
-          {
-            "name": "MUI + Konva.js",
-            "desc": "Componentes y diagramas de la interfaz de usuario"
-          },
-          {
-            "name": "Kit de herramientas Redux",
-            "desc": "Gestión del Estado"
-          },
-          {
-            "name": "Cliente WebSocket",
-            "desc": "Actualizaciones en tiempo real"
-          }
-        ]
-      },
-      {
-        "label": "API de back-end",
-        "items": [
-          {
-            "name": "Django 4.2 + DRF",
-            "desc": "API REST, lógica empresarial"
-          },
-          {
-            "name": "Canales Django",
-            "desc": "Servidor WebSocket"
-          },
-          {
-            "name": "Autenticación JWT",
-            "desc": "Autenticación y RBAC"
-          },
-          {
-            "name": "Dafne/Gunicornio",
-            "desc": "Servidores ASGI/WSGI"
-          }
-        ]
-      },
-      {
-        "label": "PLC de trabajador (óxido)",
-        "items": [
-          {
-            "name": "Tiempo de ejecución asíncrono de Tokio",
-            "desc": "trabajador de alto rendimiento"
-          },
-          {
-            "name": "Snap7/Modbus",
-            "desc": "Controladores de protocolo PLC"
-          },
-          {
-            "name": "MQTT/OPC UA",
-            "desc": "protocolos de iot"
-          },
-          {
-            "name": "Redis PubSub",
-            "desc": "Eventos de transmisión"
-          }
-        ]
-      },
-      {
-        "label": "Almacenes de datos",
-        "items": [
-          {
-            "name": "PostgreSQL + Escala de tiempoDB",
-            "desc": "Base de datos principal y series temporales."
-          },
-          {
-            "name": "Redis",
-            "desc": "Caché, sesiones, PubSub"
-          },
-          {
-            "name": "PgBouncer",
-            "desc": "Agrupación de conexiones"
-          },
-          {
-            "name": "Qdrant",
-            "desc": "Base de datos vectorial para IA"
-          }
-        ]
-      },
-      {
-        "label": "Servicio de IA",
-        "items": [
-          {
-            "name": "API rápida",
-            "desc": "Microservicio de IA asíncrono"
-          },
-          {
-            "name": "Oleoducto RAG",
-            "desc": "Recuperación Generación Aumentada"
-          },
-          {
-            "name": "SQLAlchemy asíncrono",
-            "desc": "Acceso a datos SCADA"
-          },
-          {
-            "name": "Cliente Qdrant",
-            "desc": "búsqueda semántica"
-          }
-        ]
-      },
-      {
-        "label": "Infraestructura",
-        "items": [
-          {
-            "name": "Composición acoplable",
-            "desc": "Contenedorización de toda la pila"
-          },
-          {
-            "name": "nginx",
-            "desc": "Proxy inverso, estático"
-          },
-          {
-            "name": "Agente TIA (.NET)",
-            "desc": "Integración TIA de Siemens"
-          },
-          {
-            "name": "ISO de Debian",
-            "desc": "Imagen lista para la instalación."
-          }
-        ]
-      }
-    ],
-    "systemInterface": {
-      "badge": "Áreas principales",
-      "titleA": "Sistema",
-      "titleB": "interfaz",
-      "intro": "Principales áreas de aplicación: desde monitorización y diagramas hasta equipamiento y administración.",
-      "groups": [
-        {
-          "title": "Monitoreo y visualización",
-          "layout": "capa",
-          "cards": [
-            {
-              "title": "Panel de control",
-              "desc": "Vista de inicio: KPI, estado del área y una descripción general rápida del proceso"
-            },
-            {
-              "title": "Diagramas",
-              "desc": "Diagramas mímicos: equipos, tuberías y enlaces: visualización y control cercanos al proceso real"
-            },
-            {
-              "title": "Alarmas",
-              "desc": "Alarmas y advertencias activas y borradas: filtrado, reconocimiento, historial de incidentes"
-            },
-            {
-              "title": "Registro de actividad",
-              "desc": "Seguimiento de auditoría: quién hizo qué y cuándo: para la rendición de cuentas y las investigaciones"
-            },
-            {
-              "title": "Tendencias",
-              "desc": "Tendencias y archivos para señales/etiquetas seleccionadas: analizar modos y desviaciones"
-            }
-          ]
-        },
-        {
-          "title": "Lógica y automatización",
-          "layout": "capa",
-          "cards": [
-            {
-              "title": "Programas",
-              "desc": "Escenarios de automatización: secuencias y recetas: inicio, pasos, estado de ejecución, vinculación a líneas y áreas"
-            }
-          ]
-        },
-        {
-          "title": "Equipamiento y conectividad",
-          "layout": "capa",
-          "cards": [
-            {
-              "title": "PLC",
-              "desc": "Controladores: conexión, estado del enlace, configuración de intercambio de datos (Modbus, OPC UA, etc.)"
-            },
-            {
-              "title": "puntos de E/S",
-              "desc": "Entradas/salidas físicas: direccionamiento y enlace de señales"
-            },
-            {
-              "title": "Dispositivos",
-              "desc": "Objetos de planta (bombas, válvulas, PID, etc.): parámetros, modos, vinculación a E/S y diagramas"
-            },
-            {
-              "title": "Funciones",
-              "desc": "Cálculos y transformaciones de señales."
-            }
-          ]
-        },
-        {
-          "title": "Administración",
-          "layout": "capa",
-          "cards": [
-            {
-              "title": "Usuarios",
-              "desc": "Cuentas: acceso, perfiles, bloqueos"
-            },
-            {
-              "title": "Roles",
-              "desc": "Permisos basados ​​en roles: operador, tecnólogo, administrador, etc."
-            },
-            {
-              "title": "Estados gráficos",
-              "desc": "Estado del equipo en diagramas: colores e iconos (ejecutar/parar/alarma)"
-            },
-            {
-              "title": "Ajustes",
-              "desc": "Parámetros generales de aplicación, licencia, información del sistema."
-            }
-          ]
-        }
-      ]
-    },
-    "flowTitle": "Flujo de datos",
-    "flow1": [
-      "PLC/hardware",
-      null,
-      "Trabajador del óxido",
-      null,
-      "Redis PubSub",
-      null,
-      "Canales Django",
-      null,
-      "Reaccionar interfaz de usuario"
-    ],
-    "flow2": [
-      "Trabajador del óxido",
-      null,
-      "Escala de tiempoDB",
-      null,
-      "API de Django",
-      null,
-      "API rápida de IA",
-      null,
-      "Qdrant"
-    ],
-    "versusClassic": {
-      "badge": "Comparación de enfoques",
-      "titleA": "Diferencias con",
-      "titleB": "SCADA clásicos",
-      "intro": "Cinco diferencias prácticas entre nuestra plataforma web y el cliente tradicional SCADA.",
-      "items": [
-        {
-          "aspect": "Acceso",
-          "desc": "A través del navegador: no se necesita un cliente independiente, UX unificada en cualquier dispositivo."
-        },
-        {
-          "aspect": "Pila",
-          "desc": "Python + React/TypeScript: código abierto, fácil de encontrar desarrolladores e integración de lógica personalizada."
-        },
-        {
-          "aspect": "Integración",
-          "desc": "API primero y WebSocket: MES, ERP, nube, análisis sin middleware adicional."
-        },
-        {
-          "aspect": "Despliegue",
-          "desc": "Contenedores Docker: entornos reproducibles, implementación predecible, mantenimiento sencillo."
-        },
-        {
-          "aspect": "Ingeniería de PLC",
-          "desc": "Exportación de código Modbus/OPC UA + para Siemens: brecha mínima entre el proyecto SCADA y el código del controlador."
-        }
-      ]
-    }
-  },
-  "cta": {
-    "badge": "Contáctenos",
-    "h2a": "Listo para implementar",
-    "h2b": "¿SCADA en su sitio?",
-    "intro": "Contáctenos para recibir acceso demo, asesoramiento técnico o estimar el costo de implementación para su empresa.",
-    "benefits": [
-      {
-        "title": "Acceso de demostración",
-        "desc": "Entorno de prueba con datos reales para la evaluación del sistema."
-      },
-      {
-        "title": "Proyecto piloto",
-        "desc": "Implementación en un sitio con posterior escalado."
-      },
-      {
-        "title": "Consulta técnica",
-        "desc": "Evalúe la compatibilidad con su equipo y PLC"
-      }
-    ],
-    "formTitle": "dejar una solicitud",
-    "fields": {
-      "name": "Nombre",
-      "company": "Compañía",
-      "email": "Correo electrónico",
-      "phone": "Teléfono",
-      "message": "Descripción de la tarea"
-    },
-    "placeholders": {
-      "name": "Iván Ivanov",
-      "company": "Industria LLC",
-      "email": "ivanivanov@gmail.com",
-      "phone": "+38(999) 000-00-00",
-      "message": "Cuéntanos sobre el equipamiento, protocolos, escala del proyecto..."
-    },
-    "required": null,
-    "submit": "Enviar una solicitud",
-    "sending": "Envío...",
-    "success": "Solicitud enviada! Nos comunicaremos con usted en breve.",
-    "consent": "Al hacer clic en el botón, acepta el procesamiento de datos personales"
-  },
-  "projects": {
-    "badge": "Instalaciones reales",
-    "h2a": "Ejemplos de",
-    "h2b": "proyectos",
-    "intro": "Capturas de pantalla de instalaciones SCADA operativas en instalaciones industriales de diversos sectores.",
+  "screens": {
+    "kicker": "Interfaz",
+    "h2": "Con qué trabaja el operador",
+    "intro": "Pantallas reales de OBJECTSCADA 5.0 con un proyecto de demostración de pasteurización. La interfaz cambia entre tema claro y oscuro junto con esta página.",
+    "open": "Abrir captura a tamaño completo",
+    "note": "OBJECTSCADA 5.0 · proyecto de demostración · haga clic en la imagen para verla a tamaño completo",
     "items": [
       {
         "id": "dashboard",
         "title": "Panel principal",
-        "description": "Pantalla de monitorización general: KPIs clave, estado del equipo y tendencias en tiempo real.",
-        "tags": ["Monitorización", "KPI", "WebSocket"]
+        "description": "Estado del sistema, áreas de producción con marcha/paro, últimas alarmas, tendencias en tiempo real y el estado de cada equipo en una sola pantalla."
       },
       {
         "id": "shema",
-        "title": "Esquema del proceso",
-        "description": "Diagrama de proceso interactivo con dispositivos animados, tuberías y estados de válvulas.",
-        "tags": ["Esquema", "Konva.js", "SVG"]
+        "title": "Sinóptico",
+        "description": "El proceso tal como lo ve el operador: bombas, válvulas, tuberías y valores en tiempo real. Los equipos se mandan directamente desde el sinóptico."
+      },
+      {
+        "id": "editor",
+        "title": "Editor de sinópticos",
+        "description": "El mismo sinóptico en modo edición: paleta con equipos, tuberías, líneas de producción, variables de receta, imágenes y gráficos."
       },
       {
         "id": "alarms",
         "title": "Alarmas y eventos",
-        "description": "Registro de alarmas con prioridades, confirmación e historial: filtrado por zona, tiempo y tipo.",
-        "tags": ["Alarmas", "Registro", "Confirmación"]
+        "description": "Registro de alarmas con gravedad, estado y reconocimiento. Filtre por prioridad, equipo y tiempo; resuelva alarmas en bloque."
       },
       {
         "id": "trends",
-        "title": "Tendencias y archivos",
-        "description": "Datos históricos con zoom, comparación de parámetros y exportación a Excel.",
-        "tags": ["Tendencias", "TimescaleDB", "Chart.js"]
+        "title": "Tendencias",
+        "description": "Histórico de temperatura de varios sensores en un mismo gráfico para el periodo elegido, con zoom, grupos de sensores y exportación."
       },
       {
-        "id": "connections",
-        "title": "Conexiones de dispositivos",
-        "description": "Vista unificada de enlaces con autómatas, servidores OPC y dispositivos de campo: estado de canales, diagnóstico y calidad de conexión.",
-        "tags": ["OPC UA", "Modbus", "PLC"]
+        "id": "devices",
+        "title": "Equipos",
+        "description": "Todos los equipos de la planta con tipo, estado de conexión y los programas y condiciones en los que se usa cada uno."
       },
       {
         "id": "logs",
-        "title": "Registro de acciones",
-        "description": "Auditoría de operadores: quién, cuándo y qué se hizo en el sistema — para investigaciones y responsabilidad.",
-        "tags": ["Auditoría", "Seguridad", "RBAC"]
+        "title": "Registro de actividad",
+        "description": "Trazabilidad de las acciones del operador: accesos, marchas y paros, cambios de consigna y modificaciones del proyecto."
       }
     ]
   },
+  "protocols": {
+    "kicker": "Conectividad",
+    "h2": "Funciona con los autómatas que ya tiene",
+    "intro": "Los drivers de los principales protocolos industriales están incluidos. Conecte los equipos existentes sin modificar el programa del PLC.",
+    "items": [
+      {
+        "name": "Siemens S7",
+        "detail": "S7-300, S7-400, S7-1200 y S7-1500 por Ethernet: bloques de datos, marcas, entradas y salidas."
+      },
+      {
+        "name": "Modbus TCP",
+        "detail": "Holding registers e input registers, coils y entradas discretas. Equipos Modbus RTU a través de una pasarela TCP."
+      },
+      {
+        "name": "OPC UA",
+        "detail": "Conexión como cliente a cualquier servidor OPC UA."
+      },
+      {
+        "name": "MQTT",
+        "detail": "Publicación y suscripción para dispositivos IoT, sensores y pasarelas."
+      },
+      {
+        "name": "EtherNet/IP",
+        "detail": "Allen-Bradley ControlLogix, CompactLogix y Micro800."
+      }
+    ],
+    "plc": {
+      "kicker": "Ingeniería Siemens",
+      "title": "Código de PLC generado desde el proyecto SCADA",
+      "body": "Los equipos, enclavamientos, secuencias, recetas y alarmas configurados en OBJECTSCADA se convierten en un programa Siemens listo para importar. El SCADA y el autómata se construyen desde una única fuente.",
+      "points": [
+        "Fuente SCL y tablas de variables de TIA Portal para S7-1200 y S7-1500",
+        "Lógica a nivel de equipo para S7-300 y S7-400 (STEP 7 Classic)",
+        "Configurador de rack y PROFINET con importación de GSD y tabla de direcciones",
+        "La lógica se ejecuta en el servidor o se traslada al PLC"
+      ]
+    }
+  },
+  "deployment": {
+    "kicker": "Implantación",
+    "h2": "Del piloto a la planta en marcha",
+    "intro": "OBJECTSCADA funciona en su hardware dentro de la red de planta. Nada depende de un servicio en la nube ni de una conexión a internet.",
+    "stepLabel": "Paso",
+    "steps": [
+      {
+        "title": "Consulta",
+        "description": "Revisamos sus equipos, PLC y protocolos y acordamos el alcance de un piloto."
+      },
+      {
+        "title": "Instalación",
+        "description": "Un instalador arrancable convierte un PC industrial en servidor SCADA y panel de operador, totalmente sin internet."
+      },
+      {
+        "title": "Configuración del proyecto",
+        "description": "El asistente crea PLC, equipos, áreas y sinópticos; después el equipo ajusta los sinópticos en el editor."
+      },
+      {
+        "title": "Explotación",
+        "description": "Actualizaciones en línea o desde archivo con copia de seguridad y reversión automáticas. Varios servidores de planta se gestionan desde uno maestro."
+      }
+    ]
+  },
+  "comparison": {
+    "kicker": "Comparativa",
+    "h2": "En qué se diferencia de un SCADA clásico",
+    "intro": "Las diferencias prácticas que cuentan en la operación diaria y en el coste de un proyecto.",
+    "colClassic": "SCADA clásico",
+    "colOurs": "OBJECTSCADA",
+    "rows": [
+      {
+        "aspect": "Puesto de operador",
+        "classic": "Una aplicación cliente instalada y con licencia en cada puesto.",
+        "ours": "Un navegador en cualquier PC, panel o tablet de la red."
+      },
+      {
+        "aspect": "Licencias",
+        "classic": "El precio crece con el número de variables y clientes.",
+        "ours": "Sin límite de variables ni de clientes. Licencia temporal o perpetua, prueba gratuita."
+      },
+      {
+        "aspect": "Ingeniería de PLC",
+        "classic": "Las variables del SCADA y el código del PLC se mantienen por separado.",
+        "ours": "El código Siemens y las tablas de variables se generan desde el proyecto SCADA."
+      },
+      {
+        "aspect": "Instalación",
+        "classic": "Sistema operativo, base de datos y runtime se instalan uno a uno.",
+        "ours": "Un único instalador sin internet: servidor y quiosco de operador en el mismo PC."
+      },
+      {
+        "aspect": "Actualizaciones",
+        "classic": "Reinstalación manual por un integrador.",
+        "ours": "Actualización en línea o sin conexión con copia de seguridad y reversión automáticas."
+      }
+    ]
+  },
+  "cta": {
+    "kicker": "Contacto",
+    "h2": "Hablemos de su proyecto",
+    "intro": "Cuéntenos cómo es su planta. Le mostraremos OBJECTSCADA con su caso y valoraremos un piloto.",
+    "benefits": [
+      {
+        "title": "Acceso a la demo",
+        "desc": "Un sistema de prueba con un proyecto de demostración para evaluar la interfaz y las funciones."
+      },
+      {
+        "title": "Proyecto piloto",
+        "desc": "Empiece con una línea o un área y amplíe a toda la planta."
+      },
+      {
+        "title": "Consulta técnica",
+        "desc": "Comprobación de compatibilidad con sus equipos, PLC y protocolos."
+      }
+    ],
+    "formTitle": "Envíe su solicitud",
+    "fields": {
+      "name": "Nombre",
+      "company": "Empresa",
+      "email": "Email",
+      "phone": "Teléfono",
+      "message": "Describa la tarea"
+    },
+    "placeholders": {
+      "name": "Juan García",
+      "company": "Nombre de la empresa",
+      "email": "nombre@empresa.es",
+      "phone": "+34 600 000 000",
+      "message": "Equipos, protocolos, número de líneas o plantas…"
+    },
+    "required": "*",
+    "submit": "Enviar solicitud",
+    "sending": "Enviando…",
+    "success": "Solicitud enviada. Nos pondremos en contacto con usted en breve.",
+    "errorSend": "No se pudo enviar la solicitud. Inténtelo de nuevo más tarde.",
+    "errorNetwork": "Sin conexión con el servidor. Inténtelo de nuevo más tarde.",
+    "consent": "Al enviar el formulario acepta el tratamiento de sus datos personales."
+  },
   "footer": {
-    "tagline": "Sistema SCADA web industrial para monitorización, control y automatización de procesos tecnológicos.",
-    "status": "El sistema esta funcionando",
+    "tagline": "Sistema SCADA web para supervisión, control y automatización de procesos industriales.",
     "columns": {
       "product": "Producto",
       "docs": "Documentación",
-      "contact": "Contactos"
+      "contact": "Contacto"
     },
     "links": {
       "product": [
-        {
-          "label": "Posibilidades",
-          "href": "#características"
-        },
-        {
-          "label": "Integraciones",
-          "href": "#integraciones"
-        },
-        {
-          "label": "Arquitectura",
-          "href": "#arquitectura"
-        },
-        {
-          "label": "Interfaz del sistema",
-          "href": "#interfaz-del-sistema"
-        },
-        {
-          "label": "Ventajas",
-          "href": "#advantages"
-        },
-        { "label": "Ejemplos de proyectos", "href": "#projects" }
+        { "label": "Funciones", "href": "#features" },
+        { "label": "Interfaz", "href": "#interface" },
+        { "label": "Protocolos", "href": "#protocols" },
+        { "label": "Implantación", "href": "#deployment" },
+        { "label": "Comparativa", "href": "#advantages" }
       ],
       "docs": [
-        {
-          "label": "Guía del usuario",
-          "href": null,
-          "id": "user-manual"
-        },
-        {
-          "label": "Referencia de API",
-          "href": null,
-          "id": "api-reference"
-        },
-        {
-          "label": "Configuración de la ventana acoplable",
-          "href": "https://docs.docker.com/engine/install/"
-        }
+        { "label": "Manual de usuario", "href": "#", "id": "user-manual" },
+        { "label": "Referencia de la API", "href": "#", "id": "api-reference" }
       ],
       "contact": [
-        {
-          "label": "Solicitar una demostración",
-          "href": "#contacto"
-        },
-        {
-          "label": "Apoyo técnico",
-          "href": "#contacto"
-        },
-        {
-          "label": "Asociación",
-          "href": "#contacto"
-        }
+        { "label": "Solicitar demo", "href": "#contact" },
+        { "label": "Soporte técnico", "href": "#contact" },
+        { "label": "Colaboración", "href": "#contact" }
       ]
     },
-    "copyright": "Reservados todos los derechos.",
-    "privacy": "política de privacidad",
+    "copyright": "Todos los derechos reservados.",
+    "privacy": "Política de privacidad",
     "terms": "Condiciones de uso"
   }
 }

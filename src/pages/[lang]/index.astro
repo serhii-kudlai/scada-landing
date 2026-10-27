@@ -1,6 +1,6 @@
 ---
-import Architecture from '../../components/Architecture.astro';
 import CTA from '../../components/CTA.astro';
+import Deployment from '../../components/Deployment.astro';
 import Features from '../../components/Features.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
@@ -53,9 +53,9 @@ const locale = lang as Locale;
   <main>
     <Hero lang={locale} m={m} />
     <Features m={m} />
-    <Integrations m={m} />
-    <Architecture m={m} />
     <ProjectScreens m={m} lang={locale} />
+    <Integrations m={m} />
+    <Deployment m={m} />
     <CTA m={m} />
   </main>
   <Footer lang={locale} m={m} />

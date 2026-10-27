@@ -1,0 +1,60 @@
+---
+import type { Messages } from '../i18n/types';
+import SectionHead from './SectionHead.astro';
+
+interface Props {
+  m: Messages;
+}
+
+const { m } = Astro.props;
+const d = m.deployment;
+const c = m.comparison;
+---
+
+<section id="deployment" class="scroll-mt-16 border-b border-line bg-sunken py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <SectionHead kicker={d.kicker} title={d.h2} intro={d.intro} />
+
+    <ol class="grid gap-px overflow-hidden rounded border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      {
+        d.steps.map((step, i) => (
+          <li class="flex flex-col bg-paper p-6">
+            <span class="kicker">
+              {d.stepLabel} {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3 class="mt-4 text-lg font-bold text-ink">{step.title}</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-muted">{step.description}</p>
+          </li>
+        ))
+      }
+    </ol>
+
+    <div id="advantages" class="mt-20 scroll-mt-20">
+      <SectionHead kicker={c.kicker} title={c.h2} intro={c.intro} />
+      <div class="overflow-x-auto rounded border border-line bg-paper">
+        <table class="w-full min-w-[40rem] border-collapse text-start text-[15px]">
+          <thead>
+            <tr class="border-b border-line">
+              <th scope="col" class="kicker w-1/5 px-5 py-4 text-start font-normal"></th>
+              <th scope="col" class="kicker w-2/5 px-5 py-4 text-start font-normal">{c.colClassic}</th>
+              <th scope="col" class="w-2/5 px-5 py-4 text-start font-mono text-xs uppercase tracking-[0.16em] text-accent">
+                {c.colOurs}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              c.rows.map((row) => (
+                <tr class="border-b border-line last:border-b-0">
+                  <th scope="row" class="px-5 py-4 text-start align-top font-bold text-ink">{row.aspect}</th>
+                  <td class="px-5 py-4 align-top leading-relaxed text-muted">{row.classic}</td>
+                  <td class="px-5 py-4 align-top leading-relaxed text-ink">{row.ours}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

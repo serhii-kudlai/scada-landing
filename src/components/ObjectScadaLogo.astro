@@ -4,48 +4,17 @@ interface Props {
 }
 
 const { size = 'header' } = Astro.props;
-
-const isHeader = size === 'header';
-
-const boxClass = isHeader
-  ? 'h-9 w-9 sm:h-10 sm:w-10'
-  : 'h-8 w-8 sm:h-9 sm:w-9';
-
-const textClass = isHeader
-  ? 'text-[0.8125rem] sm:text-[0.9375rem] lg:text-[1.0625rem]'
-  : 'text-sm sm:text-base';
-
+const base = import.meta.env.BASE_URL;
+const markClass = size === 'header' ? 'h-9 w-9' : 'h-8 w-8';
+const textClass = size === 'header' ? 'text-[1.0625rem]' : 'text-base';
 ---
 
-<span class="font-sans inline-flex items-center gap-2.5 sm:gap-3">
-  <span
-    class:list={[
-      'flex shrink-0 items-center justify-center overflow-hidden rounded-[0.55rem] shadow-sm',
-      boxClass,
-    ]}
-    aria-hidden="true"
-  >
-    <img
-      src="/logo_light.png"
-      alt="ObjectSCADA"
-      class:list={['block dark:hidden h-full w-full object-contain']}
-      draggable="false"
-    />
-    <img
-      src="/logo_dark.png"
-      alt="ObjectSCADA"
-      class:list={['hidden dark:block h-full w-full object-contain']}
-      draggable="false"
-    />
+<span class="inline-flex items-center gap-2.5" dir="ltr">
+  <span class:list={['relative shrink-0', markClass]} aria-hidden="true">
+    <img src={`${base}logo-mark.svg`} alt="" class="shot-light h-full w-full" draggable="false" />
+    <img src={`${base}logo-mark-dark.svg`} alt="" class="shot-dark h-full w-full" draggable="false" />
   </span>
-  <span
-    class:list={[
-      'font-black uppercase leading-none tracking-[0.08em] text-neutral-900 antialiased dark:text-white',
-      'sm:tracking-[0.1em]',
-      textClass,
-    ]}
-    style="font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';"
-  >
-    OBJECTSCADA
+  <span class:list={['leading-none tracking-[0.02em] text-ink', textClass]}>
+    <span class="font-normal">OBJECT</span><span class="font-extrabold">SCADA</span>
   </span>
 </span>

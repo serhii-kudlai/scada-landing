@@ -1,36 +1,95 @@
 @import 'tailwindcss';
 @config '../../tailwind.config.mjs';
 
+/* Same palette as the OBJECTSCADA app: cream/ink login look + gray dark theme. */
+:root {
+  --c-bg: #f4f2ec;
+  --c-paper: #ffffff;
+  --c-sunken: #ebe8df;
+  --c-ink: #0b0d12;
+  --c-muted: #5b6473;
+  --c-line: #d6d2c7;
+  --c-line-strong: #b9b4a7;
+  --c-accent: #616dd4;
+  --c-accent-ink: #ffffff;
+  --c-ok: #158c32;
+  --c-warn: #b68521;
+  --c-alarm: #b5271e;
+  color-scheme: light;
+}
+
+html.dark {
+  --c-bg: #1c1c1c;
+  --c-paper: #262626;
+  --c-sunken: #212121;
+  --c-ink: #ececec;
+  --c-muted: #a0a0a0;
+  --c-line: #3a3a3c;
+  --c-line-strong: #545456;
+  --c-accent: #9a9aff;
+  --c-accent-ink: #0b0d12;
+  --c-ok: #66bb6a;
+  --c-warn: #ffa726;
+  --c-alarm: #ef5350;
+  color-scheme: dark;
+}
+
 html,
 body {
   overflow-x: hidden;
   max-width: 100%;
 }
 
-/**
- * Вертикальное смягчение стыков между полноширинными секциями лендинга
- * (единый фон + лёгкое затемнение у верхнего/нижнего края).
- */
-.bg-landing-section-edges {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    180deg,
-    rgba(15, 23, 42, 0.042) 0%,
-    transparent min(100px, 16vw),
-    transparent calc(100% - min(100px, 16vw)),
-    rgba(15, 23, 42, 0.042) 100%
-  );
+html {
+  scroll-behavior: smooth;
 }
 
-html.dark .bg-landing-section-edges {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.28) 0%,
-    transparent min(96px, 14vw),
-    transparent calc(100% - min(96px, 14vw)),
-    rgba(0, 0, 0, 0.28) 100%
-  );
+body {
+  background: var(--c-bg);
+  color: var(--c-ink);
+}
+
+::selection {
+  background: var(--c-accent);
+  color: var(--c-accent-ink);
+}
+
+/* Mono label used for section kickers and indices — same as the app's "01 · LOGIN". */
+.kicker {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+/* Letter-spacing breaks the joining of Arabic letters. */
+[dir='rtl'] .kicker,
+[dir='rtl'] .tracking-\[0\.16em\] {
+  letter-spacing: 0;
+}
+
+/* Short accent bar on top of a card, as on the app's login card. */
+.card-strip {
+  position: relative;
+}
+.card-strip::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  inset-inline-start: -1px;
+  width: 48px;
+  height: 3px;
+  background: var(--c-accent);
+}
+
+/* Themed screenshots: light image by default, dark image under html.dark. */
+.shot-dark {
+  display: none;
+}
+html.dark .shot-light {
+  display: none;
+}
+html.dark .shot-dark {
+  display: block;
 }

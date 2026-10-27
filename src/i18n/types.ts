@@ -1,8 +1,8 @@
-import type ru from './ru.json';
+import type en from './en.json';
 
 export type Locale = 'ru' | 'en' | 'de' | 'uk' | 'es' | 'fr' | 'ar' | 'zh';
 
-export type Messages = typeof ru;
+export type Messages = typeof en;
 
 export const locales: Exclude<Locale, 'en'>[] = ['ru', 'de', 'uk', 'es', 'fr', 'ar', 'zh'];
 

@@ -27,3 +27,14 @@ export function homeHref(lang: Locale): string {
   const path = lang === 'en' ? '/' : `/${lang}/`;
   return withBase(path);
 }
+
+/** Language code used in `public/screens/{id}_{code}_{theme}.png` file names. */
+export function screenLang(lang: Locale): string {
+  return lang === 'uk' ? 'ua' : lang;
+}
+
+/** Light/dark screenshot URLs for one screen of the app in the page language. */
+export function screenSrc(id: string, lang: Locale): { light: string; dark: string } {
+  const base = `${import.meta.env.BASE_URL}screens/${id}_${screenLang(lang)}`;
+  return { light: `${base}_light.png`, dark: `${base}_dark.png` };
+}
